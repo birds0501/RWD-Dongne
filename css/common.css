@@ -1,0 +1,414 @@
+@charset "utf-8";
+
+/* 웹폰트 정의 (영문, 한글 폰트 다르면 영문 폰트 먼저 추가)*/
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+
+:root {
+  --main-color: #909d48;
+  --main-color-dark: #4f581c;
+  --text-color-w: #888;
+  --text-color-b: #555;
+  --boder-color-w: #c8c8c8;
+  --filter-text-color: #3c3c3c;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font: 1rem/1.5 "Pretendard", sans-serif;
+  /* word-break: keep-all; 
+  text-transform: capitalize; */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+hr,
+.hidden {
+  position: absolute;
+  margin: -1px;
+  width: -1px;
+  height: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+::selection {
+  background: var(--main-color);
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+.inner {
+  width: 118rem;
+  margin: 0 auto;
+  /* background: #5f5; */
+  position: relative;
+  height: 100%;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 4.5rem;
+}
+/* header -----------------------------------------------------------------*/
+
+#header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background: #5f5; */
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  height: 9.9rem;
+  margin: 0 3.7rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  display: block;
+  width: 15.8rem;
+  height: 4.4rem;
+  background: url(../img/logo.svg) no-repeat 0 0 / cover;
+}
+
+.util {
+  display: flex;
+  gap: 2.9rem;
+}
+
+.gnb {
+  display: flex;
+  /* margin-left: 4.1rem; */
+}
+
+.gnb li a {
+  display: block;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 4.1rem;
+  /* margin: 0 2.1354rem; */
+}
+
+.btn-search {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  background: url(../img/ico-search.svg) no-repeat 50%;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.btn-login {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  background: url(../img/ico-login.svg) no-repeat 50%;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.util-menu {
+  display: none;
+}
+
+.btn-menu {
+  display: block;
+  width: 3.2rem;
+  height: 2.7rem;
+  background: url(../img/ico-menu.svg) no-repeat 0 0 / cover;
+}
+
+#footer {
+  background: #f7f7f7;
+  padding: 7.5rem 0;
+}
+
+.foot-logo {
+  display: block;
+  width: 9.9rem;
+  height: 4.4rem;
+  background: url(../img/foot-logo.svg) no-repeat 50%;
+}
+
+.foot-links {
+  display: flex;
+  column-gap: 3rem;
+  margin-top: 5rem;
+}
+
+.foot-links li a {
+  display: block;
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: 0.2s;
+}
+
+.foot-text {
+  margin-top: 3.3rem;
+}
+
+.foot-text p {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-color-w);
+}
+
+.foot-text p + p {
+  margin-top: 1.4rem;
+}
+
+#footer > .inner {
+  position: relative;
+}
+
+.sns-list {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sns-list li a {
+  display: block;
+  width: 3.7rem;
+  height: 3.7rem;
+  /* border: 1px solid #000; */
+  background: no-repeat 50%;
+}
+
+.sns-list li:nth-child(1) a {
+  background-image: url(../img/sns-ico-sta.svg);
+}
+.sns-list li:nth-child(2) a {
+  background-image: url(../img/sns-ico-you.svg);
+}
+.sns-list li:nth-child(3) a {
+  background-image: url(../img/sns-ico-face.svg);
+}
+
+/* 제보하기 버튼 */
+
+.send {
+  position: fixed;
+  right: 4.3rem;
+  bottom: 7.2rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: var(--main-color) url(../img/ico-send.svg) no-repeat 50%;
+}
+
+/* 반응형 */
+
+/* 태블릿 디자인 */
+@media (max-width: 1180px) {
+  .inner {
+    width: 94.1406%;
+  }
+
+  .gnb {
+    display: none;
+  }
+
+  .util-menu {
+    display: block;
+  }
+
+  .logo {
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .foot-links li a {
+    font-size: 1.7rem;
+  }
+
+  .sns-list li a {
+    width: 4.9rem;
+    height: 4.9rem;
+  }
+
+  .foot-text p + p {
+    width: 62.4rem;
+    width: 64.7303%;
+  }
+
+  .send {
+    width: 11rem;
+    height: 11rem;
+    background-size: 49%;
+  }
+}
+
+/* 추가 분기 */
+
+@media (max-width: 1595px) {
+  .gnb li a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1093px) {
+  .send {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 862px) {
+  .send {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 702px) {
+  .send {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 450px) {
+}
+
+@media (max-width: 362px) {
+  #footer .foot-links li a {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    left: 52%;
+  }
+}
+
+/* 모바일 디자인 */
+@media (max-width: 600px) {
+  .inner {
+    width: 35rem;
+  }
+  .inner {
+    width: 89.7436%;
+  }
+
+  nav {
+    height: 7rem;
+    margin: 0 2rem;
+    align-items: end;
+  }
+
+  .logo {
+    top: 4rem;
+  }
+
+  .logo a {
+    display: block;
+    width: 11.4rem;
+    height: 3rem;
+  }
+
+  .util {
+    gap: 1.4rem;
+  }
+
+  .btn-search {
+    width: 3rem;
+    height: 3rem;
+    background-size: 50%;
+  }
+
+  .btn-login {
+    width: 3rem;
+    height: 3rem;
+    background-size: 50%;
+  }
+
+  .btn-menu {
+    width: 3rem;
+    height: 2.7rem;
+    background: url(../img/ico-menu.svg) no-repeat 0 0/ 80%;
+  }
+
+  .sns-list {
+    position: static;
+  }
+
+  #footer {
+    padding: 3.4rem 0;
+  }
+
+  .foot-logo {
+    width: 6.5rem;
+    height: 3rem;
+    background: url(../img/foot-logo-m.svg) no-repeat 50%;
+  }
+
+  .foot-links {
+    margin-top: 4rem;
+  }
+
+  .foot-links li a {
+    font-size: 1.4rem;
+  }
+
+  .foot-text p {
+    font-size: 1.2rem;
+  }
+
+  .foot-text p + p {
+    width: 35rem;
+  }
+
+  .sns-list {
+    gap: 2.7rem;
+    margin-top: 2.6rem;
+  }
+
+  .sns-list li a {
+    width: 3.6rem;
+    height: 3.6rem;
+    background: no-repeat 50%;
+  }
+
+  /* .sns-list li:nth-child(1) a {
+    background-image: url(../img/msns-ico-sta.svg);
+  }
+  .sns-list li:nth-child(2) a {
+    background-image: url(../img/msns-ico-you.svg);
+  }
+  .sns-list li:nth-child(3) a {
+    background-image: url(../img/msns-ico-face.svg);
+  } */
+
+  .send {
+    transform: none;
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+}
