@@ -217,6 +217,7 @@ nav {
 
 .send {
   position: fixed;
+  z-index: 5;
   right: 4.3rem;
   bottom: 7.2rem;
   width: 10rem;
