@@ -40,7 +40,6 @@ btn.addEventListener("click", () => {
 const btnAd = document.querySelector(".plus.ad");
 
 btnAd.addEventListener("click", () => {
-  const alarmContents = document.querySelector(".alarm-con");
   const hiddenItems = document.querySelectorAll(".ad-item.hidden");
 
   for (let i = 0; i < 3 && i < hiddenItems.length; i++) {
