@@ -278,6 +278,16 @@ nav {
   }
 }
 
+@media (max-width: 1300px) {
+  .gnb li a {
+    font-size: 1.7rem;
+  }
+
+  .inner {
+    width: 95%;
+  }
+}
+
 @media (max-width: 1093px) {
   .send {
     transform: scale(0.9);
@@ -294,9 +304,6 @@ nav {
   .send {
     transform: scale(0.7);
   }
-}
-
-@media (max-width: 450px) {
 }
 
 @media (max-width: 362px) {
