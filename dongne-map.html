@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>동네서점지도</title>
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/sub.css" />
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <a href="#container" class="skip hidden">본문 바로가기</a>
+    <header id="header">
+      <nav>
+        <h1 class="logo">
+          <a href="index.html"><i class="hidden">동네서점</i></a>
+        </h1>
+        <ul class="gnb">
+          <li><a href="intro-map.html">서비스 소개</a></li>
+          <li><a href="dongne-map.html">동네서점지도</a></li>
+          <li><a href="new-alarm.html">신간알림광고</a></li>
+          <li><a href="market.html">마켓</a></li>
+          <li><a href="#">동네서점 On Air</a></li>
+        </ul>
+        <div class="util">
+          <a href="#" class="btn-search"><i class="hidden">검색</i></a>
+          <a href="#" class="btn-login"><i class="hidden">로그인</i></a>
+        </div>
+        <div class="util-menu">
+          <a href="new-alarm.html" class="btn-menu"
+            ><i class="hidden">메뉴</i></a
+          >
+        </div>
+      </nav>
+    </header>
+    <main id="container">
+      <div class="sub-link">
+        <a class="on" href="dongne-map.html"><b>동네서점지도</b></a>
+        <a href="theme-map.html"><b>테마지도</b></a>
+      </div>
+      <section class="find-map">
+        <h2 class="hidden">동네서점 찾기</h2>
+
+        <div class="fit-store">
+          <div class="inner">
+            <h3>동네서점지도</h3>
+            <div class="store-search">
+              <div class="tools">
+                <div class="search">
+                  <form action="#">
+                    <div class="search-wrap">
+                      <input
+                        type="text"
+                        name="text"
+                        placeholder="제주도 독립서점"
+                      />
+                      <button type="submit">
+                        <i class="hidden">검색</i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div class="filter">
+                  <a href="#" class="location"
+                    ><span class="icon"></span
+                    ><span class="text">현재위치로 검색</span></a
+                  >
+                  <div class="filter-btns">
+                    <a href="#" class="btn btn-hob on"
+                      ><span class="text">취향 · 활동</span
+                      ><span class="icon"></span
+                    ></a>
+                    <a href="#" class="btn btn-area"
+                      ><span class="text">지역</span><span class="icon"></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="results">
+                <p class="results-top">총 62개의 검색 결과</p>
+                <div class="results-bottom">
+                  <ul class="re-wrap">
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간<span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <figure>
+                          <img
+                            src="./img/sub-find-01.jpg"
+                            alt="책방애월의 이미지"
+                          />
+                        </figure>
+                        <div class="store-info-wrap">
+                          <dl>
+                            <dt>
+                              책방애월
+                              <span class="store-type">독립서점</span>
+                            </dt>
+                            <dd>
+                              제주특별자치도 제주시 애월읍 광성로 76 (고성리)
+                            </dd>
+                            <dd>
+                              운영시간
+                              <span class="store-open"
+                                >화 - 토 10:30-19:00</span
+                              >
+                            </dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="store-info">
+              <div class="name-flex">
+                <button type="button" class="back-icon"></button>
+                <div class="store-title">
+                  <span class="store-name">책방애월</span>
+                  <span class="type-info">동네서점</span>
+                </div>
+              </div>
+              <figure class="store-img">
+                <img
+                  src="./img/sub-store-info-01.jpg"
+                  alt="책방애월 관련 이미지"
+                />
+              </figure>
+              <ul class="info-list">
+                <li>
+                  <dl>
+                    <dt>소개</dt>
+                    <dd>
+                      한정판으로 제작한 아티스트 상품과 주인장이 선별한
+                      독립출판물을 소개한다. 카페 '브리프' 내에서 서울
+                      '책방연희'가 운영한다.
+                    </dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>주소</dt>
+                    <dd class="address-wrap">
+                      <span
+                        >제주특별자치도 제주시 애월읍 광성로 76 (고성리) 카페
+                        브리프 내</span
+                      >
+                      <button type="button">길찾기</button>
+                    </dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>운영시간</dt>
+                    <dd>화 - 일 10:30 ~ 19:00</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>휴무일</dt>
+                    <dd>월요일, 마지막주 화요일 휴무</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>웹사이트</dt>
+                    <dd>
+                      <a href="http://www.instagram.com/chaegbangaewol"
+                        >http://www.instagram.com/chaegbangaewol</a
+                      >
+                    </dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>전화</dt>
+                    <dd>+82  064-711-5507</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>대표자</dt>
+                    <dd>신간알림 회원만 이용 가능합니다.</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>이메일</dt>
+                    <dd>신간알림 회원만 이용 가능합니다.</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>문의하기</dt>
+                    <dd>신간알림 회원만 이용 가능합니다.</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>취향 · 활동</dt>
+                    <dd>#독립출판물 #예술 #문구점</dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>테마지도</dt>
+                    <dd>#동네서점지도제주 #예술서점 #문구점</dd>
+                  </dl>
+                </li>
+              </ul>
+              <button type="button" class="back-list">
+                <span class="back-list-ico"></span>
+                <span class="back-text">이전으로</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="more-store hidden-more">
+          <span class="plus-text">더보기</span>
+          <span class="store-plus"></span>
+        </button>
+        <div class="dim"></div>
+        <div class="store-filter">
+          <div class="filter-body">
+            <div class="top-con">
+              <h4 class="filter-title">취향 · 활동</h4>
+              <a href="#" class="close-btn"></a>
+            </div>
+            <ul class="menu">
+              <li>
+                <button type="button" class="menu-item">
+                  <span class="menu-title">
+                    <span class="name">취향</span>
+                    <span class="count">2개 선택됨</span>
+                  </span>
+                  <span class="spread-btn"></span>
+                </button>
+                <ul class="sub-menu hidden">
+                  <li class="on"><button type="button">독립출판물</button></li>
+                  <li><button type="button">카페</button></li>
+                  <li><button type="button">그림책</button></li>
+                  <li><button type="button">편집소품점</button></li>
+                  <li><button type="button">라이프스타일</button></li>
+                  <li><button type="button">제로웨이스트</button></li>
+                  <li><button type="button">고서</button></li>
+                  <li><button type="button">잡지</button></li>
+                  <li class="on"><button type="button">복합문화</button></li>
+                  <li><button type="button">예술</button></li>
+                  <li><button type="button">큐레이션</button></li>
+                  <li><button type="button">독립출판물</button></li>
+                  <li><button type="button">카페</button></li>
+                  <li><button type="button">그림책</button></li>
+                  <li><button type="button">편집소품점</button></li>
+                  <li><button type="button">라이프스타일</button></li>
+                  <li><button type="button">제로웨이스트</button></li>
+                  <li><button type="button">고서</button></li>
+                  <li><button type="button">잡지</button></li>
+                  <li><button type="button">복합문화</button></li>
+                  <li><button type="button">예술</button></li>
+                  <li><button type="button">큐레이션</button></li>
+                  <li><button type="button">독립출판물</button></li>
+                  <li><button type="button">카페</button></li>
+                  <li><button type="button">그림책</button></li>
+                  <li><button type="button">편집소품점</button></li>
+                  <li><button type="button">라이프스타일</button></li>
+                  <li><button type="button">제로웨이스트</button></li>
+                  <li><button type="button">고서</button></li>
+                  <li><button type="button">잡지</button></li>
+                  <li><button type="button">복합문화</button></li>
+                  <li><button type="button">예술</button></li>
+                  <li><button type="button">큐레이션</button></li>
+                  <li><button type="button">독립출판물</button></li>
+                  <li><button type="button">카페</button></li>
+                  <li><button type="button">그림책</button></li>
+                  <li><button type="button">편집소품점</button></li>
+                  <li><button type="button">라이프스타일</button></li>
+                  <li><button type="button">제로웨이스트</button></li>
+                  <li><button type="button">고서</button></li>
+                  <li><button type="button">잡지</button></li>
+                  <li><button type="button">복합문화</button></li>
+                  <li><button type="button">예술</button></li>
+                  <li><button type="button">큐레이션</button></li>
+                </ul>
+              </li>
+              <li>
+                <button type="button" class="menu-item">
+                  <span class="menu-title">
+                    <span class="name">활동</span>
+                    <span class="count"></span>
+                  </span>
+                  <span class="spread-btn"></span>
+                </button>
+                <ul class="sub-menu hidden">
+                  <li><button type="button">영화상영</button></li>
+                  <li><button type="button">산책하기</button></li>
+                  <li><button type="button">음악</button></li>
+                  <li><button type="button">숙박</button></li>
+                  <li><button type="button">공간대여</button></li>
+                  <li><button type="button">필사</button></li>
+                  <li><button type="button">북토크</button></li>
+                  <li><button type="button">문화체험</button></li>
+                  <li><button type="button">강연</button></li>
+                  <li><button type="button">책추천</button></li>
+                  <li><button type="button">전시</button></li>
+                  <li><button type="button">영화상영</button></li>
+                  <li><button type="button">산책하기</button></li>
+                  <li><button type="button">음악</button></li>
+                  <li><button type="button">숙박</button></li>
+                  <li><button type="button">공간대여</button></li>
+                  <li><button type="button">필사</button></li>
+                  <li><button type="button">북토크</button></li>
+                  <li><button type="button">문화체험</button></li>
+                  <li><button type="button">강연</button></li>
+                  <li><button type="button">책추천</button></li>
+                  <li><button type="button">전시</button></li>
+                  <li><button type="button">영화상영</button></li>
+                  <li><button type="button">산책하기</button></li>
+                  <li><button type="button">음악</button></li>
+                  <li><button type="button">숙박</button></li>
+                  <li><button type="button">공간대여</button></li>
+                  <li><button type="button">필사</button></li>
+                  <li><button type="button">북토크</button></li>
+                  <li><button type="button">문화체험</button></li>
+                  <li><button type="button">강연</button></li>
+                  <li><button type="button">책추천</button></li>
+                  <li><button type="button">전시</button></li>
+                  <li><button type="button">영화상영</button></li>
+                  <li><button type="button">산책하기</button></li>
+                  <li><button type="button">음악</button></li>
+                  <li><button type="button">숙박</button></li>
+                  <li><button type="button">공간대여</button></li>
+                  <li><button type="button">필사</button></li>
+                  <li><button type="button">북토크</button></li>
+                  <li><button type="button">문화체험</button></li>
+                  <li><button type="button">강연</button></li>
+                  <li><button type="button">책추천</button></li>
+                  <li><button type="button">전시</button></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="bottom-con">
+              <button type="button" class="reset">
+                <span class="re-icon"></span>
+                <span>초기화</span>
+              </button>
+              <button type="button" class="filter-apply">필터 적용하기</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="g-map">
+          <h3 class="hidden">map</h3>
+          <figure>
+            <img
+              src="./img/naver_map.png"
+              alt="서점 검색 결과가 표시된 네이버 맵 이미지"
+            />
+          </figure>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <strong class="foot-logo">
+          <i class="hidden">동네서점</i>
+        </strong>
+        <ul class="foot-links">
+          <li><a href="#">개인정보보호정책</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">이메일 무단 수집거부</a></li>
+        </ul>
+        <div class="foot-text">
+          <p>@ 2015-2023 Dongneseojeom Inc.</p>
+          <p>
+            동네서점 서비스의 데이터와 콘텐츠의 저작권은 각 해당 저작자 또는
+            제보자, 주식회사 동네서점에 있습니다. 관련 문의 또는 광고, 협력,
+            후원 제안은 <a href="#">여기</a>에서 더 자세히 알아보세요.
+          </p>
+        </div>
+        <ul class="sns-list">
+          <li>
+            <a href="#"><i class="hidden">인스타그램</i></a>
+          </li>
+          <li>
+            <a href="#"><i class="hidden">유튜브</i></a>
+          </li>
+          <li>
+            <a href="#"><i class="hidden">페이스북</i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <a href="#top" class="go-top"><i class="hidden">위로 이동</i></a>
+    <a href="#" class="send"><i class="hidden">제보하기</i></a>
+  </body>
+</html>

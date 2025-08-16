@@ -128,3 +128,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+button {
+  background: none;
+  border: none;
+  padding: 0; /* 필요에 따라 조절 */
+  font: inherit; /* 부모 폰트 상속 */
+  color: inherit; /* 부모 색상 상속 */
+  cursor: pointer; /* 클릭 가능한 느낌 */
+}
