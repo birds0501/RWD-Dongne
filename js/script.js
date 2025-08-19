@@ -98,16 +98,62 @@ $(function () {
 
   //공통의 동작을 함수로 정의
   //1. 메뉴의 움직임 (보이거나, 숨기거나)
+  // function slideMenu(pos) {
+  //   $filter.animate(
+  //     {
+  //       left: pos,
+  //     },
+  //     350
+  //   );
+  //   $filterBottom.animate({ left: pos }, 350);
+  //   isActive = true;
+  // }
+
   function slideMenu(pos) {
-    $filter.animate(
-      {
-        left: pos,
-      },
-      350
-    );
-    $filterBottom.animate({ left: pos }, 350);
+    if ($(window).width() <= 1180) {
+      // 📱 모바일 / 태블릿 (1180 이하)
+      $filter.animate(
+        {
+          bottom: pos,
+        },
+        350
+      );
+      $filterBottom.animate(
+        {
+          bottom: pos,
+        },
+        350
+      );
+    } else {
+      // 💻 PC (1180 초과)
+      $filter.animate(
+        {
+          left: pos,
+        },
+        350
+      );
+      $filterBottom.animate(
+        {
+          left: pos,
+        },
+        350
+      );
+    }
     isActive = true;
   }
+
+  // 해상도 바꿀때 적용
+  $(window).on("resize", function () {
+    if (!isActive) return; // 메뉴가 열려있을 때만 적용
+
+    if ($(window).width() > 1180) {
+      // 1180 초과 (PC)
+      $filter.add($filterBottom).css({ left: "0" });
+    } else {
+      // 1180 이하 (모바일)
+      $filter.add($filterBottom).css({ bottom: "0" });
+    }
+  });
 
   //2. openMenu : 메뉴를 보이게( 메뉴 + active부여 + dim fadeIn + isActive)
   function openMenu() {
@@ -189,12 +235,13 @@ $(function () {
   const $map = $(".g-map");
   const $pop = $(".fit-store");
   const $backToList = $(".back-list");
+  const $inMap = $(".in-map");
 
   //flag 아직 활성화되지 않음
   let isActive = false;
 
   //store 클릭했을 때
-  $store.on("click", function (e) {
+  $store.add($inMap).on("click", function (e) {
     e.preventDefault();
 
     //$menu가 보여지게 : isActive조건에 따라서
@@ -204,7 +251,7 @@ $(function () {
 
   //dim클릭했을 때
 
-  $backIcon.add($map).add($backToList).on("click", closeMenu);
+  $backIcon.add($backToList).on("click", closeMenu);
 
   //공통의 동작을 함수로 정의
   //1. 메뉴의 움직임 (보이거나, 숨기거나)
