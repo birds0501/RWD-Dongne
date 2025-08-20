@@ -26,10 +26,27 @@ $(function () {
   });
 
   //서비스 소개-신간알림-리뷰 슬라이더
-  const swiper = new Swiper(".review-wrap", {
+  const reviewSlider = new Swiper(".review-wrap", {
     slidesPerView: "auto", // 자동이 아닌, 카드 width 기준으로 보여줌
     spaceBetween: 0,
     simulateTouch: true,
     touchRatio: 1,
+  });
+
+  const updateSlider = new Swiper(".update-slider", {
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+    slidesPerView: "auto",
+    spaceBetween: 40,
+
+    breakpoints: {
+      1180: { spaceBetween: 30 },
+      1179: { spaceBetween: 20 },
+      480: { spaceBetween: 20 },
+      479: { spaceBetween: 10 },
+      0: { spaceBetween: 10 },
+    },
   });
 });
