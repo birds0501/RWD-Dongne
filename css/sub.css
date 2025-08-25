@@ -29,11 +29,6 @@
   background: url(../img/sub-ico-menu.svg) no-repeat 0 0 / cover;
 }
 
-#container {
-  margin-top: 25rem;
-  /* background: #5f5; */
-}
-
 /* 상단 링크 메뉴-------------------------------------------------------*/
 
 .sub-link {
@@ -58,7 +53,7 @@
   content: "";
   display: block;
   width: 0%;
-  height: 0.2rem;
+  height: 0.1rem;
   background: var(--main-color);
   position: absolute;
   bottom: 0;
@@ -640,35 +635,35 @@ h2 {
 
 /* 서브-서비스 소개---------------------------------------------------- */
 .about {
-  margin-top: 25rem;
+  margin-top: 24rem;
 }
 
 .title-wrap {
   display: flex;
   flex-direction: column;
-  gap: 6.5rem;
+  gap: 8rem;
 }
 
 .about-title {
   display: flex;
   flex-direction: column;
-  gap: 7.5rem;
+  gap: 5rem;
 }
 
 .about-title h2 {
-  font-size: 6rem;
+  font-size: 5.2rem;
   font-weight: 700;
-  max-width: 69rem;
+  max-width: 59rem;
   /* background: #ff0000; */
 }
 
 .about-title p {
-  font-size: 3.5rem;
+  font-size: 2.6rem;
   color: #555;
-  max-width: 139rem;
+  max-width: 90rem;
 }
 .about-title p + p {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .title-wrap figure {
@@ -684,7 +679,7 @@ h2 {
 /* 서비스 소개- 동네서점지도 */
 
 .sub-link {
-  margin-top: 27rem;
+  margin-top: 20rem;
   display: flex;
   gap: 4.3rem;
   justify-content: center;
@@ -695,36 +690,41 @@ h2 {
 }
 
 .map-intro {
-  margin-top: 22rem;
+  margin-top: 26rem;
 }
 
 .intro-list {
   display: flex;
   flex-direction: column;
-  gap: 36rem;
+  gap: 28rem;
+}
+
+.br-mobile {
+  display: none;
 }
 
 .map-item-1 {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 6rem;
   text-align: center;
 }
 
-.intro-list h3 {
-  font-weight: 600;
-  font-size: 6rem;
+.map-item-1 figure {
+  margin-top: 6rem;
+  max-width: 70rem;
+  margin: 0 auto;
 }
 
 .intro-list p {
-  font-size: 3.5rem;
+  font-size: 2.4rem;
   color: #555;
 }
 
 .map-intro-wrap {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .map-theme-wrap {
@@ -738,11 +738,11 @@ h2 {
 }
 
 .map-theme-wrap ul li {
-  width: 35vw;
-  margin-right: 15rem;
+  width: 34vw;
+  margin-right: 1%;
 }
 
-.map-item-1 .map-theme-wrap ul li figure {
+.map-theme-wrap ul li figure {
   width: 100%;
   height: auto;
 }
@@ -759,37 +759,108 @@ h2 {
 
 .map-item-2 {
   display: flex;
-  justify-content: space-between;
+  gap: 9%;
+  /* justify-content: space-between; */
 }
 
 .map-item-2 .map-intro-wrap {
   display: flex;
   flex-direction: column;
-  gap: 7rem;
+  gap: 2rem;
+  padding: 2% 0 0 7%;
+
   /* max-width: 49rem; */
 }
 .map-item-2 .map-intro-wrap h3 {
-  max-width: 49rem;
+  max-width: 39.8rem;
 }
 .map-item-2 .map-intro-wrap p {
   max-width: 50rem;
 }
 
-.filter-img {
-  max-width: 60rem;
-  width: 100%;
+.tag-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  padding-right: 4%;
 }
 
-.filter-img img {
+.tag-blur.blur-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 30%,
+    rgba(255, 255, 255, 0.6) 55%,
+    rgba(255, 255, 255, 1) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 30%;
+  height: 100%;
+}
+
+.tag-blur.blur-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 30%,
+    rgba(255, 255, 255, 0.6) 55%,
+    rgba(255, 255, 255, 1) 90%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 30%;
+  height: 100%;
+}
+
+.tag-wrap figure {
+  max-width: 40vw;
+}
+
+.tag-wrap figure img {
   width: 100%;
   height: auto;
-  display: block;
 }
+
+/* .tag-wrap ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.tag-wrap .left-hook {
+  margin-left: 4rem;
+}
+
+.tag-wrap p {
+  font-size: 3.2rem;
+  font-weight: 500;
+  color: #333;
+  padding: 1rem;
+}
+
+.tag-wrap ul li {
+  border: 1px solid #efefef;
+  border-radius: 10px;
+}
+
+.tag-wrap ul li.on {
+  background: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.tag-wrap ul li.on p {
+  color: #fff;
+} */
 
 .map-item-3 {
   display: flex;
   flex-direction: column;
-  gap: 14rem;
+  gap: 8rem;
 }
 
 .map-item-3 .map-intro-wrap {
@@ -812,7 +883,7 @@ h2 {
 
 .map-item-4 p {
   margin: 0 auto;
-  max-width: 110rem;
+  max-width: 73rem;
   /* background: #f00; */
 }
 
@@ -824,7 +895,7 @@ h2 {
   height: 8.1rem;
   background: var(--main-color);
   border-radius: 40px;
-  font-size: 3rem;
+  font-size: 2.7rem;
   color: #fff;
   transition: 0.4s;
   font-weight: 700;
@@ -835,16 +906,15 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34.2rem;
-  height: 8.1rem;
+  width: 35.4rem;
+  height: 7rem;
   background: var(--main-color);
   border-radius: 40px;
-  font-size: 3rem;
+  font-size: 2.7rem;
   color: #fff;
-  margin: 5.76rem auto 0;
   transition: 0.4s;
   font-weight: 700;
-  margin: 24rem auto 35rem;
+  margin: 10rem auto 25rem;
 }
 
 .intro-btn:hover {
@@ -922,7 +992,7 @@ h2 {
 
 .item-title h3 {
   font-size: 6rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .item-title p {
@@ -1175,7 +1245,7 @@ h2 {
   height: 5rem;
   border: 1px solid #8c8c8c;
   border-radius: 40px;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
 }
 
 .btn-hob {
@@ -1719,6 +1789,60 @@ h2 {
 
 /* 반응형------------------------------------------------------------ */
 
+@media (max-width: 1500px) {
+  .inner {
+    width: 95%;
+  }
+
+  .update-slider {
+    margin-left: calc((100% - 95%) / 2);
+  }
+
+  .map-item-1 figure {
+    max-width: 67rem;
+  }
+  /* .map-theme-wrap ul li {
+    width: 36vw;
+  } */
+}
+
+@media (max-width: 1410px) {
+  .sub-new-alarm .inner,
+  .sub-semi-ad .inner,
+  .sub-ad .inner {
+    width: 96.4rem;
+    width: 94.1406%;
+  }
+
+  .con-info .con-info-wrap dl dt {
+    font-size: 3.8rem;
+  }
+
+  .con-info .con-info-wrap dl dd {
+    font-size: 2rem;
+  }
+
+  .con-info .con-info-wrap p {
+    font-size: 1.4rem;
+  }
+
+  .con-txt .txt-wrap dl dt {
+    font-size: 4.2rem;
+  }
+
+  .con-txt .txt-wrap dl dd {
+    font-size: 2.2rem;
+  }
+
+  .map-theme-wrap ul li {
+    width: 37vw;
+  }
+
+  .map-item-1 figure {
+    max-width: 62rem;
+  }
+}
+
 /* 태블릿 디자인 */
 @media (max-width: 1180px) {
   /*!new-alarm */
@@ -1830,30 +1954,95 @@ h2 {
     display: flex;
   }
 
-  /* intro-alarm */
+  /* intro-map---------------------------------------- */
+  .about {
+    margin-top: 19rem;
+  }
+
+  .map-intro {
+    margin-top: 21rem;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 3.4rem;
+  }
+
+  .intro-list p {
+    font-size: 1.8rem;
+  }
+
+  .map-intro-wrap {
+    gap: 1.4rem;
+  }
+
+  .map-item-1 {
+    gap: 5rem;
+  }
+  .map-item-1 figure {
+    max-width: 54rem;
+  }
+
+  .map-theme-wrap ul li {
+    width: 40vw;
+  }
+
+  .intro-list {
+    gap: 22rem;
+  }
+
+  .map-item-2 .map-intro-wrap h3 {
+    max-width: 28rem;
+  }
+
+  .map-item-3 {
+    gap: 6rem;
+  }
+
+  .map-item-4 p {
+    max-width: 55rem;
+  }
+
+  .map-intro .intro-btn {
+    margin: 9rem auto 21rem;
+    font-size: 2.2rem;
+    width: 27.1rem;
+    height: 6.2rem;
+  }
+
+  .tag-wrap {
+    padding-top: 1%;
+  }
+
+  /* intro-alarm--------------------------------------*/
   .title-wrap {
     gap: 5rem;
   }
 
   .about-title {
-    gap: 6.5rem;
+    gap: 4rem;
   }
 
   .about-title h2 {
-    font-size: 4.5rem;
-    max-width: 57rem;
+    font-size: 4rem;
+    max-width: 45.4rem;
   }
 
   .about-title p {
-    font-size: 2.9rem;
+    font-size: 2.1rem;
   }
 
   .about-title p + p {
-    margin-top: 3.5rem;
+    margin-top: 2.4rem;
   }
 
   .sub-link {
-    margin-top: 22rem;
+    margin-top: 18rem;
+    gap: 3.5rem;
+  }
+
+  .sub-link a {
+    font-size: 2.2rem;
   }
 
   .alarm-intro {
@@ -1951,7 +2140,7 @@ h2 {
     margin: 21rem auto 32rem;
   }
 
-  /* dongne-map------------------- */
+  /* dongne-map----------------------------------------- */
   .fit-store {
     height: 100%;
     overflow: hidden;
@@ -2104,6 +2293,76 @@ h2 {
   }
 }
 
+@media (max-width: 938px) {
+  .alarm-con li {
+    margin-top: 14rem;
+  }
+
+  .view-more {
+    margin-top: 9.5rem;
+  }
+
+  .sub-semi-ad {
+    margin-top: 13rem;
+  }
+
+  .semi-ad-con .con-txt .txt-wrap dl dt {
+    font-size: 2.9rem;
+  }
+
+  .con-txt .txt-wrap dl dd p {
+    display: none;
+  }
+
+  .txt-wrap strong {
+    display: block;
+    font-size: 1.9rem;
+  }
+
+  .search-wrap {
+    width: 60rem;
+  }
+
+  h2 {
+    font-size: 4.5rem;
+  }
+
+  .sub-ad {
+    margin-top: 15.3rem;
+  }
+
+  .ad-con-list {
+    row-gap: 9rem;
+  }
+
+  .ad-con-list .txt-wrap dl {
+    min-height: 11.9rem;
+  }
+
+  .ad-con-list .txt-wrap dl dt {
+    min-height: auto;
+    font-size: 2.8rem;
+  }
+
+  .ad-con-list .txt-wrap dl dd {
+    min-height: auto;
+    margin-top: 0.5rem;
+  }
+
+  .ad-con-list .txt-wrap p {
+    margin-top: 3rem;
+    font-size: 1.3rem;
+  }
+
+  /* .map-theme-wrap ul li {
+    width: 42vw;
+  } */
+
+  /* .tag-wrap figure {
+    max-width: 44vw;
+  } */
+}
+
 @media (max-width: 850px) {
   /* intro-alarm */
 
@@ -2113,7 +2372,7 @@ h2 {
   }
 
   .about {
-    margin-top: 23rem;
+    margin-top: 18rem;
   }
 
   .about-title h2 {
@@ -2125,15 +2384,15 @@ h2 {
   }
 
   .title-wrap {
-    gap: 4rem;
+    gap: 4.2rem;
   }
 
   .about-title {
-    gap: 5rem;
+    gap: 3.4rem;
   }
 
   .about-title p + p {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
 
   .sub-link {
@@ -2145,7 +2404,7 @@ h2 {
   }
 
   .sub-link a {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
   }
 
   .new-intro h3 {
@@ -2255,9 +2514,158 @@ h2 {
     font-size: 2.2rem;
     margin: 17rem auto 24rem;
   }
+
+  /* intro-map ----------------------*/
+  .about-title h2 {
+    font-size: 3.4rem;
+    max-width: 38.6rem;
+  }
+
+  .about-title p {
+    font-size: 1.9rem;
+  }
+
+  h3 {
+    font-size: 2.8rem;
+  }
+
+  .intro-list p {
+    font-size: 1.6rem;
+  }
+
+  .map-intro-wrap {
+    gap: 1.4rem;
+  }
+
+  .map-item-2 .map-intro-wrap h3 {
+    max-width: 24.1rem;
+  }
+
+  .map-item-2 .map-intro-wrap {
+    gap: 1.4rem;
+  }
+
+  .map-item-4 p {
+    max-width: 48.5rem;
+  }
+
+  .map-intro .intro-btn {
+    margin: 9rem auto 21rem;
+    font-size: 2rem;
+    width: 25rem;
+    height: 5.7rem;
+  }
+
+  .sub-link {
+    margin-top: 14rem;
+  }
+
+  .map-intro {
+    margin-top: 18rem;
+  }
+
+  .intro-list {
+    gap: 20rem;
+  }
+  .tag-wrap {
+    padding-top: 3%;
+  }
+
+  .map-theme-wrap ul li {
+    width: 38vw;
+    margin-right: 1%;
+  }
+}
+
+@media (max-width: 832px) {
+  h2 {
+    font-size: 4.1rem;
+  }
+
+  .semi-ad-con .con-txt .txt-wrap dl dt {
+    font-size: 2.7rem;
+  }
+
+  .semi-ad-con .con-txt .txt-wrap dl dd {
+    font-size: 1.3rem;
+  }
+
+  .txt-wrap strong {
+    display: block;
+    font-size: 1.6rem;
+  }
+
+  .ad-con-list .txt-wrap dl {
+    min-height: 11.9rem;
+  }
+
+  .ad-con-list .txt-wrap dl dt {
+    min-height: auto;
+    font-size: 2.6rem;
+  }
+
+  .ad-con-list .txt-wrap dl dd {
+    min-height: auto;
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+  }
+
+  .ad-con-list .txt-wrap p {
+    margin-top: 3rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 732px) {
+  .sub-new-alarm {
+    margin-top: 11rem;
+  }
+
+  .alarm-con li {
+    margin-top: 12rem;
+  }
+
+  .con-info {
+    margin-top: 3.5rem;
+  }
+
+  .con-info .con-info-wrap dl dt {
+    font-size: 3.6rem;
+  }
+
+  .con-info .con-info-wrap dl dd {
+    font-size: 1.9rem;
+  }
+
+  .alarm-con li figure {
+    height: 36rem;
+  }
+
+  .semi-ad-con .con-txt .txt-wrap dl dt {
+    font-size: 2.3rem;
+  }
+
+  .semi-ad-con .con-txt .txt-wrap dl dd {
+    font-size: 1rem;
+  }
+
+  .txt-wrap strong {
+    display: block;
+    font-size: 1.3rem;
+  }
+
+  .search-wrap {
+    width: 50rem;
+  }
 }
 
 /* 모바일 디자인 */
+
+@media (max-width: 660px) {
+  .map-item-2 {
+    gap: 0;
+  }
+}
 @media (max-width: 600px) {
   .inner {
     width: 35rem;
@@ -2280,16 +2688,8 @@ h2 {
     background: url(../img/sub-ico-menu.svg) no-repeat 0 0/ 80%;
   }
 
-  body #container {
-    margin-top: 15rem;
-  }
-
   .sub-link {
     gap: 3rem;
-  }
-
-  .sub-link a {
-    font-size: 2rem;
   }
 
   .search {
@@ -2570,18 +2970,115 @@ h2 {
     font-size: 1.7rem;
   }
 
-  /* intro-alarm */
+  /* intro-map--------------------------------- */
+
+  h3 {
+    font-size: 2.3rem;
+  }
+
+  .intro-list p {
+    font-size: 1.4rem;
+  }
+
+  .map-item-1 {
+    gap: 4rem;
+  }
+
+  .map-item-1 figure {
+    max-width: 40rem;
+  }
+
+  .sub-link a {
+    width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .sub-link a b::after {
+    height: 0.14rem;
+  }
+
+  .sub-link a b {
+    padding: 1.3rem 0;
+  }
+
+  .map-intro {
+    margin-top: 14rem;
+  }
+
+  .intro-list {
+    gap: 16rem;
+  }
+
+  .map-item-2 {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .map-item-2 .map-intro-wrap {
+    gap: 2rem;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    /* max-width: 49rem; */
+  }
+
+  .map-item-2 .map-intro-wrap h3 {
+    max-width: none;
+  }
+
+  .map-item-3 {
+    gap: 4rem;
+  }
+
+  .map-item-2 .map-intro-wrap p {
+    max-width: 28rem;
+  }
+
+  .map-item-2 .map-intro-wrap {
+    gap: 1.4rem;
+  }
+
+  .tag-wrap {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .tag-wrap figure {
+    max-width: 60vw;
+  }
+
+  .tag-blur.blur-left,
+  .tag-blur.blur-right {
+    width: 10%;
+  }
+
+  .map-theme-wrap ul li {
+    width: 50vw;
+    margin-right: 1%;
+  }
+  .map-item-4 p {
+    max-width: 42.4rem;
+  }
+  .map-intro .intro-btn {
+    margin: 9rem auto 15rem;
+    font-size: 1.8rem;
+    width: 21.6rem;
+    height: 5rem;
+  }
+
+  /* intro-alarm--------------------------------- */
   .about {
-    margin-top: 17rem;
+    margin-top: 16rem;
   }
 
   .about-title h2 {
-    font-size: 3.3rem;
-    max-width: 38rem;
+    font-size: 2.5rem;
+    max-width: 28.4rem;
   }
 
   .about-title p {
-    font-size: 2.1rem;
+    font-size: 1.4rem;
   }
 
   .new-intro h3 {
@@ -2593,7 +3090,7 @@ h2 {
   }
 
   .about-title {
-    gap: 3.7rem;
+    gap: 3rem;
   }
 
   .about-title p + p {
@@ -2601,15 +3098,11 @@ h2 {
   }
 
   .title-wrap {
-    gap: 3.1rem;
+    gap: 4rem;
   }
 
   .sub-link {
-    margin-top: 14rem;
-  }
-
-  .sub-link a {
-    font-size: 1.7rem;
+    margin-top: 12rem;
   }
 
   .alarm-intro {
@@ -3027,7 +3520,7 @@ h2 {
 
   /* 테마지도----------------- */
   .update-theme {
-    margin-top: 7rem;
+    margin-top: 8.5rem;
   }
 
   .update-theme h2 {
@@ -3103,6 +3596,91 @@ h2 {
   }
 }
 
+@media (max-width: 560px) {
+  .semi-ad-con .con-txt .txt-wrap dl dt {
+    font-size: 2.2rem;
+  }
+  .txt-wrap strong {
+    font-size: 1.3rem;
+  }
+
+  .search-wrap {
+    width: 45rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sub-new-alarm h2 {
+    font-size: 3rem;
+  }
+
+  .sub-link a b {
+    padding: 1.5rem 0;
+  }
+
+  .con-info {
+    margin-top: 2.8rem;
+  }
+
+  .sub-new-alarm .alarm-con li figure {
+    height: 25rem;
+  }
+
+  .view-more {
+    margin-top: 8rem;
+  }
+
+  .sub-semi-ad {
+    margin-top: 10rem;
+  }
+
+  .semi-ad-con .con-txt .txt-wrap dl dt {
+    font-size: 1.9rem;
+  }
+
+  .txt-wrap strong {
+    font-size: 1rem;
+  }
+
+  .search-wrap {
+    width: 40rem;
+    height: 4.7rem;
+  }
+
+  .con-info {
+    text-align: left;
+  }
+
+  .alarm-con ul li:nth-child(even) .con-info {
+    text-align: left;
+  }
+
+  .ad-con-list .txt-wrap dl dt {
+    font-size: 2.1rem;
+  }
+
+  .ad-con-list .txt-wrap dl dd {
+    font-size: 1.7rem;
+  }
+
+  .ad-con-list .txt-wrap p {
+    margin-top: 1.3rem;
+  }
+
+  .store-name {
+    font-size: 2.2rem;
+  }
+  .type-info {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 424px) {
+  .search-wrap {
+    width: 35rem;
+  }
+}
+
 @media (max-width: 390px) {
   .inner {
     width: 35rem;
@@ -3118,15 +3696,61 @@ h2 {
   }
 
   .about-title p {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .intro-list p {
+    font-size: 1.3rem;
+  }
+  .map-item-2 .map-intro-wrap p {
+    max-width: 26rem;
+  }
+
+  .map-item-4 p {
+    max-width: 33.7rem;
+  }
+  .title-wrap figure {
+    height: 15rem;
+  }
+
+  .title-wrap figure img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .br-mobile {
+    display: block;
   }
 
   .sub-link {
     margin-top: 9rem;
   }
 
-  .about + .sub-link a {
-    font-size: 1.6rem;
+  .sub-link a {
+    font-size: 1.4rem;
+  }
+
+  .map-intro {
+    margin-top: 12rem;
+  }
+
+  .intro-list {
+    gap: 13rem;
+  }
+
+  .map-item-1 figure {
+    max-width: 34rem;
+  }
+  .tag-wrap figure {
+    max-width: 90vw;
+  }
+
+  .map-theme-wrap ul li {
+    width: 70vw;
+    margin-right: 1%;
+  }
+  .map-item-4 p {
+    max-width: 36.3rem;
   }
 
   .alarm-intro {
@@ -3315,301 +3939,6 @@ h2 {
   }
 }
 /* 추가 분기 */
-
-@media (max-width: 1500px) {
-  .inner {
-    width: 95%;
-  }
-
-  .update-slider {
-    margin-left: calc((100% - 95%) / 2);
-  }
-}
-
-@media (max-width: 1410px) {
-  .sub-new-alarm .inner,
-  .sub-semi-ad .inner,
-  .sub-ad .inner {
-    width: 96.4rem;
-    width: 94.1406%;
-  }
-
-  .con-info .con-info-wrap dl dt {
-    font-size: 3.8rem;
-  }
-
-  .con-info .con-info-wrap dl dd {
-    font-size: 2rem;
-  }
-
-  .con-info .con-info-wrap p {
-    font-size: 1.4rem;
-  }
-
-  .con-txt .txt-wrap dl dt {
-    font-size: 4.2rem;
-  }
-
-  .con-txt .txt-wrap dl dd {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 938px) {
-  #container {
-    margin-top: 23rem;
-  }
-
-  .alarm-con li {
-    margin-top: 14rem;
-  }
-
-  .view-more {
-    margin-top: 9.5rem;
-  }
-
-  .sub-semi-ad {
-    margin-top: 13rem;
-  }
-
-  .semi-ad-con .con-txt .txt-wrap dl dt {
-    font-size: 2.9rem;
-  }
-
-  .con-txt .txt-wrap dl dd p {
-    display: none;
-  }
-
-  .txt-wrap strong {
-    display: block;
-    font-size: 1.9rem;
-  }
-
-  .search-wrap {
-    width: 60rem;
-  }
-
-  h2 {
-    font-size: 4.5rem;
-  }
-
-  .sub-ad {
-    margin-top: 15.3rem;
-  }
-
-  .ad-con-list {
-    row-gap: 9rem;
-  }
-
-  .ad-con-list .txt-wrap dl {
-    min-height: 11.9rem;
-  }
-
-  .ad-con-list .txt-wrap dl dt {
-    min-height: auto;
-    font-size: 2.8rem;
-  }
-
-  .ad-con-list .txt-wrap dl dd {
-    min-height: auto;
-    margin-top: 0.5rem;
-  }
-
-  .ad-con-list .txt-wrap p {
-    margin-top: 3rem;
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 832px) {
-  h2 {
-    font-size: 4.1rem;
-  }
-
-  .semi-ad-con .con-txt .txt-wrap dl dt {
-    font-size: 2.7rem;
-  }
-
-  .semi-ad-con .con-txt .txt-wrap dl dd {
-    font-size: 1.3rem;
-  }
-
-  .txt-wrap strong {
-    display: block;
-    font-size: 1.6rem;
-  }
-
-  .ad-con-list .txt-wrap dl {
-    min-height: 11.9rem;
-  }
-
-  .ad-con-list .txt-wrap dl dt {
-    min-height: auto;
-    font-size: 2.6rem;
-  }
-
-  .ad-con-list .txt-wrap dl dd {
-    min-height: auto;
-    margin-top: 0.5rem;
-    font-size: 1.8rem;
-  }
-
-  .ad-con-list .txt-wrap p {
-    margin-top: 3rem;
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 732px) {
-  #container {
-    margin-top: 22rem;
-  }
-
-  .sub-new-alarm {
-    margin-top: 11rem;
-  }
-
-  .alarm-con li {
-    margin-top: 12rem;
-  }
-
-  .con-info {
-    margin-top: 3.5rem;
-  }
-
-  .con-info .con-info-wrap dl dt {
-    font-size: 3.6rem;
-  }
-
-  .con-info .con-info-wrap dl dd {
-    font-size: 1.9rem;
-  }
-
-  .alarm-con li figure {
-    height: 36rem;
-  }
-
-  .semi-ad-con .con-txt .txt-wrap dl dt {
-    font-size: 2.3rem;
-  }
-
-  .semi-ad-con .con-txt .txt-wrap dl dd {
-    font-size: 1rem;
-  }
-
-  .txt-wrap strong {
-    display: block;
-    font-size: 1.3rem;
-  }
-
-  .search-wrap {
-    width: 50rem;
-  }
-}
-
-@media (max-width: 560px) {
-  .semi-ad-con .con-txt .txt-wrap dl dt {
-    font-size: 2.2rem;
-  }
-  .txt-wrap strong {
-    font-size: 1.3rem;
-  }
-
-  .search-wrap {
-    width: 45rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #container {
-    margin-top: 17rem;
-  }
-
-  .sub-new-alarm h2 {
-    font-size: 3rem;
-  }
-
-  .sub-link {
-    width: 100%;
-    gap: 0;
-  }
-
-  .sub-link a {
-    width: 100%;
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .sub-link a b {
-    padding: 1.5rem 0;
-  }
-
-  .sub-link a b::after {
-    height: 0.1rem;
-  }
-
-  .con-info {
-    margin-top: 2.8rem;
-  }
-
-  .sub-new-alarm .alarm-con li figure {
-    height: 25rem;
-  }
-
-  .view-more {
-    margin-top: 8rem;
-  }
-
-  .sub-semi-ad {
-    margin-top: 10rem;
-  }
-
-  .semi-ad-con .con-txt .txt-wrap dl dt {
-    font-size: 1.9rem;
-  }
-
-  .txt-wrap strong {
-    font-size: 1rem;
-  }
-
-  .search-wrap {
-    width: 40rem;
-    height: 4.7rem;
-  }
-
-  .con-info {
-    text-align: left;
-  }
-
-  .alarm-con ul li:nth-child(even) .con-info {
-    text-align: left;
-  }
-
-  .ad-con-list .txt-wrap dl dt {
-    font-size: 2.1rem;
-  }
-
-  .ad-con-list .txt-wrap dl dd {
-    font-size: 1.7rem;
-  }
-
-  .ad-con-list .txt-wrap p {
-    margin-top: 1.3rem;
-  }
-
-  .store-name {
-    font-size: 2.2rem;
-  }
-  .type-info {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 424px) {
-  .search-wrap {
-    width: 35rem;
-  }
-}
 
 @media (max-width: 378px) {
   .semi-ad-con .con-txt .txt-wrap dl dt {

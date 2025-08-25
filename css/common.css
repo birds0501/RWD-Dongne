@@ -61,12 +61,11 @@ label {
   width: 118rem;
   margin: 0 auto;
   /* background: #5f5; */
-  position: relative;
-  height: 100%;
+  /* position: relative; */
 }
 
 h3 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 4.5rem;
 }
 /* header -----------------------------------------------------------------*/

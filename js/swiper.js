@@ -48,5 +48,10 @@ $(function () {
       479: { spaceBetween: 10 },
       0: { spaceBetween: 10 },
     },
+    autoplay: {
+      delay: 3000, // 3초마다 자동 슬라이드
+      disableOnInteraction: false, // 유저가 조작해도 자동재생 유지
+    },
+    loop: true, // 무한 반복
   });
 });

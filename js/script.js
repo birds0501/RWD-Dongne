@@ -303,4 +303,53 @@ $(function () {
       $themeBtn.hide();
     });
   }
+
+  // 서비스 소개 item-2 br-pc 제거(600초과하면 다시 붙게)
+  function toggleBr() {
+    if ($(window).width() <= 600) {
+      $("br.br-pc").hide(); // 작은 해상도 → 숨김
+    } else {
+      $("br.br-pc").show(); // 큰 해상도 → 다시 보이기
+    }
+  }
+
+  // 처음 로드 시 실행
+  toggleBr();
+
+  // 리사이즈할 때도 실행
+  $(window).on("resize", function () {
+    toggleBr();
+  });
+
+  // 이미지 사이즈 변경
+  function changeImg() {
+    if ($(window).width() <= 600) {
+      $(".tag-wrap > figure > img").attr("src", "./img/tag-wrap-img-m.svg");
+    } else {
+      $(".tag-wrap > figure > img").attr("src", "./img/tag-wrap-img.svg");
+    }
+  }
+
+  // 처음 로드 시 실행
+  changeImg();
+
+  // 창 크기 바뀔 때 실행
+  $(window).on("resize", function () {
+    changeImg();
+  });
+
+  //blur 보이게
+  function checkWidth() {
+    if ($(window).width() <= 600) {
+      $(".blur-right").removeClass("hidden");
+    }
+  }
+
+  // 페이지 처음 로딩될 때 실행
+  checkWidth();
+
+  // 창 크기 바뀔 때도 실행
+  $(window).on("resize", function () {
+    checkWidth();
+  });
 });
