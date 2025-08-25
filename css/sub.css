@@ -1698,14 +1698,11 @@ h2 {
   text-overflow: ellipsis;
 }
 
-.swiper-horizontal > .swiper-pagination-progressbar,
-.swiper-pagination-progressbar.swiper-pagination-horizontal,
-.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
-.swiper-vertical
-  > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
   bottom: 0;
   top: auto;
   height: 5px;
+  position: relative;
 }
 
 .swiper-pagination-progressbar {

@@ -293,17 +293,16 @@
   color: #000;
 }
 
-.market-best h3 {
-  position: relative;
+.plus-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn-more.best {
   width: 5rem;
   height: 5rem;
   background: url(../img/plus-b.svg) no-repeat 50%;
-  position: absolute;
-  right: 0;
-  top: 0.9rem;
 }
 
 /* new-ad--------------------------------------------------------- */
