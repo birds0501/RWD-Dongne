@@ -3042,7 +3042,7 @@ h2 {
   }
 
   .tag-wrap figure {
-    max-width: 60vw;
+    max-width: 90vw;
   }
 
   .tag-blur.blur-left,
@@ -3676,6 +3676,22 @@ h2 {
   .search-wrap {
     width: 35rem;
   }
+
+  .map-intro-wrap {
+    align-items: center;
+  }
+
+  .intro-list p {
+    max-width: 26rem;
+  }
+
+  .map-item-2 .map-intro-wrap h3 {
+    max-width: 20rem;
+  }
+
+  .map-item-4 p {
+    max-width: 36.3rem;
+  }
 }
 
 @media (max-width: 390px) {
@@ -3684,7 +3700,7 @@ h2 {
   }
 
   .about {
-    margin-top: 16.5rem;
+    margin-top: 15rem;
   }
 
   .about-title h2 {
@@ -3692,12 +3708,17 @@ h2 {
     max-width: 28.4rem;
   }
 
+  .map-intro-wrap {
+    align-items: center;
+  }
+
   .about-title p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .intro-list p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    width: 24.6rem;
   }
   .map-item-2 .map-intro-wrap p {
     max-width: 26rem;
@@ -3752,6 +3773,13 @@ h2 {
 
   .alarm-intro {
     margin-top: 8rem;
+  }
+
+  .map-intro .intro-btn {
+    margin: 9rem auto 12.5rem;
+    font-size: 1.6rem;
+    width: 20rem;
+    height: 4.5rem;
   }
 
   .new-intro h3 {
