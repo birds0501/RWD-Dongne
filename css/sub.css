@@ -1104,8 +1104,8 @@ h2 {
   left: 0;
   text-align: left;
   font-size: 1.8em;
-  color: #878787;
-  font-weight: 500;
+  color: #999999;
+  font-weight: 300;
   letter-spacing: -0.18rem;
 }
 
@@ -3214,7 +3214,7 @@ h2 {
     padding-bottom: 2.6rem;
   }
   .see-text h4 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 
   .see-text p {
@@ -3224,7 +3224,6 @@ h2 {
 
   .link-text {
     font-size: 1.1rem;
-    text-underline-offset: 4px;
   }
 
   .swiper-pagination {
