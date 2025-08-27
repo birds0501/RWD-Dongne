@@ -81,22 +81,24 @@ h3 {
 
 nav {
   display: flex;
-  height: 9.9rem;
-  margin: 0 3.7rem;
+  height: 9rem;
+  padding: 0 4rem;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo a {
   display: block;
-  width: 15.8rem;
-  height: 4.4rem;
-  background: url(../img/logo.svg) no-repeat 0 0 / cover;
+  width: 14rem;
+  height: 3.9rem;
+  background: url(../img/logo-w.svg) no-repeat 0 0 / cover;
 }
 
 .util {
   display: flex;
-  gap: 2.9rem;
+  gap: 2rem;
+  padding-left: 6rem;
+  /* margin-left: 4.9rem; */
 }
 
 .gnb {
@@ -115,31 +117,29 @@ nav {
 
 .btn-search {
   display: block;
-  width: 4rem;
-  height: 4rem;
-  background: url(../img/ico-search.svg) no-repeat 50%;
-  border: 1px solid #fff;
-  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/sub-ico-search-w.svg) no-repeat 50%;
 }
 
 .btn-login {
   display: block;
-  width: 4rem;
-  height: 4rem;
-  background: url(../img/ico-login.svg) no-repeat 50%;
-  border: 1px solid #fff;
-  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/sub-ico-login-w-svg.svg) no-repeat 50%;
 }
 
 .util-menu {
   display: none;
+  width: 8rem;
+  height: 1.4rem;
 }
 
 .btn-menu {
   display: block;
-  width: 3.2rem;
-  height: 2.7rem;
-  background: url(../img/ico-menu.svg) no-repeat 0 0 / cover;
+  width: 2.2rem;
+  height: 1.4rem;
+  background: url(../img/sub-ico-menu-w.svg) no-repeat 0 0 / cover;
 }
 
 #footer {
@@ -238,7 +238,12 @@ nav {
   }
 
   .util-menu {
-    display: block;
+    display: flex;
+    justify-content: end;
+  }
+
+  .util {
+    padding: 0;
   }
 
   .logo {
@@ -325,41 +330,26 @@ nav {
   }
 
   nav {
-    height: 7rem;
-    margin: 0 2rem;
-    align-items: end;
+    height: 6rem;
+    padding: 0 3rem;
+    align-items: center;
+    justify-content: end;
   }
 
   .logo {
-    top: 4rem;
-  }
-
-  .logo a {
-    display: block;
-    width: 11.4rem;
-    height: 3rem;
+    top: auto;
+    bottom: 0;
+    left: 3rem;
+    transform: none;
   }
 
   .util {
-    gap: 1.4rem;
+    display: none;
   }
 
-  .btn-search {
-    width: 3rem;
-    height: 3rem;
-    background-size: 50%;
-  }
-
-  .btn-login {
-    width: 3rem;
-    height: 3rem;
-    background-size: 50%;
-  }
-
-  .btn-menu {
-    width: 3rem;
-    height: 2.7rem;
-    background: url(../img/ico-menu.svg) no-repeat 0 0/ 80%;
+  .util-menu {
+    width: 2.6rem;
+    margin-top: 1.4rem;
   }
 
   .sns-list {

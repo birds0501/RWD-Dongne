@@ -8,7 +8,7 @@
 /* 서브-신간알림! */
 
 .logo a {
-  background: url(../img/sub-logo.svg) no-repeat 0 0 / cover;
+  background-image: url(../img/logo.svg);
 }
 
 .gnb li a {
@@ -16,17 +16,15 @@
 }
 
 .btn-search {
-  background: url(../img/sub-ico-search.svg) no-repeat 50%;
-  border: 1px solid #000;
+  background-image: url(../img/sub-ico-search.svg);
 }
 
 .btn-login {
-  background: url(../img/sub-ico-login.svg) no-repeat 50%;
-  border: 1px solid #000;
+  background-image: url(../img/sub-ico-login.svg);
 }
 
 .btn-menu {
-  background: url(../img/sub-ico-menu.svg) no-repeat 0 0 / cover;
+  background-image: url(../img/sub-ico-menu.svg);
 }
 
 /* 상단 링크 메뉴-------------------------------------------------------*/
@@ -1860,14 +1858,6 @@ h2 {
     width: 94.1406%;
   }
 
-  .logo a {
-    background-image: url(../img/t-sub-logo.svg);
-  }
-
-  .btn-menu {
-    background-image: url(../img/t-sub-ico-menu.svg);
-  }
-
   .search-wrap {
     width: 61.5rem;
     /* width: 60.0586%; */
@@ -2141,7 +2131,7 @@ h2 {
   }
   .see-link {
     gap: 0.8rem;
-    margin-top: 5.2rem;
+    margin-top: 3rem;
   }
 
   .link-text {
@@ -2730,22 +2720,6 @@ h2 {
     width: 89.7436%;
   }
 
-  .logo a {
-    background-image: url(../img/m-sub-logo.svg);
-  }
-
-  .btn-search {
-    background-image: url(../img/m-sub-ico-search.svg);
-  }
-
-  .btn-login {
-    background-image: url(../img/m-sub-ico-login.svg);
-  }
-
-  .btn-menu {
-    background: url(../img/sub-ico-menu.svg) no-repeat 0 0/ 80%;
-  }
-
   .sub-link {
     gap: 3rem;
   }
@@ -3061,7 +3035,7 @@ h2 {
   }
 
   .map-intro {
-    margin-top: 14rem;
+    margin-top: 6rem;
   }
 
   .intro-list {
@@ -3122,7 +3096,7 @@ h2 {
 
   /* intro-alarm--------------------------------- */
   .about {
-    margin-top: 16rem;
+    margin-top: 12rem;
   }
 
   .about-title h2 {
@@ -3151,7 +3125,7 @@ h2 {
   }
 
   .sub-link {
-    margin-top: 12rem;
+    margin-top: 8rem;
   }
 
   .alarm-intro {
