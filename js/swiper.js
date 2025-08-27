@@ -25,14 +25,6 @@ $(function () {
     touchRatio: 1,
   });
 
-  //서비스 소개-신간알림-리뷰 슬라이더
-  const reviewSlider = new Swiper(".review-wrap", {
-    slidesPerView: "auto", // 자동이 아닌, 카드 width 기준으로 보여줌
-    spaceBetween: 0,
-    simulateTouch: true,
-    touchRatio: 1,
-  });
-
   const updateSlider = new Swiper(".update-slider", {
     pagination: {
       el: ".swiper-pagination",
@@ -53,5 +45,43 @@ $(function () {
       disableOnInteraction: false, // 유저가 조작해도 자동재생 유지
     },
     loop: true, // 무한 반복
+  });
+
+  const snsSlider = new Swiper(".snsSwiper", {
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+  });
+  const homeSlider = new Swiper(".homeSwiper", {
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+  });
+
+  const campaignSlider = new Swiper(".campaignSwiper", {
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
   });
 });

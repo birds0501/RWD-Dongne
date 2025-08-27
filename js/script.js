@@ -304,7 +304,7 @@ $(function () {
     });
   }
 
-  // 서비스 소개 item-2 br-pc 제거(600초과하면 다시 붙게)
+  // 서비스 소개 동네서점지도 item-2 br-pc 제거(600초과하면 다시 붙게)
   function toggleBr() {
     if ($(window).width() <= 600) {
       $("br.br-pc").hide(); // 작은 해상도 → 숨김
@@ -321,7 +321,41 @@ $(function () {
     toggleBr();
   });
 
-  // 이미지 사이즈 변경
+  // 서비스 소개 신간알림 br-ad 제거(1180이하는 클래스 제거)
+  function toggleBrAd() {
+    if ($(window).width() <= 1180) {
+      $("br.br-ad").hide();
+    } else {
+      $("br.br-ad").show(); // 큰 해상도 → 다시 보이기
+    }
+  }
+
+  // 처음 로드 시 실행
+  toggleBrAd();
+
+  // 리사이즈할 때도 실행
+  $(window).on("resize", function () {
+    toggleBrAd();
+  });
+
+  // 서비스 소개 신간알림 br-new 제거(424이하는 클래스 제거)
+  function toggleBrNew() {
+    if ($(window).width() <= 1180) {
+      $("br.br-new").hide();
+    } else {
+      $("br.br-new").show(); // 큰 해상도 → 다시 보이기
+    }
+  }
+
+  // 처음 로드 시 실행
+  toggleBrNew();
+
+  // 리사이즈할 때도 실행
+  $(window).on("resize", function () {
+    toggleBrNew();
+  });
+
+  // 이미지 사이즈 변경!!
   function changeImg() {
     if ($(window).width() <= 600) {
       $(".tag-wrap > figure > img").attr("src", "./img/tag-wrap-img-m.svg");
