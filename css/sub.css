@@ -5,6 +5,11 @@
   /* background: #5f5; */
 }
 
+#header {
+  background: #fff;
+  /* background: rgb(255, 255, 255, 0.9); */
+}
+
 /* 서브-신간알림! */
 
 .logo a {
@@ -650,9 +655,9 @@ h2 {
 }
 
 .about-title h2 {
-  font-size: 5.2rem;
+  font-size: 5rem;
   font-weight: 700;
-  max-width: 59rem;
+  max-width: 57rem;
   /* background: #ff0000; */
 }
 
@@ -1543,7 +1548,6 @@ h2 {
 .name-flex {
   display: flex;
   align-items: center;
-  margin-right: 3.5rem;
 }
 
 .back-icon {
@@ -1858,6 +1862,112 @@ h2 {
     width: 94.1406%;
   }
 
+  .menu-open {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    transform: translateX(100%);
+    background: #fff;
+    z-index: 150;
+    transition: transform 0.35s ease-in-out;
+  }
+
+  .menu-open.active {
+    transform: translateX(0%);
+  }
+
+  .dim-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.63);
+    z-index: 110;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease-in-out;
+  }
+
+  .dim-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-header {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* background: #fff000; */
+    /* padding: 0 2.6rem; */
+    position: relative;
+  }
+
+  .menu-close-ico {
+    width: 2.6rem;
+    height: 2.6rem;
+    background: url(../img/menu-close-ico.svg) no-repeat 50%;
+    margin-right: 2.4rem;
+  }
+
+  .menu-logo-ico a {
+    width: 5rem;
+    height: 3.8rem;
+    background: url(../img/menu-logo-ico.svg) no-repeat 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .menu-page-list {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-left: 4rem;
+  }
+
+  .menu-page-list li {
+    font-size: 3rem;
+  }
+
+  .menu-page-bottom {
+    padding: 8rem 0 0 4rem;
+  }
+
+  .menu-page-bottom a {
+    display: block;
+    font-size: 2.2rem;
+    color: var(--main-color);
+    font-weight: 500;
+  }
+
+  .menu-page-bottom a + a {
+    margin-top: 2rem;
+  }
+
+  .send-menu {
+    display: block;
+    width: 14rem;
+    height: 14rem;
+    background: var(--main-color) url(../img/ico-send-menu.svg) no-repeat 50%;
+    border-radius: 70px;
+    position: absolute;
+    bottom: 38px;
+    right: 38px;
+    transition: background-color 0.35s ease-in-out;
+  }
+
+  .send-menu:hover {
+    background-color: var(--main-color-dark);
+  }
+
   .search-wrap {
     width: 61.5rem;
     /* width: 60.0586%; */
@@ -1955,7 +2065,7 @@ h2 {
 
   /* intro-map---------------------------------------- */
   .about {
-    margin-top: 19rem;
+    margin-top: 12rem;
   }
 
   .map-intro {
@@ -2015,16 +2125,16 @@ h2 {
 
   /* intro-alarm--------------------------------------*/
   .title-wrap {
-    gap: 5rem;
-  }
-
-  .about-title {
     gap: 4rem;
   }
 
+  .about-title {
+    gap: 3rem;
+  }
+
   .about-title h2 {
-    font-size: 4rem;
-    max-width: 45.4rem;
+    font-size: 3.8rem;
+    max-width: 43.8rem;
   }
 
   .about-title p {
@@ -2269,7 +2379,7 @@ h2 {
 
   .store-info {
     position: fixed; /* 또는 absolute */
-    top: 9.9rem !important;
+    top: 7rem !important;
     right: 0;
     padding-bottom: 15rem;
     height: 100vh; /* 화면 전체 높이 */
@@ -2291,6 +2401,10 @@ h2 {
     bottom: -100%;
     width: 100%;
   }
+
+  /* .name-flex {
+    margin-right: 3.5rem;
+  } */
 
   /* 테마지도 */
 
@@ -2423,24 +2537,12 @@ h2 {
     width: 94.1835%;
   }
 
-  .about {
-    margin-top: 18rem;
-  }
-
   .about-title h2 {
     font-size: 4.3rem;
     max-width: 49rem;
   }
   .about-title p {
     font-size: 2.3rem;
-  }
-
-  .title-wrap {
-    gap: 4.2rem;
-  }
-
-  .about-title {
-    gap: 3.4rem;
   }
 
   .about-title p + p {
@@ -2565,10 +2667,9 @@ h2 {
 
   /* intro-map ----------------------*/
   .about-title h2 {
-    font-size: 3.4rem;
-    max-width: 38.6rem;
+    font-size: 3rem;
+    max-width: 34.1rem;
   }
-
   .about-title p {
     font-size: 1.9rem;
   }
@@ -2718,6 +2819,27 @@ h2 {
   .inner {
     width: 35rem;
     width: 89.7436%;
+  }
+
+  .menu-page-list li {
+    font-size: 2.4rem;
+  }
+
+  .menu-page-bottom a {
+    font-size: 2rem;
+  }
+
+  .send-menu {
+    width: 11rem;
+    height: 11rem;
+    background: var(--main-color) url(../img/ico-send-menu-t.svg) no-repeat 50%;
+    border-radius: 60px;
+    bottom: 28px;
+    right: 28px;
+  }
+
+  .menu-open {
+    width: 100%;
   }
 
   .sub-link {
@@ -3095,9 +3217,6 @@ h2 {
   }
 
   /* intro-alarm--------------------------------- */
-  .about {
-    margin-top: 12rem;
-  }
 
   .about-title h2 {
     font-size: 2.5rem;
@@ -3112,16 +3231,8 @@ h2 {
     font-size: 1.4rem;
   }
 
-  .about-title {
-    gap: 3rem;
-  }
-
   .about-title p + p {
     margin-top: 2rem;
-  }
-
-  .title-wrap {
-    gap: 4rem;
   }
 
   .sub-link {
@@ -3395,6 +3506,7 @@ h2 {
 
   .store-info {
     padding: 3rem 2rem 12rem;
+    top: 6rem !important;
   }
 
   .back-icon {
@@ -3707,13 +3819,27 @@ h2 {
     width: 35rem;
   }
 
+  .logo {
+    bottom: 1rem;
+  }
+
+  .logo a {
+    width: 12.1rem;
+    height: 3.5rem;
+    background-image: url(../img/logo-m-svg.svg);
+  }
+
+  .util-menu {
+    margin-top: 0.4rem;
+  }
+
   .about {
-    margin-top: 15rem;
+    margin-top: 10rem;
   }
 
   .about-title h2 {
-    font-size: 2.5rem;
-    max-width: 28.4rem;
+    font-size: 2.2rem;
+    max-width: 25rem;
   }
 
   .map-intro-wrap {
@@ -3722,6 +3848,14 @@ h2 {
 
   .about-title p {
     font-size: 1.4rem;
+  }
+
+  .about-title p + p {
+    margin-top: 1.4rem;
+  }
+
+  .about-title {
+    gap: 2rem;
   }
 
   .intro-list p {

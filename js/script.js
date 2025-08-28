@@ -213,7 +213,11 @@ $(function () {
     $storeInfo.scrollTop(0);
 
     if ($(window).width() > 1180) {
-      $("html, body").animate({ scrollTop: $pop.offset().top }, 500);
+      const headerHeight = $("header").outerHeight() || 0; // 헤더 높이 가져오기
+      $("html, body").animate(
+        { scrollTop: $pop.offset().top - headerHeight },
+        500
+      );
     } else {
       $("body").css("overflow", "hidden");
     }
@@ -386,4 +390,61 @@ $(function () {
   $(window).on("resize", function () {
     checkWidth();
   });
+
+  // ===========================
+  // 메인 헤더 스크롤시 색상 변경
+  // ===========================
+
+  const header = $("header")[0]; // jQuery 객체에서 DOM 요소 가져오기
+  const visual = $(".visual")[0]; // jQuery 객체에서 DOM 요소 가져오기
+
+  if (!visual) return; // visual이 없으면 실행 안 함
+
+  const obHeader = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          header.classList.remove("scrolled");
+        } else {
+          header.classList.add("scrolled");
+        }
+      });
+    },
+    { root: null, threshold: 0.2 }
+  );
+
+  obHeader.observe(visual);
+});
+
+$(function () {
+  // ===========================
+  // 메뉴 활성화(1180이하)
+  // ===========================
+  // 메뉴 열기
+  $(".util-menu").on("click", function (e) {
+    if ($(window).width() > 1180) return;
+
+    e.preventDefault();
+    $(".menu-open, .dim-menu").addClass("active");
+    $("body").css("overflow", "hidden");
+  });
+
+  // 메뉴 닫기
+  $(".dim-menu, .menu-close-ico").on("click", function () {
+    if ($(window).width() > 1180) return;
+
+    $(".menu-open, .dim-menu").removeClass("active");
+    $("body").css("overflow", "");
+  });
+
+  // 리사이즈 시 메뉴 초기화
+  function handleResizeMenu() {
+    if ($(window).width() > 1180) {
+      $(".menu-open, .dim-menu").removeClass("active");
+      $("body").css("overflow", "");
+    }
+  }
+
+  handleResizeMenu();
+  $(window).on("resize", handleResizeMenu);
 });
