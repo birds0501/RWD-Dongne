@@ -238,34 +238,34 @@ nav {
 }
 
 .menu-page-list li {
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 .menu-page-bottom {
   padding: 8rem 0 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .menu-page-bottom a {
-  display: block;
+  display: inline-block;
   font-size: 2.2rem;
   color: var(--main-color);
   font-weight: 500;
 }
 
-.menu-page-bottom a + a {
-  margin-top: 2rem;
-}
-
 .send-menu {
   display: block;
-  width: 14rem;
-  height: 14rem;
+  width: 12rem;
+  height: 12rem;
   background: var(--main-color) url(../img/ico-send-menu.svg) no-repeat 50%;
   border-radius: 70px;
   position: absolute;
-  bottom: 38px;
-  right: 38px;
+  bottom: 26px;
+  right: 26px;
   transition: background-color 0.35s ease-in-out;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .send-menu:hover {
@@ -487,20 +487,39 @@ nav {
   }
 
   .menu-page-list li {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .menu-page-bottom a {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .menu-logo-ico a {
+    width: 4rem;
+    height: 3rem;
+    background-image: url(../img/menu-logo-ico-t.svg);
+  }
+  .menu-close-ico {
+    background-image: url(../img/menu-close-ico-t.svg);
+    margin-right: 2rem;
+  }
+
+  .menu-page-list {
+    padding-left: 2.6rem;
+  }
+
+  .menu-page-bottom {
+    padding: 6rem 0 0 2.4rem;
   }
 
   .send-menu {
-    width: 11rem;
-    height: 11rem;
+    width: 10rem;
+    height: 10rem;
     background: var(--main-color) url(../img/ico-send-menu-t.svg) no-repeat 50%;
     border-radius: 60px;
-    bottom: 28px;
-    right: 28px;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
   }
 
   .menu-open {
