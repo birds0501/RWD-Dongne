@@ -606,4 +606,8 @@ nav {
   nav {
     padding: 0 1.4rem;
   }
+
+  .menu-close-ico {
+    margin-right: 1.4rem;
+  }
 }

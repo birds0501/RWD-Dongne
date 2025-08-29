@@ -81,13 +81,13 @@
 /* 검색창 -------------------------------------------------------*/
 
 .search {
-  margin-top: 9.1rem;
+  margin-top: 9rem;
 }
 
 .search-wrap {
   width: 61.5rem;
   /* width: 32.0313%; */
-  height: 6.1rem;
+  height: 5.9rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -114,7 +114,7 @@
 }
 
 .sub-new-alarm {
-  margin-top: 15.3rem;
+  margin-top: 14rem;
 }
 
 /* sub-new-alarm -------------------------------------------------------*/
@@ -669,25 +669,45 @@ h2 {
 .about-title p + p {
   margin-top: 3rem;
 }
-
+/* 
 .title-wrap figure {
   max-width: 141rem;
   width: 100%;
+  height: 100%;
+  max-height: 47rem;
+  min-height: 32rem;
 }
 
 .title-wrap img {
   width: 100%;
-  height: auto;
+  height: 100%;
+} */
+
+.oner-img {
+  width: 100%;
+  aspect-ratio: 5 / 2;
+  overflow: hidden;
+}
+
+.oner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* 서비스 소개- 동네서점지도 */
 
 .sub-link {
-  margin-top: 20rem;
+  margin-top: 18rem;
   display: flex;
   gap: 4.3rem;
   justify-content: center;
 }
+
+.sub-link.intro {
+  margin-top: 14rem;
+}
+
 .sub-link a {
   font-size: 2.5rem;
   font-weight: 700;
@@ -919,7 +939,7 @@ h2 {
 /* 서비스 소개-신간알림 */
 
 .alarm-intro {
-  margin-top: 22rem;
+  margin-top: 20rem;
 }
 
 .new-intro {
@@ -1564,7 +1584,7 @@ h2 {
 }
 
 .store-name {
-  font-size: 3.5rem;
+  font-size: 2.7rem;
   font-weight: 600;
   color: #111;
 }
@@ -1576,13 +1596,9 @@ h2 {
 }
 
 .store-img {
-  margin-top: 3.5rem;
-}
-
-.store-img figure {
+  margin-top: 3rem;
   width: 100%;
-  max-width: 57.6rem;
-  height: auto;
+  aspect-ratio: 9/5;
 }
 
 .store-img img {
@@ -1826,7 +1842,7 @@ h2 {
   }
 
   .con-info .con-info-wrap dl dt {
-    font-size: 3.8rem;
+    font-size: 3.5rem;
   }
 
   .con-info .con-info-wrap dl dd {
@@ -1851,6 +1867,11 @@ h2 {
 
   .map-item-1 figure {
     max-width: 62rem;
+  }
+
+  h2 {
+    font-size: 4.4rem;
+    font-weight: 600;
   }
 }
 
@@ -2023,6 +2044,24 @@ h2 {
   .sub-semi-ad {
     margin-top: 16rem;
   }
+  .search {
+    margin-top: 7rem;
+  }
+  .sub-new-alarm {
+    margin-top: 10rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+
+  .alarm-con li figure {
+    aspect-ratio: 2/1;
+  }
+  .con-info .con-info-wrap dl dt {
+    font-size: 3.6rem;
+  }
 
   /* sub-plus button */
 
@@ -2069,7 +2108,7 @@ h2 {
   }
 
   .map-intro {
-    margin-top: 21rem;
+    margin-top: 19rem;
   }
 
   h3 {
@@ -2146,7 +2185,6 @@ h2 {
   }
 
   .sub-link {
-    margin-top: 18rem;
     gap: 3.5rem;
   }
 
@@ -2155,7 +2193,7 @@ h2 {
   }
 
   .alarm-intro {
-    margin-top: 21rem;
+    margin-top: 17rem;
   }
 
   /* .new-intro {
@@ -2343,7 +2381,7 @@ h2 {
   }
 
   .find-map {
-    margin: 5rem 0 0 0;
+    margin: 3rem 0 0 0;
   }
 
   /* .re-wrap > li {
@@ -2469,7 +2507,7 @@ h2 {
   }
 
   .sub-semi-ad {
-    margin-top: 13rem;
+    margin-top: 9rem;
   }
 
   .semi-ad-con .con-txt .txt-wrap dl dt {
@@ -2487,10 +2525,6 @@ h2 {
 
   .search-wrap {
     width: 60rem;
-  }
-
-  h2 {
-    font-size: 4.5rem;
   }
 
   .sub-ad {
@@ -2530,6 +2564,18 @@ h2 {
 }
 
 @media (max-width: 850px) {
+  h2 {
+    font-size: 3.6rem;
+    font-weight: 600;
+  }
+
+  .con-info .con-info-wrap dl dt {
+    font-size: 3.2rem;
+  }
+
+  .con-info .con-info-wrap dl dd {
+    font-size: 1.8rem;
+  }
   /* intro-alarm */
 
   .inner {
@@ -2549,12 +2595,8 @@ h2 {
     margin-top: 2rem;
   }
 
-  .sub-link {
-    margin-top: 18rem;
-  }
-
   .alarm-intro {
-    margin-top: 18rem;
+    margin-top: 13rem;
   }
 
   .sub-link a {
@@ -2705,10 +2747,9 @@ h2 {
     height: 5.7rem;
   }
 
-  .sub-link {
-    margin-top: 14rem;
+  .sub-link.intro {
+    margin-top: 10rem;
   }
-
   .map-intro {
     margin-top: 18rem;
   }
@@ -2768,6 +2809,10 @@ h2 {
 @media (max-width: 732px) {
   .sub-new-alarm {
     margin-top: 11rem;
+  }
+
+  .search-wrap input {
+    font-size: 1.7rem;
   }
 
   .alarm-con li {
@@ -2867,13 +2912,13 @@ h2 {
   }
 
   .search {
-    margin-top: 3.4rem;
+    margin-top: 9rem;
   }
 
   .search-wrap {
     width: 35rem;
     /* width: 89.7436%; */
-    height: 5rem;
+    height: 4.4rem;
   }
 
   .search-wrap input {
@@ -2889,12 +2934,12 @@ h2 {
 
   /* sub-new-alarm----------------------------------------------------- */
 
-  .sub-new-alarm h2 {
-    font-size: 3.3rem;
+  h2 {
+    font-size: 3rem;
   }
 
   .sub-new-alarm {
-    margin-top: 8.5rem;
+    margin-top: 4rem;
   }
 
   .alarm-con li:first-child {
@@ -3173,11 +3218,11 @@ h2 {
   }
 
   .sub-link a b {
-    padding: 1.3rem 0;
+    padding: 1rem 0;
   }
 
   .map-intro {
-    margin-top: 6rem;
+    margin-top: 11rem;
   }
 
   .intro-list {
@@ -3256,7 +3301,11 @@ h2 {
   }
 
   .sub-link {
-    margin-top: 8rem;
+    margin-top: 12rem;
+  }
+
+  .sub-link.intro {
+    margin-top: 7rem;
   }
 
   .alarm-intro {
@@ -3398,7 +3447,7 @@ h2 {
   }
 
   .find-map {
-    margin: 3rem 0 0 0;
+    margin: 0;
   }
 
   .fit-store h3 {
@@ -3544,7 +3593,7 @@ h2 {
   }
 
   .store-name {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   .type-info {
     font-size: 1.5rem;
@@ -3740,19 +3789,15 @@ h2 {
   .txt-wrap strong {
     font-size: 1.3rem;
   }
-
-  .search-wrap {
-    width: 45rem;
-  }
 }
 
 @media (max-width: 480px) {
-  .sub-new-alarm h2 {
+  h2 {
     font-size: 3rem;
   }
 
   .sub-link a b {
-    padding: 1.5rem 0;
+    padding: 1rem 0;
   }
 
   .con-info {
@@ -3779,11 +3824,6 @@ h2 {
     font-size: 1rem;
   }
 
-  .search-wrap {
-    width: 40rem;
-    height: 4.7rem;
-  }
-
   .con-info {
     text-align: left;
   }
@@ -3804,9 +3844,6 @@ h2 {
     margin-top: 1.3rem;
   }
 
-  .store-name {
-    font-size: 2.2rem;
-  }
   .type-info {
     font-size: 1.4rem;
   }
@@ -3853,13 +3890,54 @@ h2 {
     margin-top: 0.4rem;
   }
 
+  .menu-close-ico {
+    margin-right: 1.4rem;
+  }
+
+  .search {
+    margin-top: 7rem;
+  }
+
+  .search-wrap {
+    height: 4.2rem;
+  }
+
+  .search-wrap input {
+    font-size: 1.3rem;
+    padding: 0 1.7rem;
+  }
+
+  .sub-new-alarm {
+    margin-top: 3rem;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  .con-info {
+    margin-top: 1.6rem;
+  }
+
+  .alarm-con .con-info .con-info-wrap dl dt {
+    font-size: 2.3rem;
+  }
+
+  .alarm-con .con-info .con-info-wrap dl dd {
+    font-size: 1.4rem;
+  }
+
+  .alarm-con .con-info .con-info-wrap p {
+    font-size: 1.1rem;
+  }
+
   .about {
     margin-top: 10rem;
   }
 
   .about-title h2 {
-    font-size: 2.2rem;
-    max-width: 25rem;
+    font-size: 2.3rem;
+    max-width: 26.1rem;
   }
 
   .map-intro-wrap {
@@ -3902,7 +3980,11 @@ h2 {
   }
 
   .sub-link {
-    margin-top: 9rem;
+    margin-top: 10rem;
+  }
+
+  .sub-link.intro {
+    margin-top: 6rem;
   }
 
   .sub-link a {
@@ -3910,7 +3992,7 @@ h2 {
   }
 
   .map-intro {
-    margin-top: 12rem;
+    margin-top: 10rem;
   }
 
   .intro-list {
@@ -3945,7 +4027,7 @@ h2 {
   }
 
   .alarm-intro {
-    margin-top: 12rem;
+    margin-top: 10rem;
   }
 
   .new-item-1 figure {
