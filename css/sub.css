@@ -44,6 +44,7 @@
 .sub-link a {
   font-weight: 500;
   font-size: 2.5rem;
+  color: #777;
 }
 
 .sub-link a b {
@@ -55,9 +56,9 @@
 .sub-link a b::after {
   content: "";
   display: block;
-  width: 0%;
+  width: 100%;
   height: 0.1rem;
-  background: var(--main-color);
+  background: #ededed;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -72,11 +73,12 @@
 
 .sub-link a.on b::after {
   width: 100%;
+  background: var(--main-color);
 }
 
-.sub-link a:hover b::after {
+/* .sub-link a:hover b::after {
   width: 100%;
-}
+} */
 
 /* 검색창 -------------------------------------------------------*/
 
@@ -706,11 +708,6 @@ h2 {
 
 .sub-link.intro {
   margin-top: 14rem;
-}
-
-.sub-link a {
-  font-size: 2.5rem;
-  font-weight: 700;
 }
 
 .map-intro h3 {
@@ -2908,16 +2905,15 @@ h2 {
   }
 
   .sub-link {
-    gap: 3rem;
+    gap: 0rem;
   }
 
   .search {
-    margin-top: 9rem;
+    margin-top: 8rem;
   }
 
   .search-wrap {
-    width: 35rem;
-    /* width: 89.7436%; */
+    width: 89.7436%;
     height: 4.4rem;
   }
 
@@ -3214,6 +3210,10 @@ h2 {
   }
 
   .sub-link a b::after {
+    height: 0.1rem;
+  }
+
+  .sub-link a.on b::after {
     height: 0.14rem;
   }
 
@@ -3222,7 +3222,7 @@ h2 {
   }
 
   .map-intro {
-    margin-top: 11rem;
+    margin-top: 10rem;
   }
 
   .intro-list {
@@ -3305,7 +3305,7 @@ h2 {
   }
 
   .sub-link.intro {
-    margin-top: 7rem;
+    margin-top: 10rem;
   }
 
   .alarm-intro {
@@ -3443,7 +3443,7 @@ h2 {
   /* dongne-map----------------------------------- */
 
   .fit-store .inner {
-    padding: 3rem 2rem 0 2rem;
+    padding: 5rem 2rem 0 2rem;
   }
 
   .find-map {
@@ -3706,7 +3706,7 @@ h2 {
 
   /* 테마지도----------------- */
   .update-theme {
-    margin-top: 8.5rem;
+    margin-top: 5rem;
   }
 
   .update-theme h2 {
