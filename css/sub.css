@@ -399,7 +399,7 @@ h2 {
 .title-txt {
   display: flex;
   align-items: center;
-  gap: 2.6rem;
+  gap: 1rem;
 }
 
 .book-menu-list .all {
@@ -452,6 +452,10 @@ h2 {
   line-height: 4.4rem;
   padding: 0 1.7rem;
 } */
+
+.market-select-list {
+  margin: auto 0;
+}
 
 .select-list-highp {
   position: relative;
@@ -2870,6 +2874,13 @@ h2 {
   .book-list {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .select-list-highp .highp {
+    width: 12.2rem;
+    height: 3.8rem;
+    font-size: 1.4rem;
+    padding: 0px 1.4rem;
+  }
 }
 
 /* 모바일 디자인 */
@@ -3132,11 +3143,10 @@ h2 {
   }
 
   .market-select-list .select-list-highp .highp {
-    width: 13.1rem;
-    height: 4.1rem;
-    font-size: 1.5rem;
-    gap: 1.8rem;
-    padding: 1rem 1.5rem;
+    width: 10.2rem;
+    height: 3.3rem;
+    font-size: 1.2rem;
+    padding: 0rem 1.2rem;
   }
 
   .market-select-list .select-list-highp .highp::after {
@@ -3926,6 +3936,13 @@ h2 {
 
   .book-con .book-list {
     gap: 6rem 3%;
+  }
+
+  .market-select-list .select-list-highp .highp {
+    width: 9.5rem;
+    height: 2.9rem;
+    font-size: 1.2rem;
+    padding: 0rem 1rem;
   }
 
   .con-info {
