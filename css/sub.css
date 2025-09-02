@@ -2582,7 +2582,6 @@ h2 {
   }
 
   .book-list {
-    gap: 2%;
     row-gap: 10rem;
   }
   .con-info .con-info-wrap dl dt {
@@ -3166,6 +3165,22 @@ h2 {
 
   .book-list li .market-btn-wrap {
     margin-top: 2.3rem;
+  }
+
+  .market-btn-wrap {
+    gap: 1.6rem;
+  }
+
+  .market-btn-wrap button {
+    width: 1.9rem;
+    height: 1.9rem;
+    background: url(../img/market-bag-ico-s.svg) no-repeat 50%;
+  }
+
+  .market-btn-wrap button + button {
+    width: 1.9rem;
+    height: 1.9rem;
+    background: url(../img/market-heart-ico-s.svg) no-repeat 50%;
   }
 
   .book-con .pagination {
