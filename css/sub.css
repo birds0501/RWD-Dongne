@@ -382,6 +382,10 @@ h2 {
 
 /* 서브-마켓 */
 
+.sub-market .inner {
+  overflow-x: hidden;
+}
+
 .market-title {
   display: flex;
   margin-top: 8rem;
@@ -466,7 +470,7 @@ h2 {
   align-items: center;
   width: 15.2rem;
   height: 4.4rem;
-  border: 1px solid var(--text-color-w);
+  border: 1px solid #d8d8d8;
   border-radius: 4px;
   font-size: 1.6rem;
   font-weight: 500;
@@ -1834,6 +1838,7 @@ h2 {
   .sub-ad .inner {
     width: 96.4rem;
     width: 94.1406%;
+    overflow-x: hidden;
   }
 
   .con-info .con-info-wrap dl dt {
@@ -3918,7 +3923,7 @@ h2 {
   }
 
   .search {
-    margin-top: 7rem;
+    margin-top: 5rem;
   }
 
   .search-wrap {
