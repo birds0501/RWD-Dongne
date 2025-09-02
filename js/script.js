@@ -66,7 +66,7 @@ $(function () {
 
       $btnAd.hide();
       $btnAdMargin.css({
-        margin: 0,
+        marginBottom: 0,
       });
     });
   }

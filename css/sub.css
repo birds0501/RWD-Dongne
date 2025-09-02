@@ -117,16 +117,6 @@
 .sub-new-alarm {
   margin-top: 8rem;
 }
-.alarm-con {
-  overflow-x: hidden;
-}
-
-.semi-ad-con {
-  overflow-x: hidden;
-}
-.ad-con-list {
-  overflow-x: hidden;
-}
 
 /* sub-new-alarm -------------------------------------------------------*/
 
@@ -138,11 +128,6 @@ h2 {
 .sub-new-alarm,
 .sub-ad {
   /* display: none; */
-}
-
-.sub-new-alarm .inner,
-.sub-ad .inner {
-  overflow-x: hidden;
 }
 
 .alarm-con li figure {
@@ -710,7 +695,7 @@ h2 {
 
 .oner-img {
   width: 100%;
-  aspect-ratio: 5 / 2;
+  aspect-ratio: 6 / 2;
   overflow: hidden;
 }
 
