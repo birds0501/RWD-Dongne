@@ -4,6 +4,7 @@ $(function () {
   // ===========================
   const $btn = $(".alarm-con .plus");
   const $hiddenItems = $(".alarm-con .item.hidden");
+  const $btnMargin = $(".alarm-con .view-more");
 
   const observer = new IntersectionObserver(
     (entries, obs) => {
@@ -28,6 +29,9 @@ $(function () {
         observer.observe(this);
       });
       $btn.hide();
+      $btnMargin.css({
+        margin: 0,
+      });
     });
   }
 
@@ -36,6 +40,7 @@ $(function () {
   // ===========================
   const $btnAd = $(".plus.ad");
   const $foldItems = $(".ad-con .ad-item.hidden");
+  const $btnAdMargin = $(".view-more.bottom");
 
   const watcher = new IntersectionObserver(
     (entries, obs) => {
@@ -58,7 +63,11 @@ $(function () {
         $(this).removeClass("hidden").addClass("wait");
         watcher.observe(this);
       });
+
       $btnAd.hide();
+      $btnAdMargin.css({
+        margin: 0,
+      });
     });
   }
 
@@ -295,6 +304,7 @@ $(function () {
 
     if ($(window).width() > 1180) {
       $("body").css("overflow", "");
+      $storeInfo.css("top", "");
     } else {
       $("body").css("overflow", "hidden");
       updateStoreInfoTopMobile(); // 1180 이하이면 위치 재조정
@@ -475,6 +485,31 @@ $(function () {
   );
 
   obHeader.observe(visual);
+
+  $(".alarm-ad a")
+    .eq(1)
+    .on("click", function (e) {
+      e.preventDefault(); // a 태그 기본 동작 막기
+
+      const targetTop = $(".sub-ad").offset().top;
+
+      $("html, body").animate(
+        { scrollTop: targetTop },
+        500 // 0.5초 동안 부드럽게 이동
+      );
+    });
+
+  $(document).on("click", ".alarm-ad a:eq(1)", function (e) {
+    e.preventDefault();
+
+    const $target = $(".sub-ad");
+    if ($target.length === 0) return; // 안전 처리
+
+    const targetTop = $target.offset().top;
+    const headerHeight = $("header").outerHeight() || 0; // 고정 헤더 있으면 보정
+
+    $("html, body").animate({ scrollTop: targetTop - headerHeight }, 500);
+  });
 });
 
 $(function () {
@@ -508,4 +543,23 @@ $(function () {
 
   handleResizeMenu();
   $(window).on("resize", handleResizeMenu);
+
+  // ===========================
+  // 신간알림광고 탭 누르면 광고로 이동
+  // ===========================
+
+  $(document).on("click", ".alarm-ad a:eq(1)", function (e) {
+    e.preventDefault();
+
+    const $target = $(".sub-ad");
+    if ($target.length === 0) return; // 대상 없으면 종료
+
+    const targetTop = $target.offset().top;
+    const headerHeight = $("header").outerHeight() || 0; // 고정 헤더 있으면 보정
+
+    $("html, body").animate(
+      { scrollTop: targetTop - headerHeight },
+      500 // 0.5초 동안 부드럽게 이동
+    );
+  });
 });

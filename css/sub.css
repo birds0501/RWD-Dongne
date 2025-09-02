@@ -321,15 +321,10 @@ h2 {
 
 .ad-con-list {
   margin-top: 3.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
   row-gap: 15rem;
-}
-
-.ad-con-list li {
-  width: 43.3rem;
-  width: 30.7092%;
 }
 
 .ad-con-list li figure {
@@ -465,14 +460,14 @@ h2 {
 .select-list-highp .highp {
   display: flex;
   align-items: center;
-  width: 21.1rem;
-  height: 6.2rem;
+  width: 15.2rem;
+  height: 4.4rem;
   border: 1px solid var(--text-color-w);
   border-radius: 4px;
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
   color: var(--filter-text-color);
-  padding: 0 2.5rem;
+  padding: 0px 2.2rem;
   justify-content: space-between;
 }
 
@@ -482,7 +477,7 @@ h2 {
   width: 1.8rem;
   height: 1.8rem;
   /* border: 1px solid #000; */
-  background: url(../img/sub-select-b.svg) no-repeat 50%;
+  background: url(../img/sub-select-s.svg) no-repeat 50%;
 }
 
 /* .select-list-bottom {
@@ -513,19 +508,19 @@ h2 {
 } */
 
 .book-con {
-  margin-top: 17.9rem;
+  margin-top: 8rem;
 }
 
 .book-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  gap: 4%;
+  grid-template-columns: repeat(4, 1fr);
   row-gap: 19rem;
+  justify-content: center;
 }
 
 .book-list li {
-  width: 45rem;
-  /* width: 31.9149%; */
+  max-width: 100%;
 }
 
 .book-list li a figure {
@@ -542,21 +537,25 @@ h2 {
 }
 
 .text-box p {
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: var(--main-color);
 }
 
 .text-box h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
   transition: 0.4s;
   margin-top: 0.3rem;
+  display: -webkit-box; /* Flexbox 아님, 웹킷 전용 박스 모델 */
+  -webkit-box-orient: vertical; /* 세로 방향 */
+  -webkit-line-clamp: 1; /* 최대 2줄 */
+  overflow: hidden;
 }
 
 .book-list li:hover .text-box h3 {
   font-weight: 700;
-  transition: 0.4s;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .book-list li:hover .text-box strong {
@@ -564,36 +563,29 @@ h2 {
 }
 
 .text-box strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
   transition: 0.4s;
   margin-top: 1.7rem;
 }
 
-.text-box strong {
-  font-size: 3rem;
-  font-weight: 700;
-}
-
 .market-btn-wrap {
-  margin-top: 3.7rem;
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 
 .market-btn-wrap button {
-  width: 13.5rem;
-  /* width: 30%; */
-  height: 5rem;
-  border: 1px solid var(--text-color-b);
-  border-radius: 11px;
-  color: var(--text-color-b);
-  background: #fff;
-  font-weight: 500;
-  font-size: 2.1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../img/market-bag-ico.svg) no-repeat 50%;
 }
-
-.market-btn-wrap .buy {
-  color: #fff;
-  background: var(--main-color);
-  border: 0px solid #000;
-  margin-left: 1.5rem;
+.market-btn-wrap button + button {
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../img/market-heart-ico.svg) no-repeat 50%;
 }
 
 .pagination {
@@ -1812,6 +1804,9 @@ h2 {
 
 /* 반응형------------------------------------------------------------ */
 
+@media (max-width: 1920px) {
+}
+
 @media (max-width: 1500px) {
   .inner {
     width: 95%;
@@ -2080,17 +2075,14 @@ h2 {
   .sub-ad {
     margin-top: 16rem;
   }
-  .ad-con-list li {
-    width: 46.6rem;
-    width: 48.3402%;
-  }
 
   .ad-con-list {
     row-gap: 13rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .view-more.bottom {
-    margin-bottom: 21rem;
+    margin-bottom: 12rem;
   }
 
   /*!market */
@@ -2100,6 +2092,26 @@ h2 {
 
   .market-title {
     margin-top: 10rem;
+  }
+
+  .book-list li {
+    width: 100%;
+  }
+
+  .book-list {
+    gap: 4%;
+    grid-template-columns: repeat(3, minmax(220px, 310px));
+    row-gap: 14rem;
+  }
+
+  .text-box p {
+    font-size: 1.6rem;
+  }
+  .text-box h3 {
+    font-size: 1.8rem;
+  }
+  .text-box strong {
+    font-size: 1.8rem;
   }
 
   /* intro-map---------------------------------------- */
@@ -2569,6 +2581,10 @@ h2 {
     font-weight: 600;
   }
 
+  .book-list {
+    gap: 2%;
+    row-gap: 10rem;
+  }
   .con-info .con-info-wrap dl dt {
     font-size: 3.2rem;
   }
@@ -2768,10 +2784,6 @@ h2 {
 }
 
 @media (max-width: 832px) {
-  h2 {
-    font-size: 4.1rem;
-  }
-
   .semi-ad-con .con-txt .txt-wrap dl dt {
     font-size: 2.7rem;
   }
@@ -2803,6 +2815,10 @@ h2 {
   .ad-con-list .txt-wrap p {
     margin-top: 3rem;
     font-size: 1.3rem;
+  }
+
+  .book-list {
+    grid-template-columns: repeat(3, minmax(0, 260px));
   }
 }
 
@@ -2850,6 +2866,10 @@ h2 {
 
   .search-wrap {
     width: 50rem;
+  }
+
+  .book-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -3054,19 +3074,9 @@ h2 {
 
   .ad-con-list {
     margin-top: 2rem;
-    flex-wrap: nowrap;
+    grid-template-columns: 1fr;
     overflow: auto;
-    gap: 2rem;
-  }
-
-  .ad-con-list li {
-    width: 28.3rem;
-    width: 80.8571%;
-  }
-
-  .ad-con-list li a {
-    display: block;
-    width: 28.3rem;
+    gap: 4rem;
   }
 
   .ad-con-list .txt-wrap {
@@ -3092,12 +3102,8 @@ h2 {
   }
 
   .ad-con-list .txt-wrap p {
-    margin-top: 2.5rem;
-    font-size: 1.3rem;
-  }
-
-  .view-more.bottom {
-    display: none;
+    margin-top: 2rem;
+    font-size: 1.2rem;
   }
 
   .go-top {
@@ -3141,19 +3147,11 @@ h2 {
   }
 
   .sub-market .book-con {
-    margin-top: 6.3rem;
+    margin-top: 4rem;
   }
 
   .book-con .book-list {
     row-gap: 7rem;
-  }
-
-  .book-con .book-list li {
-    width: 16.9rem;
-  }
-
-  .book-list .text-box {
-    min-height: 8.8rem;
   }
 
   .book-list .text-box p {
@@ -3168,17 +3166,6 @@ h2 {
 
   .book-list li .market-btn-wrap {
     margin-top: 2.3rem;
-  }
-
-  .book-list .market-btn-wrap button {
-    width: 6.5rem;
-    height: 2.5rem;
-    font-size: 1.2rem;
-    border-radius: 6px;
-  }
-
-  .book-list .market-btn-wrap .buy {
-    margin-left: 0.9rem;
   }
 
   .book-con .pagination {
@@ -3725,7 +3712,7 @@ h2 {
   }
 
   .update-slider {
-    padding: 2.5rem 0 3rem;
+    padding: 2rem 0 3rem;
   }
 
   .update-item {
@@ -3759,7 +3746,7 @@ h2 {
   }
 
   .theme-map-wrap {
-    padding: 2.5rem 0 0;
+    padding: 2rem 0 0;
   }
 
   .about-theme {
@@ -3776,12 +3763,12 @@ h2 {
   }
 
   .theme-map-wrap {
-    row-gap: 4rem;
+    row-gap: 4.6rem;
   }
 
-  .theme-map .view-more {
+  /* .theme-map .view-more {
     margin-top: 7rem;
-  }
+  } */
 
   .theme-list {
     margin-bottom: 8rem;
@@ -3918,12 +3905,12 @@ h2 {
     padding: 0 1.7rem;
   }
 
-  .sub-new-alarm {
-    margin-top: 3rem;
+  h2 {
+    font-size: 2.5rem;
   }
 
-  h2 {
-    font-size: 2.6rem;
+  .book-con .book-list {
+    gap: 6rem 3%;
   }
 
   .con-info {
@@ -3995,7 +3982,7 @@ h2 {
   }
 
   .sub-link.intro {
-    margin-top: 6rem;
+    margin-top: 8rem;
   }
 
   .sub-link a {
@@ -4003,7 +3990,7 @@ h2 {
   }
 
   .map-intro {
-    margin-top: 10rem;
+    margin-top: 6rem;
   }
 
   .intro-list {
@@ -4038,7 +4025,7 @@ h2 {
   }
 
   .alarm-intro {
-    margin-top: 10rem;
+    margin-top: 6rem;
   }
 
   .new-item-1 figure {
