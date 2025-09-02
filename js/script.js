@@ -190,9 +190,11 @@ $(function () {
   const $backToList = $(".back-list");
   const $inMap = $(".in-map");
   const $pop = $(".fit-store");
+  const $header = $("header");
 
   let isActiveStore = false;
 
+  // 상세창 열기/닫기 토글
   $store.add($inMap).on("click", function (e) {
     e.preventDefault();
     !isActiveStore ? openStore() : closeStore();
@@ -200,30 +202,58 @@ $(function () {
 
   $backIcon.add($backToList).on("click", closeStore);
 
+  // 상세창 슬라이드 함수
   function slideStore(pos) {
     $storeInfo.animate({ left: pos }, 350);
     isActiveStore = true;
   }
 
+  // ===========================
+  // 1180px 이하: 상세창 위치 갱신
+  // ===========================
+  function updateStoreInfoTopMobile() {
+    if ($(window).width() > 1180) return; // 1180 초과는 무시
+
+    const scrollTop = $pop.scrollTop();
+    let offsetTop = 0;
+
+    if (!$header.hasClass("hide")) {
+      offsetTop = $header.outerHeight() || 0;
+    }
+
+    $storeInfo.css({ top: scrollTop + offsetTop + "px" });
+  }
+
+  // ===========================
+  // 상세창 열기
+  // ===========================
   function openStore() {
     slideStore(0);
     isActiveStore = true;
+
     const scrollTop = $pop.scrollTop();
-    $storeInfo.css({ top: scrollTop + "px" });
+    $storeInfo.css({ top: scrollTop + "px" }); // 초기값
     $storeInfo.scrollTop(0);
 
     if ($(window).width() > 1180) {
-      const headerHeight = $("header").outerHeight() || 0; // 헤더 높이 가져오기
+      const headerHeight = $header.outerHeight() || 0;
       $("html, body").animate(
         { scrollTop: $pop.offset().top - headerHeight },
         500
       );
     } else {
       $("body").css("overflow", "hidden");
+      // 1180 이하: 상세창 열릴 때 헤더 항상 보이게
+      $header.removeClass("hide");
+      updateStoreInfoTopMobile(); // 헤더 높이 반영해서 상세창 top 조정
     }
+
     $pop.css("overflow", "hidden");
   }
 
+  // ===========================
+  // 상세창 닫기
+  // ===========================
   function closeStore() {
     slideStore("-100%");
     isActiveStore = false;
@@ -231,12 +261,43 @@ $(function () {
     $pop.css("overflow", "auto");
   }
 
+  // ===========================
+  // 헤더 스크롤 숨김/보임 기능
+  // ===========================
+  let lastScroll = 0;
+  $(window).on("scroll", function () {
+    const currentScroll = $(this).scrollTop();
+
+    // 상세창이 열려 있고 1180 이하일 때는 헤더 숨김 방지
+    if (isActiveStore && $(window).width() <= 1180) {
+      $header.removeClass("hide");
+    } else {
+      if (currentScroll <= 0) {
+        $header.removeClass("hide");
+      } else if (currentScroll > lastScroll) {
+        $header.addClass("hide");
+      } else {
+        $header.removeClass("hide");
+      }
+    }
+
+    lastScroll = currentScroll;
+
+    // 1180 이하 & 상세창 열려있을 때 위치 갱신
+    if (isActiveStore) updateStoreInfoTopMobile();
+  });
+
+  // ===========================
+  // 리사이즈 시에도 1180 이하일 경우 위치 갱신
+  // ===========================
   $(window).on("resize", function () {
     if (!isActiveStore) return;
+
     if ($(window).width() > 1180) {
       $("body").css("overflow", "");
     } else {
       $("body").css("overflow", "hidden");
+      updateStoreInfoTopMobile(); // 1180 이하이면 위치 재조정
     }
   });
 

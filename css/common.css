@@ -76,8 +76,12 @@ h3 {
   top: 0;
   left: 0;
   background-color: transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   z-index: 100;
+}
+
+#header.hide {
+  transform: translateY(-100%);
 }
 
 #header.scrolled .logo a {

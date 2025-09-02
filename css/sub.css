@@ -6,8 +6,7 @@
 }
 
 #header {
-  background: #fff;
-  /* background: rgb(255, 255, 255, 0.9); */
+  background-color: #fff;
 }
 
 /* 서브-신간알림! */
@@ -56,7 +55,7 @@
 .sub-link a b::after {
   content: "";
   display: block;
-  width: 100%;
+  width: 0;
   height: 0.1rem;
   background: #ededed;
   position: absolute;
@@ -116,13 +115,13 @@
 }
 
 .sub-new-alarm {
-  margin-top: 14rem;
+  margin-top: 8rem;
 }
 
 /* sub-new-alarm -------------------------------------------------------*/
 
 h2 {
-  font-size: 5rem;
+  font-size: 4.4rem;
   font-weight: 600;
 }
 
@@ -390,7 +389,7 @@ h2 {
 
 .market-title {
   display: flex;
-  margin-top: 15.3rem;
+  margin-top: 8rem;
   justify-content: space-between;
 }
 
@@ -715,7 +714,7 @@ h2 {
 }
 
 .map-intro {
-  margin-top: 26rem;
+  margin-top: 18rem;
 }
 
 .intro-list {
@@ -936,7 +935,7 @@ h2 {
 /* 서비스 소개-신간알림 */
 
 .alarm-intro {
-  margin-top: 20rem;
+  margin-top: 18rem;
 }
 
 .new-intro {
@@ -1553,7 +1552,7 @@ h2 {
   height: 100%;
   padding: 3rem 3rem 5rem;
   overflow-y: auto;
-  transition: transform 0.35s ease;
+  /* transition: transform 0.35s ease; */
   background: #fff;
   z-index: 10;
 }
@@ -1680,7 +1679,7 @@ h2 {
 /* 테마지도 */
 
 .update-theme {
-  margin-top: 16rem;
+  margin-top: 8rem;
 }
 
 .update-slider {
@@ -1692,7 +1691,7 @@ h2 {
 
 .update-item {
   width: 50%;
-  max-width: 81rem;
+  max-width: 74rem;
 }
 
 .update-item a:hover {
@@ -2099,6 +2098,10 @@ h2 {
     display: flex;
   }
 
+  .market-title {
+    margin-top: 10rem;
+  }
+
   /* intro-map---------------------------------------- */
   .about {
     margin-top: 12rem;
@@ -2414,7 +2417,7 @@ h2 {
 
   .store-info {
     position: fixed; /* 또는 absolute */
-    top: 7rem !important;
+    top: 0;
     right: 0;
     padding-bottom: 15rem;
     height: 100vh; /* 화면 전체 높이 */
@@ -2444,7 +2447,7 @@ h2 {
   /* 테마지도 */
 
   .update-theme {
-    margin-top: 12rem;
+    margin-top: 10rem;
   }
 
   .update-item {
@@ -2863,6 +2866,10 @@ h2 {
     width: 89.7436%;
   }
 
+  .sub-link a b::after {
+    width: 100%;
+  }
+
   .menu-page-list li {
     font-size: 2.2rem;
   }
@@ -2909,7 +2916,7 @@ h2 {
   }
 
   .search {
-    margin-top: 8rem;
+    margin-top: 6rem;
   }
 
   .search-wrap {
@@ -3101,6 +3108,10 @@ h2 {
   }
 
   /* --------------------- */
+
+  .market-title {
+    margin-top: 4rem;
+  }
   .title-txt .book-menu-list .all {
     width: 6.6rem;
     height: 2.6rem;
@@ -3222,7 +3233,7 @@ h2 {
   }
 
   .map-intro {
-    margin-top: 10rem;
+    margin-top: 8rem;
   }
 
   .intro-list {
@@ -3305,11 +3316,11 @@ h2 {
   }
 
   .sub-link.intro {
-    margin-top: 10rem;
+    margin-top: 12rem;
   }
 
   .alarm-intro {
-    margin-top: 11rem;
+    margin-top: 8rem;
   }
 
   .new-item-1 {
@@ -3443,7 +3454,7 @@ h2 {
   /* dongne-map----------------------------------- */
 
   .fit-store .inner {
-    padding: 5rem 2rem 0 2rem;
+    padding: 3.4rem 2rem 0 2rem;
   }
 
   .find-map {
@@ -3706,7 +3717,7 @@ h2 {
 
   /* 테마지도----------------- */
   .update-theme {
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
 
   .update-theme h2 {
