@@ -232,37 +232,29 @@ h2 {
 .view-more {
   display: flex;
   justify-content: center;
-  margin-top: 14rem;
+  width: 36rem;
+  height: 5.2rem;
+  border: 1px solid #ececec;
+  margin: 14rem auto 0;
+  border-radius: 40px;
 }
 
 .plus {
   background: transparent;
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: var(--main-color);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #646464;
   display: flex;
-  gap: 1.1rem;
   align-items: center;
-  transition: 0.4s;
+  gap: 1rem;
 }
 
 .plus::after {
   content: "";
   display: block;
-  width: 4.3rem;
-  height: 4.3rem;
+  width: 1.4rem;
+  height: 1.4rem;
   background: url(../img/sub-plus.svg) no-repeat 50%;
-  transition: 0.4s;
-}
-
-.view-more:hover .plus {
-  color: var(--main-color-dark);
-  transition: 0.4s;
-}
-
-.view-more:hover .plus::after {
-  transition: 0.4s;
-  background: url(../img/sub-plus-hover.svg) no-repeat 50%;
 }
 
 .alarm-con ul .li-4 {
@@ -324,7 +316,7 @@ h2 {
 /* sub-ad -------------------------------------------------------*/
 
 .sub-ad {
-  margin-top: 23.2rem;
+  margin: 23rem 0 20rem;
 }
 
 .ad-con-list {
@@ -367,13 +359,9 @@ h2 {
 }
 
 .ad-con-list .txt-wrap p {
-  margin-top: 6.2rem;
+  margin-top: 1rem;
   font-size: 1.4rem;
   color: var(--text-color-w);
-}
-
-.view-more.bottom {
-  margin-bottom: 15rem;
 }
 
 .go-top {
@@ -960,10 +948,10 @@ h2 {
 }
 
 .new-item-3 {
-  margin-top: 28rem;
+  margin-top: 22rem;
 }
 .new-item-4 {
-  margin-top: 28rem;
+  margin-top: 22rem;
 }
 
 .new-intro-wrap {
@@ -997,18 +985,22 @@ h2 {
   /* text-align: center; */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.3rem;
+  align-items: start;
+  gap: 1rem;
+  /* display: none; */
+}
+.item-title h3 {
+  color: #111;
+  font-weight: 700;
 }
 
 .item-title p {
   font-size: 2.4rem;
-
   color: var(--main-color);
 }
 
 .item-wrap {
-  padding-top: 17rem;
+  padding-top: 6rem;
   display: flex;
   flex-direction: column;
   gap: 20rem;
@@ -1044,6 +1036,11 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  display: none;
+}
+
+.see-text.active {
+  display: flex;
 }
 
 .new-item-2 .swiper {
@@ -1122,8 +1119,8 @@ h2 {
 
 .new-item-2 {
   background: #f7f8f2;
-  padding: 9rem 0 16rem 0;
-  margin-top: 19rem;
+  padding: 11rem 0 10rem 0;
+  margin-top: 13rem;
 }
 
 .swiper-pagination {
@@ -1749,7 +1746,7 @@ h2 {
 }
 
 .theme-map {
-  margin-top: 26rem;
+  margin: 26rem 0 20rem;
 }
 
 .theme-map-wrap {
@@ -1809,10 +1806,6 @@ h2 {
 .theme-map-item.wait {
   opacity: 0;
   transform: translateY(20px);
-}
-
-.theme-list {
-  margin-bottom: 15rem;
 }
 
 .inner {
@@ -2070,32 +2063,22 @@ h2 {
   /* sub-plus button */
 
   .plus {
-    font-size: 2.2rem;
-  }
-
-  .plus::after {
-    width: 3.3rem;
-    height: 3.3rem;
-    background-image: url(../img/t-sub-plus.svg);
+    font-size: 1.8rem;
   }
 
   .view-more {
-    margin-top: 10.6rem;
+    margin-top: 10rem;
   }
 
   /*sub-ad */
 
   .sub-ad {
-    margin-top: 16rem;
+    margin: 16rem auto 16rem;
   }
 
   .ad-con-list {
     row-gap: 13rem;
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .view-more.bottom {
-    margin-bottom: 12rem;
   }
 
   /*!market */
@@ -2249,6 +2232,7 @@ h2 {
 
   .item-title {
     gap: 1rem;
+    align-items: center;
   }
   .item-title p {
     font-size: 2rem;
@@ -2382,21 +2366,6 @@ h2 {
   .more-store {
     opacity: 1;
     display: flex;
-    gap: 0.8rem;
-    margin: 8rem auto 0;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .plus-text {
-    font-size: 2.3rem;
-    color: var(--main-color);
-  }
-
-  .store-plus {
-    width: 3.6rem;
-    height: 3.6rem;
-    background: url(../img/store-plus-t.svg) no-repeat 50%;
   }
 
   .g-map {
@@ -2409,6 +2378,9 @@ h2 {
     margin: 3rem 0 0 0;
   }
 
+  .more-store {
+    margin-top: 6rem;
+  }
   /* .re-wrap > li {
     opacity: 1;
     transform: translateY(0);
@@ -2501,7 +2473,7 @@ h2 {
   }
 
   .theme-map {
-    margin-top: 16rem;
+    margin: 16rem 0 16rem;
   }
 
   .theme-map h2 {
@@ -2509,7 +2481,7 @@ h2 {
   }
 
   .theme-map-wrap {
-    padding: 3rem 0 13rem;
+    padding: 3rem 0 0;
   }
 
   .about-theme strong {
@@ -2528,10 +2500,13 @@ h2 {
   }
 
   .view-more {
-    margin-top: 9.5rem;
+    width: 52rem;
   }
 
   .sub-semi-ad {
+    margin-top: 14rem;
+  }
+  .view-more {
     margin-top: 9rem;
   }
 
@@ -2553,7 +2528,7 @@ h2 {
   }
 
   .sub-ad {
-    margin-top: 15.3rem;
+    margin: 15rem auto 15rem;
   }
 
   .ad-con-list {
@@ -2577,6 +2552,14 @@ h2 {
   .ad-con-list .txt-wrap p {
     margin-top: 3rem;
     font-size: 1.3rem;
+  }
+
+  .more-store {
+    margin-top: 6rem;
+  }
+
+  .theme-map {
+    margin: 16rem 0 15rem;
   }
 
   /* .map-theme-wrap ul li {
@@ -2905,6 +2888,10 @@ h2 {
     width: 89.7436%;
   }
 
+  .update-slider {
+    margin-left: calc((100% - 89.7436%) / 2);
+  }
+
   .sub-link a b::after {
     width: 100%;
   }
@@ -3035,19 +3022,20 @@ h2 {
   /* plus */
 
   .plus {
-    font-size: 1.5rem;
-  }
-
-  .view-more {
-    margin-top: 7.3rem;
+    font-size: 1.3rem;
   }
 
   .plus::after {
-    width: 1.9rem;
-    height: 1.9rem;
-    background-image: url(../img/m-sub-plus.svg);
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url(../img/sub-plus-s.svg);
   }
 
+  .view-more {
+    margin-top: 4rem;
+    width: 100%;
+    height: 4rem;
+  }
   /* sub-semi-ad */
   .sub-semi-ad {
     margin-top: 8.9rem;
@@ -3088,7 +3076,7 @@ h2 {
   /*sub-ad */
 
   #container .sub-ad {
-    margin: 10rem 0 10.7rem;
+    margin: 10rem 0 10rem;
   }
 
   .ad-con-list {
@@ -3586,11 +3574,6 @@ h2 {
     margin-left: 1rem;
   }
 
-  .more-store {
-    margin: 4.5rem auto 0;
-    gap: 0.6rem;
-  }
-
   .plus-text {
     font-size: 1.5rem;
   }
@@ -3772,7 +3755,7 @@ h2 {
   }
 
   .theme-map {
-    margin-top: 12rem;
+    margin: 12rem 0 10rem;
   }
 
   .theme-map h2 {
@@ -3803,10 +3786,6 @@ h2 {
   /* .theme-map .view-more {
     margin-top: 7rem;
   } */
-
-  .theme-list {
-    margin-bottom: 8rem;
-  }
 
   .theme-map-wrap {
     display: grid;
@@ -3841,7 +3820,11 @@ h2 {
   }
 
   .view-more {
-    margin-top: 8rem;
+    margin-top: 5rem;
+  }
+
+  .more-store {
+    margin-top: 4rem;
   }
 
   .sub-semi-ad {
@@ -3906,6 +3889,10 @@ h2 {
 @media (max-width: 390px) {
   .inner {
     width: 35rem;
+  }
+
+  .update-slider {
+    margin-left: calc((100% - 35rem) / 2);
   }
 
   .logo {
@@ -4160,7 +4147,12 @@ h2 {
     font-size: 1.4rem;
     margin-top: 0.3rem;
   }
+
+  .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    height: 3px;
+  }
 }
+
 /* 추가 분기 */
 
 @media (max-width: 378px) {

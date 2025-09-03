@@ -2,9 +2,8 @@ $(function () {
   // ===========================
   // 신간알림 더보기 버튼
   // ===========================
-  const $btn = $(".alarm-con .plus");
+  const $btn = $(".alarm-con .view-more");
   const $hiddenItems = $(".alarm-con .item.hidden");
-  const $btnMargin = $(".alarm-con .view-more");
 
   const observer = new IntersectionObserver(
     (entries, obs) => {
@@ -29,7 +28,7 @@ $(function () {
         observer.observe(this);
       });
       $btn.hide();
-      $btnMargin.css({
+      $btn.css({
         margin: 0,
       });
     });
@@ -38,9 +37,8 @@ $(function () {
   // ===========================
   // 광고 더보기 버튼
   // ===========================
-  const $btnAd = $(".plus.ad");
+  const $btnAd = $(".view-more.bottom");
   const $foldItems = $(".ad-con .ad-item.hidden");
-  const $btnAdMargin = $(".view-more.bottom");
 
   const watcher = new IntersectionObserver(
     (entries, obs) => {
@@ -65,16 +63,13 @@ $(function () {
       });
 
       $btnAd.hide();
-      $btnAdMargin.css({
-        marginBottom: 0,
-      });
     });
   }
 
   // ===========================
   // 테마 더보기 버튼
   // ===========================
-  const $btnTheme = $(".theme-more");
+  const $btnTheme = $(".theme-list");
   const $themefoldItems = $(".theme-map-item.hidden");
 
   const themeWatcher = new IntersectionObserver(

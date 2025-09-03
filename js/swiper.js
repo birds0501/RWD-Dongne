@@ -47,6 +47,10 @@ $(function () {
     loop: true, // 무한 반복
   });
 
+  // 페이지 로딩 시 첫 번째 텍스트 박스 활성화 (초기 상태 설정)
+
+  $("#text-box-0").addClass("active");
+
   const snsSlider = new Swiper(".snsSwiper", {
     slidesPerView: 1,
     loop: true,
@@ -55,33 +59,20 @@ $(function () {
       type: "fraction",
     },
     autoplay: {
-      delay: 4000,
+      delay: 4500,
       disableOnInteraction: false,
     },
-  });
-  const homeSlider = new Swiper(".homeSwiper", {
-    slidesPerView: 1,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-  });
 
-  const campaignSlider = new Swiper(".campaignSwiper", {
-    slidesPerView: 1,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
+    on: {
+      slideChange: function () {
+        const activeIndex = this.realIndex;
+
+        // 모든 텍스트 박스에서 'active' 클래스 제거
+        $(".see-text").removeClass("active");
+
+        // 현재 인덱스에 맞는 텍스트 박스에 'active' 클래스 추가
+        $(`#text-box-${activeIndex}`).addClass("active");
+      },
     },
   });
 });
