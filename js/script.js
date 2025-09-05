@@ -557,4 +557,52 @@ $(function () {
       500 // 0.5초 동안 부드럽게 이동
     );
   });
+
+  // ===========================
+  //탑버튼
+  // ===========================
+
+  const $topBtn = $(".go-top");
+  const showAfter = 900;
+  let scrollingToTop = false; // 클릭 시 true로 변경
+
+  // 스크롤 이벤트
+  $(window).on("scroll", function () {
+    if (scrollingToTop) return; // 클릭 중이면 scroll 이벤트 무시
+
+    if ($(this).scrollTop() > showAfter) {
+      $topBtn.fadeIn(150);
+    } else {
+      $topBtn.fadeOut(150);
+    }
+  });
+
+  // 클릭 이벤트
+  $topBtn.on("click", function () {
+    scrollingToTop = true; // 클릭 시 scroll 이벤트 무시
+    $("html, body").animate({ scrollTop: 0 }, 350, function () {
+      scrollingToTop = false; // 스크롤 이벤트 다시 활성화
+      // 스크롤 위치 확인 후 fadeOut 처리
+      if ($(window).scrollTop() <= showAfter) {
+        $topBtn.fadeOut(150); // 0이 아니라 0.3초 정도로 fadeOut
+      }
+    });
+  });
+
+  const $ico = $(".send-trans-ico");
+  const $txt = $(".send-trans-txt");
+  let showTxt = false;
+
+  setInterval(function () {
+    if (showTxt) {
+      // 텍스트 숨기고 아이콘 나타내기 (아래로 이동)
+      $txt.css({ transform: "translate(-50%, 100%)", opacity: 0 });
+      $ico.css({ transform: "translate(-50%, -50%)", opacity: 1 });
+    } else {
+      // 아이콘 숨기고 텍스트 위로 올라오기
+      $ico.css({ transform: "translate(-50%, -150%)", opacity: 0 });
+      $txt.css({ transform: "translate(-50%, -50%)", opacity: 1 });
+    }
+    showTxt = !showTxt;
+  }, 2000); // 2초 간격
 });

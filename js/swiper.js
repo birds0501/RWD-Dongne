@@ -14,16 +14,18 @@ $(function () {
     observeParents: true,
     simulateTouch: true,
     touchRatio: 1,
-    // autoplay: {
-    //   delay: 4000,
-    //   disableOnInteraction: true,
-    // },
+
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
   });
 
   const bestSlider = new Swiper(".best-slider", {
     slidesPerView: 3.5,
     spaceBetween: 40,
     centeredSlides: false,
+    slidesPerGroup: 1,
     freeMode: false,
     simulateTouch: true,
     slidesOffsetAfter: 0,

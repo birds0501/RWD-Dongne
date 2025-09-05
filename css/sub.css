@@ -234,14 +234,14 @@ h2 {
   justify-content: center;
   width: 36rem;
   height: 5.2rem;
-  border: 1px solid #ececec;
+  border: 1px solid #dfdfdf;
   margin: 14rem auto 0;
   border-radius: 40px;
 }
 
 .plus {
   background: transparent;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: #646464;
   display: flex;
@@ -365,16 +365,72 @@ h2 {
 }
 
 .go-top {
-  display: block;
+  display: none;
   position: fixed;
-  top: 70%;
-  right: 80px;
-  width: 7rem;
-  height: 7rem;
+  bottom: 160px;
+  right: 40px;
+  width: 8rem;
+  height: 8rem;
   background: var(--main-color) url(../img/go-top.svg) no-repeat 50%;
   border-radius: 50%;
-  box-shadow: 0px 16px 22px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
   z-index: 100;
+}
+
+.go-send {
+  position: fixed;
+  right: 40px;
+  width: 8rem;
+  height: 8rem;
+  background: var(--main-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  z-index: 100;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.go-send,
+.go-top {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.go-send:hover,
+.go-top:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.send-trans-ico,
+.send-trans-txt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.send-trans-ico {
+  width: 4.5rem;
+  height: 3.5rem;
+  background: url(../img/go-send.svg) no-repeat 50%;
+
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.send-trans-txt {
+  color: #fff;
+  font-size: 1.8rem;
+  /* font-weight: 500; */
+  line-height: 1.1;
+  letter-spacing: 1.4px;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, 100%);
 }
 
 /* 서브-마켓 */
@@ -755,7 +811,7 @@ h2 {
 
 .map-theme-wrap ul {
   display: flex;
-  animation: flowAni 80s linear infinite;
+  animation: flowAni 20s linear infinite;
   /* background: #e87070; */
 }
 
@@ -982,10 +1038,10 @@ h2 {
 }
 
 .item-title {
-  /* text-align: center; */
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  /* align-items: start; */
   gap: 1rem;
   /* display: none; */
 }
@@ -995,12 +1051,12 @@ h2 {
 }
 
 .item-title p {
-  font-size: 4rem;
+  font-size: 2.4rem;
   color: var(--main-color);
 }
 
 .item-wrap {
-  padding-top: 6rem;
+  padding-top: 11rem;
   display: flex;
   flex-direction: column;
   gap: 20rem;
@@ -1011,19 +1067,6 @@ h2 {
 }
 
 .sns-item {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* 왼쪽 2, 오른쪽 1 비율 */
-  column-gap: 5rem; /* 항상 동일한 간격 */
-  align-items: start;
-}
-
-.home-item {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* 왼쪽 2, 오른쪽 1 비율 */
-  column-gap: 5rem; /* 항상 동일한 간격 */
-  align-items: start;
-}
-.campaign-item {
   display: grid;
   grid-template-columns: 2fr 1fr; /* 왼쪽 2, 오른쪽 1 비율 */
   column-gap: 5rem; /* 항상 동일한 간격 */
@@ -1970,7 +2013,7 @@ h2 {
   }
 
   .send-menu {
-    display: block;
+    display: none;
     width: 12rem;
     height: 12rem;
     background: var(--main-color) url(../img/ico-send-menu.svg) no-repeat 50%;
@@ -2923,6 +2966,31 @@ h2 {
     padding: 6rem 0 0 2.4rem;
   }
 
+  .go-send,
+  .go-top {
+    width: 5rem;
+    height: 5rem;
+    right: 20px;
+  }
+  .go-send {
+    bottom: 40px;
+  }
+
+  .go-top {
+    background-image: url(../img/go-top-s.svg);
+    bottom: 100px;
+  }
+
+  .send-trans-ico {
+    width: 3rem;
+    height: 2.2rem;
+    background-image: url(../img/go-send-s.svg);
+  }
+
+  .send-trans-txt {
+    font-size: 1.2rem;
+  }
+
   .send-menu {
     width: 10rem;
     height: 10rem;
@@ -3302,6 +3370,10 @@ h2 {
   }
 
   /* intro-alarm--------------------------------- */
+
+  .oner-img {
+    aspect-ratio: 7 / 3;
+  }
 
   .about-title h2 {
     font-size: 2.5rem;
@@ -3993,7 +4065,7 @@ h2 {
     max-width: 31.1rem;
   }
   .title-wrap figure {
-    height: 15rem;
+    height: 21rem;
   }
 
   .title-wrap figure img {
