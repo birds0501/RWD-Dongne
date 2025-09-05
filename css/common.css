@@ -307,7 +307,7 @@ nav {
 }
 
 .foot-text p {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.5rem;
   color: var(--text-color-w);
 }
@@ -541,7 +541,7 @@ nav {
   }
 
   .foot-links {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 
   .foot-links li a {
@@ -562,12 +562,12 @@ nav {
   }
 
   .sns-list li a {
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 2rem;
+    height: 2rem;
     background: no-repeat 50%;
   }
 
-  /* .sns-list li:nth-child(1) a {
+  .sns-list li:nth-child(1) a {
     background-image: url(../img/msns-ico-sta.svg);
   }
   .sns-list li:nth-child(2) a {
@@ -575,7 +575,7 @@ nav {
   }
   .sns-list li:nth-child(3) a {
     background-image: url(../img/msns-ico-face.svg);
-  } */
+  }
 
   .send {
     transform: none;
