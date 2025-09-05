@@ -3,6 +3,7 @@ $(function () {
     pagination: {
       el: ".ad-slider .swiper-pagination",
       clickable: true,
+      type: "fraction",
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -13,16 +14,31 @@ $(function () {
     observeParents: true,
     simulateTouch: true,
     touchRatio: 1,
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: true,
+    // },
   });
 
   const bestSlider = new Swiper(".best-slider", {
-    slidesPerView: "auto",
-    spaceBetween: 50,
-    slidesOffsetAfter: 150,
-    watchOverflow: true,
+    slidesPerView: 3.5,
+    spaceBetween: 40,
+    centeredSlides: false,
     freeMode: false,
     simulateTouch: true,
     touchRatio: 1,
+
+    breakpoints: {
+      1180: { slidesPerView: 3.5, spaceBetween: 30 },
+      900: { slidesPerView: 3.5, spaceBetween: 30 },
+      790: { slidesPerView: 3.5, spaceBetween: 25 },
+      600: { slidesPerView: 2.5, spaceBetween: 25 },
+      550: { slidesPerView: 2.5, spaceBetween: 25 },
+      490: { slidesPerView: 1.5, spaceBetween: 25 },
+      391: { slidesPerView: 1.5, spaceBetween: 20 },
+      390: { slidesPerView: 1.5, spaceBetween: 20 },
+      0: { slidesPerView: 1.5, spaceBetween: 20 },
+    },
   });
 
   const updateSlider = new Swiper(".update-slider", {
