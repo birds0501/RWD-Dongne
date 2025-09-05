@@ -26,6 +26,7 @@ $(function () {
     centeredSlides: false,
     freeMode: false,
     simulateTouch: true,
+    slidesOffsetAfter: 0,
     touchRatio: 1,
 
     breakpoints: {
