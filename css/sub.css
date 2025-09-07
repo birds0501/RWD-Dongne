@@ -427,7 +427,6 @@ h2 {
   font-size: 1.8rem;
   /* font-weight: 500; */
   line-height: 1.1;
-  letter-spacing: 1.4px;
   text-align: center;
   opacity: 0;
   transform: translate(-50%, 100%);
@@ -1251,7 +1250,7 @@ h2 {
 }
 
 .fit-store {
-  flex: 0 0 45%;
+  flex: 0 0 46%;
   overflow-y: auto;
   /* padding: 3rem 3rem 0 4rem; */
   height: 100vh;
@@ -1434,15 +1433,51 @@ h2 {
 }
 
 .g-map {
-  flex: 0 0 55%;
+  position: relative;
+  flex: 0 0 54%;
   height: 100vh;
+  overflow: hidden;
 }
 .g-map figure {
   width: 100%;
   height: 100%;
 }
 
-.g-map figure img {
+.g-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.g-item {
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  transform: translateX(-40%);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: start;
+}
+
+.store-window {
+  width: 46rem;
+  height: auto;
+  margin-left: 17%;
+}
+
+.store-window img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ping {
+  width: 20%;
+  height: auto;
+  margin-top: 3%;
+}
+
+.ping img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2404,6 +2439,8 @@ h2 {
 
   .find-map {
     display: block;
+
+    margin: 5rem 0 0rem 0;
   }
 
   .more-store {
@@ -2417,8 +2454,8 @@ h2 {
     max-height: 60rem;
   }
 
-  .find-map {
-    margin: 3rem 0 0 0;
+  .g-map figure img {
+    transform: scale(1.8);
   }
 
   .more-store {
@@ -2471,6 +2508,11 @@ h2 {
     bottom: -100%;
     width: 100%;
     height: 70%;
+  }
+
+  .g-item {
+    top: 16%;
+    left: 55%;
   }
 
   .bottom-con {
@@ -2612,6 +2654,17 @@ h2 {
   /* .tag-wrap figure {
     max-width: 44vw;
   } */
+
+  .g-map figure img {
+    transform: scale(2);
+  }
+
+  .store-window {
+    width: 39rem;
+  }
+  .ping {
+    width: 21%;
+  }
 }
 
 @media (max-width: 850px) {
@@ -2819,6 +2872,17 @@ h2 {
     width: 38vw;
     margin-right: 1%;
   }
+
+  .g-map figure img {
+    transform: scale(2.1);
+  }
+
+  .store-window {
+    width: 37rem;
+  }
+  .ping {
+    width: 23%;
+  }
 }
 
 @media (max-width: 832px) {
@@ -2915,6 +2979,18 @@ h2 {
     height: 3.8rem;
     font-size: 1.4rem;
     padding: 0px 1.4rem;
+  }
+
+  .g-item {
+    top: 10%;
+    left: 49%;
+  }
+
+  .store-window {
+    width: 34rem;
+  }
+  .ping {
+    width: 20%;
   }
 }
 
@@ -3862,6 +3938,15 @@ h2 {
   .theme-map-wrap {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .ping {
+    width: 18%;
+  }
+
+  .store-window {
+    width: 100%;
+    max-width: 30rem;
   }
 }
 

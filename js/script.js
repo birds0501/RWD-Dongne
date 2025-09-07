@@ -192,6 +192,7 @@ $(function () {
   const $storeInfo = $(".store-info");
   const $backIcon = $(".back-icon");
   const $backToList = $(".back-list");
+  const $gItem = $(".g-item");
   const $inMap = $(".in-map");
   const $pop = $(".fit-store");
   const $header = $("header");
@@ -199,12 +200,12 @@ $(function () {
   let isActiveStore = false;
 
   // 상세창 열기/닫기 토글
-  $store.add($inMap).on("click", function (e) {
+  $store.add($gItem).on("click", function (e) {
     e.preventDefault();
     !isActiveStore ? openStore() : closeStore();
   });
 
-  $backIcon.add($backToList).on("click", closeStore);
+  $backIcon.add($backToList).add($inMap).on("click", closeStore);
 
   // 상세창 슬라이드 함수
   function slideStore(pos) {
