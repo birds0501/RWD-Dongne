@@ -371,9 +371,9 @@ h2 {
   right: 40px;
   width: 8rem;
   height: 8rem;
-  background: var(--main-color) url(../img/go-top.svg) no-repeat 50%;
+  background: rgba(255, 255, 255, 0.4) url(../img/go-top.svg) no-repeat 50%;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
 
@@ -810,7 +810,7 @@ h2 {
 
 .map-theme-wrap ul {
   display: flex;
-  animation: flowAni 20s linear infinite;
+  animation: flowAni 40s linear infinite;
   /* background: #e87070; */
 }
 
@@ -1472,7 +1472,7 @@ h2 {
 }
 
 .ping {
-  width: 20%;
+  width: 17%;
   height: auto;
   margin-top: 3%;
 }
