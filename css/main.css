@@ -7,9 +7,9 @@
   right: 40px;
   width: 8rem;
   height: 8rem;
-  background: var(--main-color) url(../img/go-top.svg) no-repeat 50%;
+  background: rgba(255, 255, 255, 0.4) url(../img/go-top.svg) no-repeat 50%;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
 
@@ -1112,7 +1112,7 @@
   }
 
   .go-top {
-    background-image: url(../img/go-top-s.svg);
+    background-image: url(../img/m-go-top.svg);
     bottom: 100px;
   }
 
