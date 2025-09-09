@@ -1400,6 +1400,11 @@ h2 {
   object-fit: cover;
 }
 
+.store-info-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
 .store-info-wrap dl dt {
   font-weight: 500;
   font-size: 1.9rem;
@@ -1422,6 +1427,10 @@ h2 {
 .store-info-wrap dd {
   font-size: 1.8rem;
   color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 플렉스 박스로 바꿔서 해보기 */
 }
 
 .store-info-wrap dd + dd {

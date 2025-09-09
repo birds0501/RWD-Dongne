@@ -350,10 +350,15 @@
   font-weight: 500;
   font-size: 2rem;
   transition: 0.2s;
-  display: -webkit-box;
+  /* display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  overflow: hidden; */
+
+  max-width: 99%;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .best-item .list-info p {
@@ -419,6 +424,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.ad-item figure {
+  overflow: hidden;
+}
+
+.ad-item:hover img {
+  transform: scale(1.02); /* 살짝 확대 */
 }
 
 .ad-item .con-info {
@@ -429,9 +443,10 @@
 }
 
 .ad-item .con-info dl dt {
-  font-weight: 400;
-  font-size: 6rem;
+  font-weight: 500;
+  font-size: 4.8rem;
   transition: 0.4s;
+  color: #222;
 }
 
 .ad-item .con-info dl dd {
@@ -628,7 +643,7 @@
   }
 
   .ad-item .con-info dl dt {
-    font-size: 5.3rem;
+    font-size: 4.4rem;
   }
   .ad-item .con-info dl dd {
     font-size: 2.5rem;
@@ -641,14 +656,14 @@
 
 @media (max-width: 1334px) {
   .ad-item .con-info dl dt {
-    font-size: 4.7rem;
+    font-size: 4.2rem;
   }
   .ad-item .con-info dl dd {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .ad-item .con-info p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .visual-title h2 {
@@ -769,11 +784,15 @@
     font-size: 1.8rem;
   }
 
-  .ad-slider .ad-item .con-info dl dt {
-    font-size: 5.3rem;
+  .ad-item .con-info dl dt {
+    font-size: 4.2rem;
   }
-  .ad-slider .ad-item .con-info dl dd {
-    font-size: 2.5rem;
+  .ad-item .con-info dl dd {
+    font-size: 2.2rem;
+  }
+
+  .ad-item .con-info p {
+    font-size: 1.6rem;
   }
 
   .new-ad .swiper-pagination-fraction {
@@ -796,7 +815,7 @@
   .ad-item .con-info {
     width: 65rem;
     width: 63.4766%;
-    margin: 5rem 0 0 3rem;
+    margin: 4rem 0 0 3rem;
   }
 
   .swiper-button-next,
@@ -973,14 +992,19 @@
     margin: 0 0 0 12.6374%;
   } */
 
-  .ad-slider .ad-item .con-info dl dt {
-    font-size: 4.9rem;
+  .ad-item .con-info dl dt {
+    font-size: 3.6rem;
   }
-  .ad-slider .ad-item .con-info dl dd {
-    font-size: 2.2rem;
+  .ad-item .con-info dl dd {
+    font-size: 2rem;
   }
-  .ad-slider .ad-item .con-info p {
-    font-size: 1.5rem;
+
+  .ad-item .con-info {
+    margin: 3rem 0 0 3rem;
+  }
+
+  .ad-item .con-info p {
+    font-size: 1.4rem;
   }
 
   .new-ad .swiper-pagination-fraction {
@@ -1064,13 +1088,10 @@
   }
 
   .ad-slider .ad-item .con-info dl dt {
-    font-size: 3.6rem;
+    font-size: 3.4rem;
   }
   .ad-slider .ad-item .con-info dl dd {
     font-size: 1.8rem;
-  }
-  .ad-slider .ad-item .con-info p {
-    font-size: 1.4rem;
   }
 
   .new-ad .swiper-pagination-fraction {
@@ -1322,18 +1343,19 @@
   .ad-item .con-info {
     width: 32rem;
     width: 82.0513%;
-    margin: 3.1rem 0 0 2rem;
+    margin: 2.4rem 0 0 2rem;
   }
 
-  .ad-item .con-info dl dt {
+  .ad-slider .ad-item .con-info dl dt {
     font-size: 3rem;
     font-weight: 500;
   }
-  .ad-item .con-info dl dd {
+  .ad-slider .ad-item .con-info dl dd {
     font-size: 1.5rem;
+    margin-top: 0.7rem;
   }
 
-  .ad-item .con-info p {
+  .ad-slider .ad-item .con-info p {
     font-size: 1.2rem;
     margin-top: 3.5rem;
   }
@@ -1439,10 +1461,10 @@
   }
 
   .ad-slider .ad-item .con-info dl dt {
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
   .ad-slider .ad-item .con-info dl dd {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .ad-slider .ad-item .con-info p {
     font-size: 1.2rem;
