@@ -3505,7 +3505,7 @@ h2 {
   }
 
   .about-title p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .new-intro-wrap p {
@@ -4176,15 +4176,15 @@ h2 {
   }
 
   .about-title p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .about-title p + p {
-    margin-top: 1.4rem;
+    margin-top: 2rem;
   }
 
   .about-title {
-    gap: 2rem;
+    gap: 2.3rem;
   }
 
   .intro-list p {
@@ -4223,11 +4223,11 @@ h2 {
   }
 
   .map-intro {
-    margin-top: 6rem;
+    margin-top: 9rem;
   }
 
   .intro-list {
-    gap: 13rem;
+    gap: 16rem;
   }
 
   .map-item-1 figure {
@@ -4246,10 +4246,6 @@ h2 {
     max-width: 27rem;
   }
 
-  .alarm-intro {
-    margin-top: 8rem;
-  }
-
   .intro-btn {
     margin: 6rem auto 12.5rem;
     font-size: 1.6rem;
@@ -4258,7 +4254,7 @@ h2 {
   }
 
   .alarm-intro {
-    margin-top: 6rem;
+    margin-top: 9rem;
   }
 
   .new-item-1 figure {
@@ -4269,7 +4265,7 @@ h2 {
   }
 
   .new-item-2 {
-    margin-top: 8rem;
+    margin-top: 11rem;
   }
 
   .item-title p {
@@ -4285,7 +4281,7 @@ h2 {
   }
 
   .new-item-3 {
-    margin-top: 7rem;
+    margin-top: 11rem;
   }
 
   .new-item-4 {
