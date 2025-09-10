@@ -30,7 +30,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: var(--main-color);
+  /* color: var(--main-color); */
 }
 
 hr,

@@ -313,7 +313,7 @@ $(function () {
   const $items = $(".re-wrap > li");
   const $moreStore = $(".more-store");
   const hiddenCount = 6;
-  const revealCount = 3;
+  const revealCount = 6;
   const mq = window.matchMedia("(max-width: 1180px)");
 
   function setHidden(mq) {
