@@ -855,6 +855,9 @@
 }
 
 @media (max-width: 1094px) {
+  .visual {
+    height: 100vh;
+  }
   .visual-title h2 {
     font-size: 5.4rem;
   }
@@ -1040,9 +1043,6 @@
 }
 
 @media (max-width: 703px) {
-  .visual {
-    height: 98rem;
-  }
   .visual-title h2 {
     font-size: 3.6rem;
   }
@@ -1151,10 +1151,6 @@
 
   .send-trans-txt {
     font-size: 1.2rem;
-  }
-
-  .visual {
-    height: 60rem;
   }
 
   .visual-title {

@@ -131,14 +131,14 @@ $(function () {
     $dim.stop().fadeIn();
     slideMenu(0);
     isActive = true;
-    $("body").css("overflow", "hidden");
+    $("html, body").addClass("is-locked");
   }
 
   function closeMenu() {
     $dim.stop().fadeOut();
     slideMenu("-100%");
     isActive = false;
-    $("body").css("overflow", "");
+    $("html, body").removeClass("is-locked");
     initSubmenu();
   }
 

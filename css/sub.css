@@ -1,5 +1,17 @@
 @charset "utf-8";
 
+/* 테마지도 애니메이션 가로스크롤 없애는용 */
+html {
+  overflow-x: hidden;
+}
+
+/* 동네서점지도 필터 오픈시 html, body 스크롤 막기 */
+html.is-locked,
+body.is-locked {
+  overflow: hidden;
+  height: 100%;
+}
+
 .inner {
   width: 141rem;
   /* background: #5f5; */
