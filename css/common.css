@@ -18,7 +18,9 @@ html {
 }
 
 body {
-  font: 1rem/1.5 "Pretendard", sans-serif;
+  font:
+    1rem/1.5 "Pretendard",
+    sans-serif;
 }
 
 a {
@@ -74,7 +76,9 @@ h3 {
   top: 0;
   left: 0;
   background-color: transparent;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   z-index: 100;
 }
 
@@ -276,7 +280,7 @@ nav {
 
 #footer {
   background: #f7f7f7;
-  padding: 7.5rem 0;
+  padding: 7.5rem 0 5rem 0;
 }
 
 .foot-logo {
@@ -289,19 +293,19 @@ nav {
 .foot-links {
   display: flex;
   column-gap: 3rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .foot-links li a {
   display: block;
-
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.8rem;
   transition: 0.2s;
+  color: #222;
 }
 
 .foot-text {
-  margin-top: 3.3rem;
+  margin-top: 2rem;
 }
 
 .foot-text p {
@@ -311,7 +315,7 @@ nav {
 }
 
 .foot-text p + p {
-  margin-top: 1.4rem;
+  margin-top: 0.4rem;
 }
 
 #footer > .inner {
@@ -394,10 +398,10 @@ nav {
     height: 4.9rem;
   }
 
-  .foot-text p + p {
+  /* .foot-text p + p {
     width: 62.4rem;
     width: 64.7303%;
-  }
+  } */
 
   .send {
     width: 11rem;
@@ -550,9 +554,9 @@ nav {
     font-size: 1.2rem;
   }
 
-  .foot-text p + p {
+  /* .foot-text p + p {
     width: 35rem;
-  }
+  } */
 
   .sns-list {
     gap: 2.7rem;
