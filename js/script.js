@@ -18,7 +18,7 @@ $(function () {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   if ($btn.length) {
@@ -52,7 +52,7 @@ $(function () {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   if ($btnAd.length) {
@@ -83,7 +83,7 @@ $(function () {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   if ($btnTheme.length) {
@@ -244,7 +244,7 @@ $(function () {
       const headerHeight = $header.outerHeight() || 0;
       $("html, body").animate(
         { scrollTop: $pop.offset().top - headerHeight },
-        500
+        500,
       );
     } else {
       $("body").css("overflow", "hidden");
@@ -362,7 +362,7 @@ $(function () {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   if ($themeBtn.length) {
@@ -378,9 +378,9 @@ $(function () {
   // 서비스 소개 동네서점지도 item-2 br-pc 제거(600초과하면 다시 붙게)
   function toggleBr() {
     if ($(window).width() <= 600) {
-      $("br.br-pc").hide(); // 작은 해상도 → 숨김
+      $("br.br-pc").hide(); // 작은 해상도 숨김
     } else {
-      $("br.br-pc").show(); // 큰 해상도 → 다시 보이기
+      $("br.br-pc").show(); // 큰 해상도 다시 보이기
     }
   }
 
@@ -397,7 +397,7 @@ $(function () {
     if ($(window).width() <= 1180) {
       $("br.br-ad").hide();
     } else {
-      $("br.br-ad").show(); // 큰 해상도 → 다시 보이기
+      $("br.br-ad").show(); // 큰 해상도 다시 보이기
     }
   }
 
@@ -414,7 +414,7 @@ $(function () {
     if ($(window).width() <= 1180) {
       $("br.br-new").hide();
     } else {
-      $("br.br-new").show(); // 큰 해상도 → 다시 보이기
+      $("br.br-new").show(); // 큰 해상도 다시 보이기
     }
   }
 
@@ -477,7 +477,7 @@ $(function () {
         }
       });
     },
-    { root: null, threshold: 0.2 }
+    { root: null, threshold: 0.2 },
   );
 
   obHeader.observe(visual);
@@ -491,7 +491,7 @@ $(function () {
 
       $("html, body").animate(
         { scrollTop: targetTop },
-        500 // 0.5초 동안 부드럽게 이동
+        500, // 0.5초 동안 부드럽게 이동
       );
     });
 
@@ -555,7 +555,7 @@ $(function () {
 
     $("html, body").animate(
       { scrollTop: targetTop - headerHeight },
-      500 // 0.5초 동안 부드럽게 이동
+      500, // 0.5초 동안 부드럽게 이동
     );
   });
 
