@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-
     <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/common.css" />
@@ -20,49 +19,161 @@
   </head>
   <body>
     <a href="#container" class="skip hidden">본문 바로가기</a>
-    <!-- tab누르면 바로 본문으로 갈 수 있도록! (사용성위해) -->
     <header id="header">
-      <nav>
-        <h1 class="logo">
-          <a href="index.html"><i class="hidden">동네서점</i></a>
-        </h1>
-        <ul class="gnb">
-          <li><a href="intro-map.html">서비스 소개</a></li>
-          <li><a href="dongne-map.html">동네서점지도</a></li>
-          <li><a href="new-alarm.html">신간알림광고</a></li>
-          <li><a href="market.html">마켓</a></li>
-          <li><a href="#">동네서점 On Air</a></li>
-        </ul>
-        <div class="util">
-          <a href="" class="btn-search"><i class="hidden">검색</i></a>
-          <a href="" class="btn-login"><i class="hidden">로그인</i></a>
-        </div>
-        <div class="util-menu">
-          <a href="" class="btn-menu"><i class="hidden">메뉴</i></a>
-        </div>
-      </nav>
+      <div class="inner">
+        <nav>
+          <h1 class="logo">
+            <a href="index.html"><i class="hidden">동네서점</i></a>
+          </h1>
+          <ul class="gnb">
+            <!-- <li><a href="intro-map.html">서비스 소개</a></li> -->
+            <li><a href="dongne-map.html">서점찾기</a></li>
+            <li><a href="book-issue.html">북이슈</a></li>
+            <li><a href="market.html">마켓</a></li>
+            <li><a href="#">동네소식</a></li>
+          </ul>
+          <div class="menu-set">
+            <div class="util">
+              <a href="#" class="btn-search">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <circle cx="7.5" cy="7.5" r="6.65" stroke-width="1.6" />
+                  <path
+                    d="M12.5 12.5L17.15 17.15"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="btn-login">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <circle cx="9" cy="5" r="4.15" stroke-width="1.6" />
+                  <path
+                    d="M1.5 17.15C1.5 13 4.8 9.5 9 9.5C13.2 9.5 16.5 13 16.5 17.15"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="btn-business"
+                >비즈니스
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </a>
+            </div>
+            <div class="util-menu">
+              <a href="" class="btn-menu"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path d="M2 3h16" stroke-width="1.6" stroke-linecap="round" />
+                  <path d="M7 9h11" stroke-width="1.6" stroke-linecap="round" />
+                  <path
+                    d="M2 15h16"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
     <hr />
 
     <main id="container">
       <div class="menu-open">
-        <div class="menu-header">
-          <div class="menu-close-ico"></div>
-          <div class="menu-logo-ico"><a href="index.html"></a></div>
+        <div class="inner">
+          <div class="menu-header">
+            <div class="menu-close-ico">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M0 0l20 20"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M20 0L0 20"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div class="menu-logo-ico"><a href="index.html"></a></div>
+          </div>
+          <ul class="menu-page-list">
+            <li><a href="dongne-map.html">서점찾기</a></li>
+            <li><a href="book-issue.html">북이슈</a></li>
+            <li><a href="market.html">마켓</a></li>
+            <li><a href="#">동네소식</a></li>
+          </ul>
+          <div class="menu-page-mid">
+            <a href="#"
+              >비즈니스
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+          </div>
+          <div class="menu-page-bottom">
+            <a href="#"
+              >로그인 / 회원가입
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-left: 2px; vertical-align: middle"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+          <!-- <a href="#" class="send-menu"><i class="hidden">공간 제보하기</i></a> -->
         </div>
-        <ul class="menu-page-list">
-          <li><a href="intro-map.html">서비스 소개</a></li>
-          <li><a href="dongne-map.html">동네서점지도</a></li>
-          <li><a href="new-alarm.html">신간알림광고</a></li>
-          <li><a href="market.html">마켓</a></li>
-          <li><a href="#">동네서점 On Air</a></li>
-        </ul>
-        <div class="menu-page-bottom">
-          <div><a href="">검색</a></div>
-          <div><a href="">로그인</a></div>
-          <div><a href="">공간 제보하기</a></div>
-        </div>
-        <!-- <a href="#" class="send-menu"><i class="hidden">공간 제보하기</i></a> -->
       </div>
       <div class="dim-menu"></div>
       <section class="visual">
@@ -80,16 +191,32 @@
           <div class="map-con">
             <div class="map-info">
               <div class="title-wrap theme">
-                <h3>동네서점지도</h3>
+                <h3>
+                  테마로 손쉽게 발견하는 <br />
+                  내 취향의 서점
+                </h3>
                 <p>
-                  여러가지 다양한 테마, 위치에 따라 내 취향의 책공간을
-                  발견해보세요.
+                  클릭 한 번으로 원하는 테마의 <br />
+                  독립서점을 발견해보세요
                 </p>
                 <div class="btn-wrap">
-                  <!-- <a href="#" class="btn btn-change">테마 보기</a> -->
-                  <a href="intro-map.html" class="btn btn-serve map"
-                    >서비스 소개</a
-                  >
+                  <a href="intro-map.html" class="btn btn-find"
+                    >테마로 서점 찾기
+                    <!-- <svg
+                      width="20"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      style="margin-left: -1px; vertical-align: middle"
+                    >
+                      <line x1="4" y1="12" x2="20" y2="12"></line>
+                      <polyline points="14 6 20 12 14 18"></polyline>
+                    </svg> -->
+                  </a>
                 </div>
               </div>
             </div>
@@ -297,25 +424,119 @@
         <div class="inner">
           <div class="new-con">
             <div class="new-info">
-              <div class="title-wrap alarm">
-                <h3>신간알림</h3>
-                <p>
-                  문화예술 창작자라면 독립 · 예술 출판물을 <br />
-                  7백여 곳의 독립서점과 문화예술 공간에 알리고 광고해보세요.
-                </p>
-                <div class="btn-wrap">
-                  <!-- <a href="new-alarm.html" class="btn btn-change"
-                    >신간알림 신청하기</a
-                  > -->
-                  <a href="intro-alarm.html" class="btn btn-serve"
-                    >서비스 소개</a
-                  >
-                </div>
+              <h3>다양한 취향태그로 찾는 나만의 공간</h3>
+              <p>140여개의 취향태그로 나에게 딱 맞는 독립서점을 찾아보세요</p>
+            </div>
+            <div class="tag-set">
+              <a href="dongne-map.html" class="tag-item">카페</a>
+              <a href="dongne-map.html" class="tag-item">반려동물 동반</a>
+              <a href="dongne-map.html" class="tag-item">아이와 함께</a>
+              <a href="dongne-map.html" class="tag-item">제주도</a>
+              <a href="dongne-map.html" class="tag-item">자연생태</a>
+              <a href="dongne-map.html" class="tag-item">음악감상</a>
+              <a href="dongne-map.html" class="tag-item">심야운영</a>
+              <a href="dongne-map.html" class="tag-item">글쓰기</a>
+              <a href="dongne-map.html" class="tag-item">전시</a>
+              <a href="dongne-map.html" class="tag-item">독서모임</a>
+              <a href="dongne-map.html" class="tag-item">독립출판물</a>
+              <a href="dongne-map.html" class="tag-item">내주변</a>
+            </div>
+            <div class="btn-wrap">
+              <a href="intro-alarm.html" class="btn btn-find"
+                >태그로 서점 찾기
+                <!-- <svg
+                  width="20"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="margin-left: -1px; vertical-align: middle"
+                >
+                  <line x1="4" y1="12" x2="20" y2="12"></line>
+                  <polyline points="14 6 20 12 14 18"></polyline>
+                </svg> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="new-ad">
+        <div class="inner">
+          <h3>오늘의 발견</h3>
+          <div class="swiper ad-slider">
+            <div class="swiper-wrapper">
+              <div class="ad-item swiper-slide book-card no-ad">
+                <a href="new-alarm.html" class="card-link">
+                  <figure>
+                    <img src="./img/new-ad01.jpg" alt="완벽이 온다" />
+                  </figure>
+                  <div class="con-info">
+                    <dl>
+                      <dt>완벽이 온다 외 6개 신간알림</dt>
+                      <dd>동네서점 신간알림 7개가 도착했어요.</dd>
+                    </dl>
+
+                    <p>2026년 1월 8일</p>
+                  </div>
+                </a>
+              </div>
+              <div class="ad-item swiper-slide book-card">
+                <a href="new-alarm.html" class="card-link">
+                  <figure>
+                    <img src="./img/alarm-con02.jpg" alt="사랑과 전쟁" />
+                  </figure>
+                  <div class="con-info">
+                    <dl>
+                      <dt>사랑과 전쟁</dt>
+                      <dd>대문호 톨스토이가 발견한 “내가 사는 이유”</dd>
+                    </dl>
+
+                    <p>2026년 1월 2일</p>
+                  </div>
+                </a>
+              </div>
+              <div class="ad-item swiper-slide book-card">
+                <a href="new-alarm.html" class="card-link">
+                  <figure>
+                    <img src="./img/alarm-conn.jpg" alt="소전천권" />
+                  </figure>
+                  <div class="con-info">
+                    <dl>
+                      <dt>소전천권</dt>
+                      <dd>오직 동네서점만, 1000선의 고전문학</dd>
+                    </dl>
+
+                    <p>2025년 12월 12일</p>
+                  </div>
+                </a>
+              </div>
+              <div class="ad-item swiper-slide book-card no-ad">
+                <a href="new-alarm.html" class="card-link">
+                  <figure>
+                    <img src="./img/alarm-connㅜ.jpg" alt="2025인천책지도" />
+                  </figure>
+                  <div class="con-info">
+                    <dl>
+                      <dt>2025 인천책지도 8</dt>
+                      <dd>
+                        인천책지도 포스터를 무료 전자책(PDF)으로 만나세요.
+                      </dd>
+                    </dl>
+
+                    <p>2025년 11월 24일</p>
+                  </div>
+                </a>
               </div>
             </div>
-            <figure>
-              <img src="./img/new-alarm.jpg" alt="신간알림 이용 독립서점주" />
-            </figure>
+            <div class="ad-button-wrap">
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
@@ -325,323 +546,197 @@
           <div class="plus-box">
             <h3>마켓 Best</h3>
             <a href="market.html" class="btn-more best"
-              ><i class="hidden">더보기</i></a
-            >
+              >마켓 전체 보기
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-left: 2px; vertical-align: middle"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
           </div>
-
-          <div class="swiper best-slider">
-            <div class="swiper-wrapper">
-              <div class="best-item swiper-slide">
-                <a href="market.html">
-                  <figure>
-                    <img
-                      src="./img/best01.jpg"
-                      alt="여행자의 동네서점 개정 증보판"
-                    />
-                  </figure>
-                  <div class="list-info">
-                    <dl>
-                      <dt>종이책 | 서점입고</dt>
-                      <dd>여행자의 동네서점 개정 증보판</dd>
-                    </dl>
-                    <p>12,900원</p>
-                  </div>
-                </a>
-              </div>
-              <div class="best-item swiper-slide">
-                <a href="market.html">
-                  <figure>
-                    <img src="./img/best02.jpg" alt="같이 걸을까, 인문 지도" />
-                  </figure>
-                  <div class="list-info">
-                    <dl>
-                      <dt>종이책</dt>
-                      <dd>같이 걸을까, 인문 지도</dd>
-                    </dl>
-                    <p>무료</p>
-                  </div>
-                </a>
-              </div>
-              <div class="best-item swiper-slide">
-                <a href="market.html">
-                  <figure>
-                    <img
-                      src="./img/best03.jpg"
-                      alt="또 만나요, 동네책방 문화사랑방"
-                    />
-                  </figure>
-                  <div class="list-info">
-                    <dl>
-                      <dt>종이책</dt>
-                      <dd>또 만나요, 동네책방 문화사랑방</dd>
-                    </dl>
-                    <p>무료</p>
-                  </div>
-                </a>
-              </div>
-              <div class="best-item swiper-slide">
-                <a href="market.html">
-                  <figure>
-                    <img
-                      src="./img/best04.jpg"
-                      alt="또 만나요, 동네책방 문화사랑방(eBook)"
-                    />
-                  </figure>
-                  <div class="list-info">
-                    <dl>
-                      <dt>e-book</dt>
-                      <dd>또 만나요, 동네책방 문화사랑방</dd>
-                    </dl>
-                    <p>무료</p>
-                  </div>
-                </a>
-              </div>
-              <div class="best-item swiper-slide">
-                <a href="market.html">
-                  <figure>
-                    <img
-                      src="./img/best05.jpg"
-                      alt="여행자의 동네서점 개정 증보판"
-                    />
-                  </figure>
-                  <div class="list-info">
-                    <dl>
-                      <dt>종이책 | 서점입고</dt>
-                      <dd>여행자의 동네서점 개정 증보판</dd>
-                    </dl>
-                    <p>12,900원</p>
-                  </div>
-                </a>
-              </div>
-              <div class="best-item swiper-slide">
-                <a href="market.html">
-                  <figure>
-                    <img src="./img/best06.jpg" alt="같이 걸을까, 인문 지도" />
-                  </figure>
-                  <div class="list-info">
-                    <dl>
-                      <dt>종이책</dt>
-                      <dd>같이 걸을까, 인문 지도</dd>
-                    </dl>
-                    <p>무료</p>
-                  </div>
-                </a>
-              </div>
-              <div class="best-item swiper-slide">
-                <a href="market.html">
-                  <figure>
-                    <img
-                      src="./img/best07.jpg"
-                      alt="또 만나요, 동네책방 문화사랑방"
-                    />
-                  </figure>
-                  <div class="list-info">
-                    <dl>
-                      <dt>종이책</dt>
-                      <dd>또 만나요, 동네책방 문화사랑방</dd>
-                    </dl>
-                    <p>무료</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="new-ad">
-        <div class="inner">
-          <h3>신간알림 광고</h3>
-        </div>
-        <div class="swiper ad-slider">
-          <div class="swiper-wrapper">
-            <div class="ad-item swiper-slide">
-              <a href="#">
+          <div class="best-list">
+            <div class="best-item">
+              <a href="market.html">
                 <figure>
-                  <a href="new-alarm.html"
-                    ><img
-                      src="./img/new-ad01.jpg"
-                      alt="이 땅의 수많은 ‘민서’에게.."
-                  /></a>
+                  <img
+                    src="./img/best01.jpg"
+                    alt="여행자의 동네서점 개정 증보판"
+                  />
                 </figure>
-                <div class="con-info">
-                  <a href="new-alarm.html">
-                    <dl>
-                      <dt>
-                        이 땅의 수많은 ‘민서’에게.. <br />
-                        외 6개 신간알림
-                      </dt>
-                      <dd>이주의 동네서점 신간알림 7개가 도착했어요.</dd>
-                    </dl>
-                    <p>2025년 9월 8일 · 7min read</p>
-                  </a>
+                <div class="list-info">
+                  <dl>
+                    <dt>종이책</dt>
+                    <dd>여행자의 동네서점 개정 증보판</dd>
+                  </dl>
+                  <p>12,900원</p>
                 </div>
               </a>
             </div>
-            <div class="ad-item swiper-slide">
-              <figure>
-                <a href="new-alarm.html"
-                  ><img src="./img/alarm-con02.jpg" alt="자살에 관한 모든 것"
-                /></a>
-              </figure>
-              <div class="con-info">
-                <a href="new-alarm.html">
+            <div class="best-item">
+              <a href="market.html">
+                <figure>
+                  <img src="./img/best02.jpg" alt="동네서점이 사랑한 책들" />
+                </figure>
+                <div class="list-info">
                   <dl>
-                    <dt>사랑과 전쟁 외</dt>
-                    <dd>이주의 동네서점 신간알림이 도착했어요.</dd>
+                    <dt>종이책</dt>
+                    <dd>동네서점이 사랑한 책들</dd>
                   </dl>
-                  <p>2025년 9월 23일 · 3min read</p>
-                </a>
-              </div>
+                  <p>9,900원</p>
+                </div>
+              </a>
             </div>
-            <div class="ad-item swiper-slide">
-              <figure>
-                <a href="new-alarm.html"
-                  ><img src="./img/alarm-con03.jpg" alt="그림책 이상한 캔디콩"
-                /></a>
-              </figure>
-              <div class="con-info">
-                <a href="new-alarm.html">
+            <div class="best-item">
+              <a href="market.html">
+                <figure>
+                  <img src="./img/best03.jpg" alt="탐방서점" />
+                </figure>
+                <div class="list-info">
                   <dl>
-                    <dt>
-                      창조적 행위
-                      <br />
-                      외 5개 신간알림
-                    </dt>
-                    <dd>이주의 동네서점 신간알림 6개가 도착했어요.</dd>
+                    <dt>종이책</dt>
+                    <dd>탐방서점</dd>
                   </dl>
-                  <p>2025년 8월 8일 · 7min read</p>
-                </a>
-              </div>
+                  <p>8,000원</p>
+                </div>
+              </a>
             </div>
-            <div class="ad-item swiper-slide">
-              <figure>
-                <a href="new-alarm.html"
-                  ><img
-                    src="./img/alarm-con04.jpg"
-                    alt="독립출판, 내가 하지 말라고 했지?"
-                /></a>
-              </figure>
-              <div class="con-info">
-                <a href="new-alarm.html">
+            <div class="best-item">
+              <a href="market.html">
+                <figure>
+                  <img
+                    src="./img/best04.jpg"
+                    alt="또 만나요, 동네책방 문화사랑방(eBook)"
+                  />
+                </figure>
+                <div class="list-info">
                   <dl>
-                    <dt>바람 냄새가 밴 사람들</dt>
-                    <dd>이주의 동네서점 신간알림 7개가 도착했어요.</dd>
+                    <dt>종이책</dt>
+                    <dd>여행자의 동네서점 초판</dd>
                   </dl>
-                  <p>2025년 7월 10일 · 7min read</p>
-                </a>
-              </div>
+                  <p>9,900원</p>
+                </div>
+              </a>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
         </div>
       </section>
 
-      <section class="on-air">
+      <section class="main-banner inner">
+        <div class="banner-con">
+          <div class="banner-image">
+            <img src="./img/main-banner.png" alt="" />
+          </div>
+          <div class="banner-text">
+            <strong>나만 아는 특별한 독립서점이 있나요?</strong>
+            <p>동네서점은 여러분의 제보로 함께 만들어갑니다.</p>
+          </div>
+          <a href="#" class="banner-cta">서점 제보하기</a>
+        </div>
+      </section>
+
+      <section class="now">
         <div class="inner">
-          <h3>동네서점 On Air</h3>
-          <div class="con-wrap">
-            <div class="serve">
-              <div class="title-btn">
-                <h4>동네서점 제공</h4>
-                <a href="#" class="btn-more serve"
-                  ><i class="hidden">더보기</i></a
-                >
+          <div class="plus-box">
+            <h3>지금 주목할 소식</h3>
+            <a href="#" class="btn-more best"
+              >동네소식 전체 보기
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="margin-left: 2px; vertical-align: middle"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+          <div class="now-wrap">
+            <div class="swiper now-con">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide now-list">
+                  <div class="now-card">
+                    <a href="#">
+                      <img src="./img/now01.jpg" alt="" />
+                      <dl>
+                        <dt>함께 해요! 세계 책과 저작권의 날</dt>
+                        <dd>동네컨텐츠</dd>
+                      </dl>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide now-list">
+                  <div class="now-card">
+                    <a href="#">
+                      <img src="./img/now02.jpg" alt="" />
+                      <dl>
+                        <dt>2025 동네서점 트렌드 보고서</dt>
+                        <dd>동네컨텐츠</dd>
+                      </dl>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide now-list">
+                  <div class="now-card">
+                    <a href="#">
+                      <img src="./img/now03.jpg" alt="" />
+                      <dl>
+                        <dt>'청소년책사줄게' 토스 미니앱 공개</dt>
+                        <dd>보도자료</dd>
+                      </dl>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide now-list">
+                  <div class="now-card">
+                    <a href="#">
+                      <img src="./img/now04.jpg" alt="" />
+                      <dl>
+                        <dt>37곳의 책방에서 881통의 마음이 모였어요.</dt>
+                        <dd>동네 컨텐츠</dd>
+                      </dl>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide now-list">
+                  <div class="now-card">
+                    <a href="#">
+                      <img src="./img/now05.jpg" alt="" />
+                      <dl>
+                        <dt>2025 과학책방 올해의 책</dt>
+                        <dd>동네 컨텐츠</dd>
+                      </dl>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide now-list">
+                  <div class="now-card">
+                    <a href="#">
+                      <img src="./img/now01.jpg" alt="" />
+                      <dl>
+                        <dt>함께 해요! 세계 책과 저작권의 날</dt>
+                        <dd>동네 컨텐츠</dd>
+                      </dl>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <figure>
-                <a href="#"
-                  ><img
-                    src="./img/on-air-serve.jpg"
-                    alt="동네서점이 사랑한 책들"
-                /></a>
-              </figure>
             </div>
-            <div class="project">
-              <div class="title-btn">
-                <h4>프로젝트</h4>
-                <a href="#" class="btn-more project"
-                  ><i class="hidden">더보기</i></a
-                >
-              </div>
-              <figure>
-                <a href="#"
-                  ><img
-                    src="./img/on-air-pro.jpg"
-                    alt="(유튜브) 책 만드는 서점"
-                /></a>
-                <a href="#" class="btn-play"
-                  ><i class="hidden">영상으로 이동</i></a
-                >
-              </figure>
-            </div>
-            <div class="news">
-              <div class="title-btn">
-                <h4>새소식</h4>
-                <a href="#" class="btn-more new"
-                  ><i class="hidden">더보기</i></a
-                >
-              </div>
-              <ul class="news-list">
-                <li>
-                  <strong>업데이트</strong>
-                  <a href="#">
-                    <dl>
-                      <dt>신간알림 무료체험 곧 종료합니다.</dt>
-                      <dd>
-                        신간알림 무료체험이 곧 종료될 예정입니다. 동네서점
-                        신간알림은 전국 7백여 독립서점 책방지기의 받은편지함으로
-                        찾아가는 이메일 카탈로그 서비스입니다. 9...
-                      </dd>
-                    </dl>
-                  </a>
-                </li>
-                <li>
-                  <strong>소식지</strong>
-                  <a href="#">
-                    <dl>
-                      <dt>
-                        강원특별자치도 고성군 심심해서 심심한가, 샵 메이커즈,
-                        서사당신의 서재 외 5곳의 지도 업데이트
-                      </dt>
-                      <dd></dd>
-                    </dl>
-                  </a>
-                </li>
-                <li>
-                  <strong>언론보도</strong>
-                  <a href="#">
-                    <dl>
-                      <dt>
-                        비즈한국/ 주식회사 동네서점이 말하는 ‘팬데믹 시대,
-                        동네서점의 존재이유’
-                      </dt>
-                      <dd>
-                        2021년 10월 21일 서울 마포구 동교동 경의선책거리의 한
-                        서점에서 '주식회사 동네서점' 대표 남반장(남창우) 인터뷰
-                        기사 중 주식회사 동네서점 남반장 "동...
-                      </dd>
-                    </dl>
-                  </a>
-                </li>
-                <li>
-                  <strong>자주묻는질문</strong>
-                  <a href="#">
-                    <dl>
-                      <dt>
-                        Q. 멤버십 광고 또는 신간알림 결제 방법은?(세금계산서
-                        발행)
-                      </dt>
-                      <dd>
-                        A. 동네서점 마켓에서 해당 상품을 '바로주문'을 선택한 후,
-                        신용카드/페이팔/계좌이체/가상계좌 등 원하는 결제 방법을
-                        선택해 결제할 수 있어요...
-                      </dd>
-                    </dl>
-                  </a>
-                </li>
-              </ul>
+            <div class="now-button-wrap">
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
           </div>
         </div>
@@ -651,31 +746,52 @@
 
     <footer id="footer">
       <div class="inner">
-        <strong class="foot-logo">
-          <i class="hidden">동네서점</i>
-        </strong>
-        <ul class="foot-links">
-          <li><a href="#">개인정보보호정책</a></li>
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">이메일 무단 수집거부</a></li>
-        </ul>
-        <div class="foot-text">
-          <p>@ 2015-2023 Dongneseojeom Inc.</p>
-          <p>
-            동네서점 서비스의 데이터와 콘텐츠의 저작권은 각 해당 저작자 또는
-            제보자, 주식회사 동네서점에 있습니다. 관련 문의 또는 광고, 협력,
-            후원 제안은 <a href="#">여기</a>에서 더 자세히 알아보세요.
-          </p>
+        <div class="foot-top">
+          <h1 class="foot-logo">
+            <a href="index.html"><i class="hidden">동네서점</i></a>
+          </h1>
+          <ul class="foot-links">
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">비즈니스 제안</a></li>
+            <li><a href="#">문의</a></li>
+            <li class="personal"><a href="#">개인정보보호정책</a></li>
+            <li><a href="#">이용약관</a></li>
+          </ul>
+        </div>
+        <div class="foot-mid">
+          동네서점 서비스의 데이터와 콘텐츠의 저작권은 각 해당 저작자 또는
+          제보자, 주식회사 동네서점에 있습니다. <br />
+          동네서점은 여러분과 함께 만들어갑니다.
+        </div>
+        <div class="foot-bottom">
+          <p>@ 2015-2024 Dongneseojeom Inc.</p>
+          <ul class="sns-list">
+            <li>
+              <a href="#"
+                ><img src="./img/sns-ico-sta.svg" alt="인스타그램 링크"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="./img/sns-ico-you.svg" alt="유튜브 링크"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="./img/sns-ico-face.svg" alt="페이스북 링크"
+              /></a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
 
     <button type="button" class="go-top">
-      <i class="hidden">위로 이동</i>
+      <div class="go-top-ico"><i class="hidden">위로 이동</i></div>
     </button>
     <button type="button" class="go-send">
       <div class="send-trans-ico"></div>
-      <div class="send-trans-txt">공간 <br />제보</div>
+      <div class="send-trans-txt">서점 <br />제보</div>
     </button>
   </body>
 </html>

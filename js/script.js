@@ -1,462 +1,618 @@
 $(function () {
-  // ===========================
-  // 신간알림 더보기 버튼
-  // ===========================
-  const $btn = $(".alarm-con .view-more");
-  const $hiddenItems = $(".alarm-con .item.hidden");
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // 그룹 내 index 계산
-          const index = $(entry.target).index();
-          $(entry.target)
-            .css("transition-delay", `${index * 0.04}s`)
-            .removeClass("wait");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 },
-  );
-
-  if ($btn.length) {
-    $btn.on("click", function () {
-      $hiddenItems.each(function () {
-        $(this).removeClass("hidden").addClass("wait");
-        observer.observe(this);
-      });
-      $btn.hide();
-      $btn.css({
-        margin: 0,
-      });
-    });
-  }
-
-  // ===========================
-  // 광고 더보기 버튼
-  // ===========================
-  const $btnAd = $(".view-more.bottom");
-  const $foldItems = $(".ad-con .ad-item.hidden");
-
-  const watcher = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = $(entry.target).index();
-          $(entry.target)
-            .css("transition-delay", `${index * 0.04}s`)
-            .removeClass("wait");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 },
-  );
-
-  if ($btnAd.length) {
-    $btnAd.on("click", function () {
-      $foldItems.each(function () {
-        $(this).removeClass("hidden").addClass("wait");
-        watcher.observe(this);
-      });
-
-      $btnAd.hide();
-    });
-  }
-
-  // ===========================
-  // 테마 더보기 버튼
-  // ===========================
-  const $btnTheme = $(".theme-list");
-  const $themefoldItems = $(".theme-map-item.hidden");
-
-  const themeWatcher = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = $(entry.target).index();
-          $(entry.target).css("transition-delay", `${index * 0.08}s`);
-          $(entry.target).removeClass("wait");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 },
-  );
-
-  if ($btnTheme.length) {
-    $btnTheme.on("click", function () {
-      $themefoldItems.each(function () {
-        $(this).removeClass("hidden").addClass("wait");
-        themeWatcher.observe(this);
-      });
-      $btnTheme.hide();
-    });
-  }
-
-  // ===========================
-  // 동네서점 지도 필터
-  // ===========================
-  const $btnFilter = $(".filter-btns");
-  const $filter = $(".store-filter");
-  const $filterBottom = $(".bottom-con");
-  const $dim = $(".dim");
-  const $btnClose = $(".close-btn");
-
-  let isActive = false;
-
-  function slideMenu(pos) {
-    if ($(window).width() <= 1180) {
-      $filter.animate({ bottom: pos }, 350);
-      $filterBottom.animate({ bottom: pos }, 350);
-    } else {
-      $filter.animate({ left: pos }, 350);
-      $filterBottom.animate({ left: pos }, 350);
-    }
-    isActive = true;
-  }
-
-  $(window).on("resize", function () {
-    if (!isActive) return;
-    if ($(window).width() > 1180) {
-      $filter.add($filterBottom).css({ left: "0" });
-    } else {
-      $filter.add($filterBottom).css({ bottom: "0" });
-    }
-  });
-
-  function openMenu() {
-    $dim.stop().fadeIn();
-    slideMenu(0);
-    isActive = true;
-    $("html, body").addClass("is-locked");
-  }
-
-  function closeMenu() {
-    $dim.stop().fadeOut();
-    slideMenu("-100%");
-    isActive = false;
-    $("html, body").removeClass("is-locked");
-    initSubmenu();
-  }
-
-  $btnFilter.on("click", function (e) {
+  $('a[href="#"]').on("click", function (e) {
     e.preventDefault();
-    !isActive ? openMenu() : closeMenu();
   });
 
-  $dim.add($filterBottom).add($btnClose).on("click", closeMenu);
-
-  const $menuItem = $(".menu-item");
-  const $submenu = $(".sub-menu");
-
-  $menuItem.on("click", function (e) {
-    e.preventDefault();
-    const $currentSubmenu = $(this).next(".sub-menu");
-    const isOpen = !$currentSubmenu.hasClass("hidden");
-
-    $submenu
-      .not($currentSubmenu)
-      .stop()
-      .slideUp(300, function () {
-        $(this).addClass("hidden");
-      });
-    $menuItem.parent("li").not($(this).parent("li")).removeClass("on");
-
-    if (!isOpen) {
-      $currentSubmenu.removeClass("hidden").stop().slideDown(300);
-      $(this).parent("li").addClass("on");
-    } else {
-      $currentSubmenu.stop().slideUp(300, function () {
-        $(this).addClass("hidden");
-      });
-      $(this).parent("li").removeClass("on");
-    }
-  });
-
-  function initSubmenu() {
-    $submenu.stop().slideUp(300, function () {
-      $(this).addClass("hidden");
-    });
-    $menuItem.parent("li").removeClass("on");
-  }
-
-  $menuItem.on("dblclick", initSubmenu);
-
   // ===========================
-  // 서점 상세 정보 창
-  // ===========================
-  const $store = $(".re-wrap > li");
-  const $storeInfo = $(".store-info");
-  const $backIcon = $(".back-icon");
-  const $backToList = $(".back-list");
-  const $gItem = $(".g-item");
-  const $inMap = $(".in-map");
-  const $pop = $(".fit-store");
-  const $header = $("header");
+  // 마켓 더보기 동작
 
-  let isActiveStore = false;
+  $(function () {
+    function checkResponsive() {
+      const windowWidth = $(window).width();
 
-  // 상세창 열기/닫기 토글
-  $store.add($gItem).on("click", function (e) {
-    e.preventDefault();
-    !isActiveStore ? openStore() : closeStore();
-  });
-
-  $backIcon.add($backToList).add($inMap).on("click", closeStore);
-
-  // 상세창 슬라이드 함수
-  function slideStore(pos) {
-    $storeInfo.animate({ left: pos }, 350);
-    isActiveStore = true;
-  }
-
-  // ===========================
-  // 1180px 이하: 상세창 위치 갱신
-  // ===========================
-  function updateStoreInfoTopMobile() {
-    if ($(window).width() > 1180) return; // 1180 초과는 무시
-
-    const scrollTop = $pop.scrollTop();
-    let offsetTop = 0;
-
-    if (!$header.hasClass("hide")) {
-      offsetTop = $header.outerHeight() || 0;
-    }
-
-    $storeInfo.css({ top: scrollTop + offsetTop + "px" });
-  }
-
-  // ===========================
-  // 상세창 열기
-  // ===========================
-  function openStore() {
-    slideStore(0);
-    isActiveStore = true;
-
-    const scrollTop = $pop.scrollTop();
-    $storeInfo.css({ top: scrollTop + "px" }); // 초기값
-    $storeInfo.scrollTop(0);
-
-    if ($(window).width() > 1180) {
-      const headerHeight = $header.outerHeight() || 0;
-      $("html, body").animate(
-        { scrollTop: $pop.offset().top - headerHeight },
-        500,
-      );
-    } else {
-      $("body").css("overflow", "hidden");
-      // 1180 이하: 상세창 열릴 때 헤더 항상 보이게
-      $header.removeClass("hide");
-      updateStoreInfoTopMobile(); // 헤더 높이 반영해서 상세창 top 조정
-    }
-
-    $pop.css("overflow", "hidden");
-  }
-
-  // ===========================
-  // 상세창 닫기
-  // ===========================
-  function closeStore() {
-    slideStore("-100%");
-    isActiveStore = false;
-    $("body").css("overflow", "");
-    $pop.css("overflow", "auto");
-  }
-
-  // ===========================
-  // 헤더 스크롤 숨김/보임 기능
-  // ===========================
-  let lastScroll = 0;
-  $(window).on("scroll", function () {
-    const currentScroll = $(this).scrollTop();
-
-    // 상세창이 열려 있고 1180 이하일 때는 헤더 숨김 방지
-    if (isActiveStore && $(window).width() <= 1180) {
-      $header.removeClass("hide");
-    } else {
-      if (currentScroll <= 0) {
-        $header.removeClass("hide");
-      } else if (currentScroll > lastScroll) {
-        $header.addClass("hide");
+      if (windowWidth <= 600) {
+        // 💡 모바일 화면으로 들어왔을 때, 아직 활성화된 카드가 없다면 최초 개수만큼 클래스 부여
+        if ($(".card-item.is-active").length === 0) {
+          $(".card-item").slice(0, 8).addClass("is-active");
+        }
       } else {
-        $header.removeClass("hide");
+        // 💻 PC 화면으로 돌아가면 모바일에서 덕지덕지 붙었던 클래스를 깔끔하게 지워 초기화해 줍니다.
+        // (어차피 PC 노출은 위의 CSS :nth-of-type이 완벽하게 통제하고 있습니다.)
+        $(".card-item").removeClass("is-active");
       }
     }
 
-    lastScroll = currentScroll;
+    // 화면 열릴 때 최초 1회 실행
+    checkResponsive();
 
-    // 1180 이하 & 상세창 열려있을 때 위치 갱신
-    if (isActiveStore) updateStoreInfoTopMobile();
+    // 💡 사용자가 브라우저 창 크기를 늘렸다 줄였다 할 때 실시간 감지하여 실행
+    $(window).on("resize", function () {
+      checkResponsive();
+    });
+
+    // [모바일 무한 스크롤 로직]
+    $(window).on("scroll", function () {
+      const currentWidth = $(window).width();
+
+      if (currentWidth <= 600) {
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const documentHeight = $(document).height();
+
+        // 바닥 근처에 오면 다음 4개(모바일 2줄 분량)씩 추가 로딩
+        if (scrollTop + windowHeight >= documentHeight - 100) {
+          $(".card-item:hidden").slice(0, 8).addClass("is-active");
+        }
+      }
+    });
   });
 
   // ===========================
-  // 리사이즈 시에도 1180 이하일 경우 위치 갱신
-  // ===========================
-  $(window).on("resize", function () {
-    if (!isActiveStore) return;
-
-    if ($(window).width() > 1180) {
-      $("body").css("overflow", "");
-      $storeInfo.css("top", "");
-    } else {
-      $("body").css("overflow", "hidden");
-      updateStoreInfoTopMobile(); // 1180 이하이면 위치 재조정
-    }
+  // sub-link .active
+  $(".sub-link a").on("click", function () {
+    $(".sub-link a").removeClass("active");
+    $(this).addClass("active");
   });
 
   // ===========================
-  // 1180 이하 더보기 기능
-  // ===========================
-  const $items = $(".re-wrap > li");
-  const $moreStore = $(".more-store");
-  const hiddenCount = 6;
-  const revealCount = 6;
-  const mq = window.matchMedia("(max-width: 1180px)");
+  // .chips-wrap.single
+  $(".chips-wrap.single .chip").on("click", function () {
+    const $wrap = $(this).closest(".chips-wrap.single");
 
-  function setHidden(mq) {
-    $items.removeClass("hidden");
-    if (mq.matches) {
-      $items.slice(-hiddenCount).addClass("hidden");
-      $moreStore.removeClass("hidden-more");
+    $wrap.find(".chip").removeClass("active");
+    $(this).addClass("active");
+  });
+  // ===========================
+  // .chips-wrap.multiple
+  $(".chips-wrap.multiple .chip").on("click", function () {
+    $(this).toggleClass("active");
+
+    updateFilterCount();
+    filterStores();
+  });
+
+  // 필터 개수 및 버튼 상태
+  function updateFilterCount() {
+    const count = $(".chips-wrap.multiple .chip.active").length;
+    const $filterBtn = $(".filter-all-btn");
+    const $resetBtn = $(".filter-reset-btn");
+
+    if (count > 0) {
+      $filterBtn.attr("data-count", count).addClass("has-count active");
     } else {
-      $moreStore.addClass("hidden-more");
+      $filterBtn.removeAttr("data-count").removeClass("has-count active");
     }
+
+    $resetBtn.toggleClass("hidden", count === 0);
+
+    updateChipsFade();
   }
 
-  setHidden(mq);
-  mq.addEventListener("change", () => setHidden(mq));
+  // 그라디언트 표시 여부
+  function updateChipsFade() {
+    $(".chips-scroll").each(function () {
+      const el = this;
 
-  $moreStore.on("click", function () {
-    $items
-      .filter(".hidden")
-      .slice(0, revealCount)
-      .each(function (i) {
-        $(this)
-          .css("transition-delay", `${i * 0.05}s`)
-          .removeClass("hidden");
-      });
-    if ($items.filter(".hidden").length === 0) {
-      $moreStore.addClass("hidden-more");
-    }
-  });
+      const canScroll = el.scrollWidth > el.clientWidth;
+      const isEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 1;
 
-  // ===========================
-  // 테마지도 더보기 버튼
-  // ===========================
-  const $themeBtn = $(".plus.theme");
-  const $themeHiddenItems = $(".theme-map-item.hidden");
-
-  const sum = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // 그룹 내 index 계산
-          const index = $(entry.target).index();
-          $(entry.target)
-            .css("transition-delay", `${index * 0.04}s`)
-            .removeClass("wait");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 },
-  );
-
-  if ($themeBtn.length) {
-    $themeBtn.on("click", function () {
-      $themeHiddenItems.each(function () {
-        $(this).removeClass("hidden").addClass("wait");
-        sum.observe(this);
-      });
-      $themeBtn.hide();
+      $(el)
+        .closest(".chips-area")
+        .toggleClass("show-fade", canScroll && !isEnd);
     });
   }
 
-  // 서비스 소개 동네서점지도 item-2 br-pc 제거(600초과하면 다시 붙게)
-  function toggleBr() {
-    if ($(window).width() <= 600) {
-      $("br.br-pc").hide(); // 작은 해상도 숨김
+  // 리셋 버튼
+  $(".filter-reset-btn").on("click", function () {
+    $(".chips-wrap.multiple .chip").removeClass("active");
+
+    updateFilterCount();
+    filterStores();
+  });
+
+  // 스크롤 시 그라디언트 업데이트
+  $(".chips-scroll").on("scroll", updateChipsFade);
+
+  // 리사이즈 시 그라디언트 업데이트
+  $(window).on("resize", updateChipsFade);
+
+  // 최초 실행
+  updateFilterCount();
+
+  // ===========================
+  // market select-box
+  const $customSelect = $(".custom-select");
+  const $selected = $(".custom-select .selected");
+  const $options = $(".custom-select .options li");
+
+  $selected.on("click", function (e) {
+    e.stopPropagation();
+    $(this).closest(".custom-select").toggleClass("active");
+  });
+
+  $options.on("click", function () {
+    const $this = $(this);
+    const text = $this.text();
+    const $parentSelect = $this.closest(".custom-select");
+
+    $parentSelect.find(".selected").html(text + ' <span class="arrow"></span>');
+    $this.addClass("active").siblings().removeClass("active");
+    $parentSelect.removeClass("active");
+  });
+
+  $(document).on("click", function () {
+    $customSelect.removeClass("active");
+  });
+
+  // ===========================
+  //토스트 메시지 동작
+
+  const toastMessage = {
+    store: {
+      add: "찜한 서점에 추가했어요.",
+      remove: "찜한 서점에서 삭제했어요.",
+    },
+    market: {
+      add: "찜한 상품에 추가했어요.",
+      remove: "찜한 상품에서 삭제했어요.",
+    },
+    detail: {
+      add: "즐겨찾기에 추가했어요.",
+      remove: "즐겨찾기에서 삭제했어요.",
+    },
+  };
+
+  const $toast = $(".toast");
+
+  function showToast(message) {
+    $toast.text(message).addClass("show");
+
+    clearTimeout(window.toastTimer);
+
+    window.toastTimer = setTimeout(() => {
+      $toast.removeClass("show");
+    }, 2000);
+  }
+
+  $(".bookmark-btn").on("click", function (e) {
+    e.stopPropagation();
+
+    const $btn = $(this);
+
+    $btn.toggleClass("active");
+
+    const type = $btn.closest("[data-type]").data("type");
+
+    const message = $btn.hasClass("active")
+      ? toastMessage[type].add
+      : toastMessage[type].remove;
+
+    showToast(message);
+  });
+
+  // 복사 버튼
+  const copyMessage = {
+    address: "주소를 복사했어요.",
+    phone: "전화번호를 복사했어요.",
+  };
+
+  $(".copy-btn").on("click", async function () {
+    const text = $(this).data("copy");
+    const type = $(this).data("copy-type");
+
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast(copyMessage[type]);
+    } catch (err) {
+      showToast("복사에 실패했어요.");
+    }
+  });
+  // ===========================
+  // 북이슈 더보기
+  // ===========================
+  const $btnAd = $(".new-list-button");
+
+  const MOBILE_BREAKPOINT = 600;
+  const LOAD_COUNT = 6;
+
+  const cardObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        $(entry.target).removeClass("wait");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.1,
+    },
+  );
+
+  function loadMoreCards() {
+    const $hiddenCards = $(".alarm-con .book-card.hidden");
+
+    if (!$hiddenCards.length) return;
+
+    $hiddenCards.slice(0, LOAD_COUNT).each(function (idx) {
+      $(this).removeClass("hidden").addClass("wait");
+
+      cardObserver.observe(this);
+    });
+
+    // 더 이상 숨겨진 카드가 없으면
+    if ($(".alarm-con .book-card.hidden").length === 0) {
+      $(".business-banner").removeClass("hidden");
+      $btnAd.hide();
+    }
+  }
+
+  function checkResponsive() {
+    const isMobile = $(window).width() <= MOBILE_BREAKPOINT;
+
+    if (isMobile) {
+      $btnAd.hide();
     } else {
-      $("br.br-pc").show(); // 큰 해상도 다시 보이기
+      // 숨겨진 카드가 남아있을 때만 버튼 노출
+      if ($(".alarm-con .book-card.hidden").length > 0) {
+        $btnAd.show();
+      }
     }
   }
 
-  // 처음 로드 시 실행
-  toggleBr();
+  // 최초 실행
+  checkResponsive();
 
-  // 리사이즈할 때도 실행
-  $(window).on("resize", function () {
-    toggleBr();
+  // PC 더보기 버튼
+  $btnAd.on("click", function () {
+    loadMoreCards();
   });
 
-  // 서비스 소개 신간알림 br-ad 제거(1180이하는 클래스 제거)
-  function toggleBrAd() {
-    if ($(window).width() <= 1180) {
-      $("br.br-ad").hide();
+  // 리사이즈 대응
+  $(window).on("resize", function () {
+    checkResponsive();
+  });
+
+  // 모바일 무한 스크롤
+  let isLoading = false;
+
+  $(window).on("scroll", function () {
+    if ($(window).width() > MOBILE_BREAKPOINT) return;
+    if (isLoading) return;
+
+    const scrollTop = $(window).scrollTop();
+    const windowHeight = $(window).height();
+    const documentHeight = $(document).height();
+
+    if (scrollTop + windowHeight >= documentHeight - 100) {
+      isLoading = true;
+
+      loadMoreCards();
+
+      setTimeout(() => {
+        isLoading = false;
+      }, 200);
+    }
+  });
+
+  // ----------------------
+  // 서점찾기
+  // ----------------------
+  const $list = $(".store-list-page");
+  const $details = $(".store-detail");
+  const $findStoreBody = $(".find-store-body");
+  const $toggleBtn = $(".view-toggle-btn");
+  const $toggleIcon = $toggleBtn.find("img");
+  const $toggleText = $toggleBtn.find("span");
+  const $pins = $(".map-pin");
+  const $preview = $(".map-preview");
+  let selectedStoreId = null;
+  let currentStoreId = null;
+  let currentView = "list";
+  let previousView = "list";
+  let listScrollTop = 0;
+  const $chips = $(".chips-wrap.multiple .chip");
+  const $cards = $(".store-card");
+  const $resultCount = $(".result-count");
+  const $resultTitle = $(".result-title");
+
+  // ----------------------
+  // 필터함수
+  // ----------------------
+  function filterStores() {
+    const selectedTags = [];
+
+    $chips.filter(".active").each(function () {
+      selectedTags.push($(this).data("tag"));
+    });
+
+    // 핀 active 제거
+    $pins.removeClass("active");
+
+    // 미니카드 닫기
+    hidePreview();
+
+    // 상세 닫기
+    if (currentView === "detail") {
+      closeStore();
+    }
+
+    let visibleCount = 0;
+
+    $cards.each(function () {
+      const tags = ($(this).data("tags") || "").split(" ");
+
+      const matched =
+        selectedTags.length === 0 ||
+        selectedTags.every((tag) => tags.includes(tag));
+
+      $(this).toggleClass("filtered-out", !matched);
+      if (matched) visibleCount++;
+    });
+
+    $resultCount.text(`${visibleCount}개`);
+
+    if (selectedTags.length > 0) {
+      $resultTitle.text("검색 서점");
     } else {
-      $("br.br-ad").show(); // 큰 해상도 다시 보이기
+      $resultTitle.text("전체 서점");
+    }
+
+    console.log(selectedTags.length);
+    console.log($resultTitle.length);
+    console.log($resultCount.length);
+  }
+
+  // ----------------------
+  // 리스트 ↔ 지도 렌더링
+  // ----------------------
+  function renderView() {
+    if ($(window).width() > 768) {
+      $findStoreBody.removeClass("view-list view-map");
+      return;
+    }
+    if (currentView === "detail") return;
+    $findStoreBody
+      .toggleClass("view-list", currentView === "list")
+      .toggleClass("view-map", currentView === "map");
+
+    if (currentView === "list") {
+      $toggleText.text("지도 보기");
+      $toggleIcon.attr("src", "./img/map-icon.svg");
+    } else if (currentView === "map") {
+      $toggleText.text("목록 보기");
+      $toggleIcon.attr("src", "./img/list-icon.svg");
     }
   }
 
-  // 처음 로드 시 실행
-  toggleBrAd();
+  // ----------------------
+  // 미니카드 로직
+  // ----------------------
 
-  // 리사이즈할 때도 실행
-  $(window).on("resize", function () {
-    toggleBrAd();
+  function showPreview(storeId) {
+    selectedStoreId = storeId;
+
+    // 핀 active
+    $pins.removeClass("active");
+    $(`.map-pin[data-store-id="${storeId}"]`).addClass("active");
+
+    // 미니카드 표시
+    $preview.addClass("show");
+
+    // 플로팅 버튼 비활성화
+    $toggleBtn.addClass("disabled");
+  }
+
+  function hidePreview() {
+    selectedStoreId = null;
+
+    $pins.removeClass("active");
+
+    $preview.removeClass("show");
+
+    $toggleBtn.removeClass("disabled");
+  }
+
+  $preview.on("click", function () {
+    if (selectedStoreId === null) return;
+    console.log("preview click");
+    console.log(selectedStoreId);
+    openStore(selectedStoreId);
   });
 
-  // 서비스 소개 신간알림 br-new 제거(424이하는 클래스 제거)
-  function toggleBrNew() {
-    if ($(window).width() <= 1180) {
-      $("br.br-new").hide();
+  // 빈 곳 클릭하면 카드 다운
+  $(".map-wrap").on("click", function (e) {
+    // 핀 클릭이면 무시
+    if ($(e.target).closest(".map-pin").length) return;
+
+    // 모바일
+    if ($(window).width() <= 768) {
+      hidePreview();
+      return;
+    }
+
+    // PC
+    if (currentView === "detail") {
+      closeStore();
+    }
+  });
+
+  // ----------------------
+  // 상세 열기
+  // ----------------------
+  function openStore(storeId) {
+    // 리스트 클릭
+    console.log("save", window.scrollY);
+
+    // 상세 열기 직전
+    console.log("saved value", listScrollTop);
+
+    // 뒤로가기 직전
+    console.log("restore", listScrollTop);
+    currentStoreId = storeId;
+    $preview.removeClass("show");
+    // previousView = currentView;
+    if (currentView !== "detail") {
+      previousView = currentView;
+    }
+
+    // if (previousView === "list") {
+    //   listScrollTop = $(window).scrollTop();
+    // }
+    if (currentView === "list") {
+      listScrollTop = window.scrollY;
+    }
+
+    currentView = "detail";
+
+    // 기존 active 제거
+    $pins.removeClass("active");
+
+    // 선택한 핀 active
+    $(`.map-pin[data-store-id="${storeId}"]`).addClass("active");
+
+    // storeId → detailId(1~5 반복)
+    const detailId = ((storeId - 1) % 5) + 1;
+
+    $list.removeClass("active");
+    $findStoreBody.removeClass("view-list view-map").addClass("view-detail");
+
+    // 모든 상세 초기화
+    $details.removeClass("show active");
+    // 선택한 상세
+    const $target = $(`.store-detail[data-detail-id="${detailId}"]`);
+
+    // 먼저 display:block
+    $target.addClass("show");
+
+    // 다음 프레임에 Fade In
+    requestAnimationFrame(() => {
+      $target.addClass("active");
+    });
+
+    $toggleBtn.addClass("hidden");
+
+    $(window).scrollTop(0);
+  }
+
+  // ----------------------
+  // 상세 닫기
+  // ----------------------
+  function closeStore() {
+    currentStoreId = null;
+    currentView = previousView;
+    $pins.removeClass("active");
+
+    const $activeDetail = $(".store-detail.show");
+
+    // Fade Out
+    $activeDetail.removeClass("active");
+
+    // 완전히 숨김
+    $activeDetail.removeClass("show");
+
+    // 리스트 복원
+    $list.addClass("active");
+
+    $toggleBtn.removeClass("hidden");
+
+    $findStoreBody.removeClass("view-detail");
+
+    if ($(window).width() <= 768) {
+      if (previousView === "map") {
+        $findStoreBody.addClass("view-map");
+      } else {
+        $findStoreBody.addClass("view-list");
+      }
+    }
+
+    renderView();
+
+    if (currentView === "list") {
+      requestAnimationFrame(() => {
+        $(window).scrollTop(listScrollTop);
+      });
+    }
+  }
+
+  // ----------------------
+  // 플로팅 버튼
+  // ----------------------
+  $toggleBtn.on("click", function () {
+    if (currentView === "detail") return;
+
+    if (currentView === "list") {
+      listScrollTop = window.scrollY;
+    }
+
+    currentView = currentView === "list" ? "map" : "list";
+
+    renderView();
+
+    if (currentView === "list") {
+      requestAnimationFrame(() => {
+        window.scrollTo(0, listScrollTop);
+      });
+    }
+  });
+
+  // ----------------------
+  // 리스트 클릭
+  // ----------------------
+  $(".store-card").on("click", function () {
+    const storeId = Number($(this).data("store-id"));
+
+    openStore(storeId);
+  });
+
+  // ----------------------
+  // 핀 클릭
+  // ----------------------
+  $pins.on("click", function (e) {
+    e.stopPropagation();
+
+    const storeId = Number($(this).data("store-id"));
+
+    // PC는 기존처럼 바로 상세
+    if ($(window).width() > 768) {
+      openStore(storeId);
+      return;
+    }
+
+    // 모바일은 미리보기
+    showPreview(storeId);
+  });
+  // ----------------------
+  // 뒤로가기
+  // ----------------------
+  $(".detail-back-btn").on("click", function () {
+    closeStore();
+    $toggleBtn.removeClass("disabled");
+  });
+
+  // ----------------------
+  // 리사이즈
+  // ----------------------
+  $(window).on("resize", function () {
+    renderView();
+
+    if ($(window).width() > 768 && currentStoreId !== null) {
+      $pins.removeClass("active");
+
+      $(`.map-pin[data-store-id="${currentStoreId}"]`).addClass("active");
+    }
+
+    if (currentView === "detail") {
+      $findStoreBody.addClass("view-detail");
     } else {
-      $("br.br-new").show(); // 큰 해상도 다시 보이기
+      $findStoreBody.removeClass("view-detail");
     }
-  }
-
-  // 처음 로드 시 실행
-  toggleBrNew();
-
-  // 리사이즈할 때도 실행
-  $(window).on("resize", function () {
-    toggleBrNew();
   });
 
-  // 이미지 사이즈 변경!!
-  function changeImg() {
-    if ($(window).width() <= 600) {
-      $(".tag-wrap > figure > img").attr("src", "./img/tag-wrap-img-m.svg");
-    } else {
-      $(".tag-wrap > figure > img").attr("src", "./img/tag-wrap-img.svg");
-    }
-  }
-
-  // 처음 로드 시 실행
-  changeImg();
-
-  // 창 크기 바뀔 때 실행
-  $(window).on("resize", function () {
-    changeImg();
-  });
-
-  //blur 보이게
-  function checkWidth() {
-    if ($(window).width() <= 600) {
-      $(".blur-right").removeClass("hidden");
-    }
-  }
-
-  // 페이지 처음 로딩될 때 실행
-  checkWidth();
-
-  // 창 크기 바뀔 때도 실행
-  $(window).on("resize", function () {
-    checkWidth();
-  });
+  // ----------------------
+  // 최초 실행
+  // ----------------------
+  renderView();
 
   // ===========================
   // 메인 헤더 스크롤시 색상 변경
@@ -514,11 +670,13 @@ $(function () {
   // ===========================
   // 메뉴 열기
   $(".util-menu").on("click", function (e) {
-    if ($(window).width() > 1180) return;
+    if ($(window).width() > 768) return;
 
     e.preventDefault();
     $(".menu-open, .dim-menu").addClass("active");
-    $("body").css("overflow", "hidden");
+    $("html, body").css({
+      overflow: "hidden",
+    });
   });
 
   // 메뉴 닫기
@@ -526,12 +684,14 @@ $(function () {
     if ($(window).width() > 1180) return;
 
     $(".menu-open, .dim-menu").removeClass("active");
-    $("body").css("overflow", "");
+    $("html, body").css({
+      overflow: "",
+    });
   });
 
   // 리사이즈 시 메뉴 초기화
   function handleResizeMenu() {
-    if ($(window).width() > 1180) {
+    if ($(window).width() > 768) {
       $(".menu-open, .dim-menu").removeClass("active");
       $("body").css("overflow", "");
     }
@@ -539,25 +699,6 @@ $(function () {
 
   handleResizeMenu();
   $(window).on("resize", handleResizeMenu);
-
-  // ===========================
-  // 신간알림광고 탭 누르면 광고로 이동
-  // ===========================
-
-  $(document).on("click", ".alarm-ad a:eq(1)", function (e) {
-    e.preventDefault();
-
-    const $target = $(".sub-ad");
-    if ($target.length === 0) return; // 대상 없으면 종료
-
-    const targetTop = $target.offset().top;
-    const headerHeight = $("header").outerHeight() || 0; // 고정 헤더 있으면 보정
-
-    $("html, body").animate(
-      { scrollTop: targetTop - headerHeight },
-      500, // 0.5초 동안 부드럽게 이동
-    );
-  });
 
   // ===========================
   //탑버튼
@@ -589,21 +730,4 @@ $(function () {
       }
     });
   });
-
-  const $ico = $(".send-trans-ico");
-  const $txt = $(".send-trans-txt");
-  let showTxt = false;
-
-  setInterval(function () {
-    if (showTxt) {
-      // 텍스트 숨기고 아이콘 나타내기 (아래로 이동)
-      $txt.css({ transform: "translate(-50%, 100%)", opacity: 0 });
-      $ico.css({ transform: "translate(-50%, -50%)", opacity: 1 });
-    } else {
-      // 아이콘 숨기고 텍스트 위로 올라오기
-      $ico.css({ transform: "translate(-50%, -150%)", opacity: 0 });
-      $txt.css({ transform: "translate(-50%, -50%)", opacity: 1 });
-    }
-    showTxt = !showTxt;
-  }, 2000); // 2초 간격
 });
